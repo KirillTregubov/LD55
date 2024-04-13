@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgi8g0srvwpng"]
+
+[ext_resource type="Script" path="res://Menus/pause_menu.gd" id="1_ii6yf"]
+[ext_resource type="Theme" uid="uid://dkqrfy3kvl768" path="res://Menus/menu_theme.tres" id="1_spalh"]
+[ext_resource type="PackedScene" uid="uid://0j6h00qv1oe8" path="res://Menus/options_menu.tscn" id="3_fupm4"]
+
+[node name="PauseMenu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_ii6yf")
+
+[node name="Menu" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_spalh")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Menu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_type_variation = &"HeaderLarge"
+text = "Paused"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Menu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="Resume" type="Button" parent="Menu/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+size_flags_vertical = 4
+text = "Resume"
+
+[node name="Options" type="Button" parent="Menu/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+size_flags_vertical = 4
+text = "Options"
+
+[node name="OptionsMenu" parent="." instance=ExtResource("3_fupm4")]
+visible = false
+
+[connection signal="pressed" from="Menu/VBoxContainer/HBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/HBoxContainer/Options" to="." method="_on_options_pressed"]

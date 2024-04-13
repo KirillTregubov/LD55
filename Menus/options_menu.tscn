@@ -133,6 +133,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 size_flags_stretch_ratio = 0.5
+value = 50.0
 
 [node name="Music" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Audio"]
 layout_mode = 2
@@ -148,6 +149,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 size_flags_stretch_ratio = 0.5
+value = 50.0
 
 [node name="SFX" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Audio"]
 layout_mode = 2
@@ -163,11 +165,18 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 size_flags_stretch_ratio = 0.5
+value = 50.0
 
 [node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(512, 128)
+custom_minimum_size = Vector2(512, 64)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Back"
 
+[connection signal="item_selected" from="MarginContainer/VBoxContainer/Visuals/Fullscreen/OptionButton" to="." method="_on_screen_toggle_toggled"]
+[connection signal="item_selected" from="MarginContainer/VBoxContainer/Visuals/VSync/OptionButton" to="." method="_on_vs_toggle_toggled"]
+[connection signal="item_selected" from="MarginContainer/VBoxContainer/Visuals/Resolution/OptionButton" to="." method="_on_resolution_selected"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/Audio/Master/HSlider" to="." method="_on_master_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/Audio/Music/HSlider" to="." method="_on_music_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/Audio/SFX/HSlider" to="." method="_on_sfx_value_changed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
