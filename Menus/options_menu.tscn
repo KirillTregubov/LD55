@@ -1,0 +1,173 @@
+[gd_scene load_steps=3 format=3 uid="uid://0j6h00qv1oe8"]
+
+[ext_resource type="Theme" uid="uid://dkqrfy3kvl768" path="res://Menus/menu_theme.tres" id="1_mpdn4"]
+[ext_resource type="Script" path="res://Menus/options_menu.gd" id="1_ufuy2"]
+
+[node name="OptionsMenu" type="CanvasLayer"]
+script = ExtResource("1_ufuy2")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_mpdn4")
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "Options"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Visuals" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Visuals"]
+layout_mode = 2
+theme_type_variation = &"HeaderMedium"
+text = "Display"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Fullscreen" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Visuals"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Visuals/Fullscreen"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"HeaderSmall"
+text = "Fullscreen"
+
+[node name="OptionButton" type="OptionButton" parent="MarginContainer/VBoxContainer/Visuals/Fullscreen"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+alignment = 1
+item_count = 2
+selected = 1
+popup/item_0/text = "On"
+popup/item_0/id = 0
+popup/item_1/text = "Off"
+popup/item_1/id = 1
+
+[node name="VSync" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Visuals"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Visuals/VSync"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"HeaderSmall"
+text = "VSync"
+
+[node name="OptionButton" type="OptionButton" parent="MarginContainer/VBoxContainer/Visuals/VSync"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+alignment = 1
+item_count = 2
+selected = 0
+popup/item_0/text = "On"
+popup/item_0/id = 0
+popup/item_1/text = "Off"
+popup/item_1/id = 1
+
+[node name="Resolution" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Visuals"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Visuals/Resolution"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"HeaderSmall"
+text = "Windowed Resolution"
+
+[node name="OptionButton" type="OptionButton" parent="MarginContainer/VBoxContainer/Visuals/Resolution"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+alignment = 1
+icon_alignment = 1
+item_count = 3
+selected = 1
+popup/item_0/text = "800x600"
+popup/item_0/id = 0
+popup/item_1/text = "1280x720"
+popup/item_1/id = 1
+popup/item_2/text = "1920x1080"
+popup/item_2/id = 2
+
+[node name="Audio" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Audio"]
+layout_mode = 2
+theme_type_variation = &"HeaderMedium"
+text = "Audio"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Master" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Audio"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Audio/Master"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"HeaderSmall"
+text = "Master Volume"
+
+[node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer/Audio/Master"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.5
+
+[node name="Music" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Audio"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Audio/Music"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"HeaderSmall"
+text = "Music Volume"
+
+[node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer/Audio/Music"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.5
+
+[node name="SFX" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Audio"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Audio/SFX"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"HeaderSmall"
+text = "Sound Effects Volume"
+
+[node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer/Audio/SFX"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.5
+
+[node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(512, 128)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Back"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
