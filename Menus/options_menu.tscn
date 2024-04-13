@@ -19,52 +19,8 @@ theme_override_constants/margin_right = 32
 theme_override_constants/margin_bottom = 32
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-editor_description = ""
-visible = true
-modulate = Color(1, 1, 1, 1)
-self_modulate = Color(1, 1, 1, 1)
-show_behind_parent = false
-top_level = false
-clip_children = 0
-light_mask = 1
-visibility_layer = 1
-z_index = 0
-z_as_relative = true
-y_sort_enabled = false
-texture_filter = 0
-texture_repeat = 0
-material = null
-use_parent_material = false
-clip_contents = false
-custom_minimum_size = Vector2(0, 0)
-layout_direction = 0
 layout_mode = 2
-size_flags_horizontal = 1
 size_flags_vertical = 4
-size_flags_stretch_ratio = 1.0
-auto_translate = true
-localize_numeral_system = true
-tooltip_text = ""
-focus_neighbor_left = NodePath("")
-focus_neighbor_top = NodePath("")
-focus_neighbor_right = NodePath("")
-focus_neighbor_bottom = NodePath("")
-focus_next = NodePath("")
-focus_previous = NodePath("")
-focus_mode = 0
-mouse_filter = 1
-mouse_force_pass_scroll_events = true
-mouse_default_cursor_shape = 0
-theme = null
-theme_type_variation = &""
-alignment = 0
-script = null
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -74,52 +30,8 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Visuals" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-editor_description = ""
-visible = true
-modulate = Color(1, 1, 1, 1)
-self_modulate = Color(1, 1, 1, 1)
-show_behind_parent = false
-top_level = false
-clip_children = 0
-light_mask = 1
-visibility_layer = 1
-z_index = 0
-z_as_relative = true
-y_sort_enabled = false
-texture_filter = 0
-texture_repeat = 0
-material = null
-use_parent_material = false
-clip_contents = false
-custom_minimum_size = Vector2(0, 0)
-layout_direction = 0
 layout_mode = 2
-size_flags_horizontal = 1
-size_flags_vertical = 1
-size_flags_stretch_ratio = 1.0
-auto_translate = true
-localize_numeral_system = true
-tooltip_text = ""
-focus_neighbor_left = NodePath("")
-focus_neighbor_top = NodePath("")
-focus_neighbor_right = NodePath("")
-focus_neighbor_bottom = NodePath("")
-focus_next = NodePath("")
-focus_previous = NodePath("")
-focus_mode = 0
-mouse_filter = 1
-mouse_force_pass_scroll_events = true
-mouse_default_cursor_shape = 0
-theme = null
-theme_type_variation = &""
 alignment = 1
-script = null
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Visuals"]
 layout_mode = 2
@@ -136,18 +48,20 @@ alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"HeaderSmall"
-text = "Fullscreen"
+text = "Display Mode"
 
 [node name="OptionButton" type="OptionButton" parent="MarginContainer/VBoxContainer/Visuals/Fullscreen"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.5
+theme = ExtResource("1_mpdn4")
 alignment = 1
 item_count = 2
-selected = 1
-popup/item_0/text = "On"
+selected = 0
+allow_reselect = true
+popup/item_0/text = "Windowed"
 popup/item_0/id = 0
-popup/item_1/text = "Off"
+popup/item_1/text = "Fullscreen"
 popup/item_1/id = 1
 
 [node name="VSync" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Visuals"]
@@ -164,6 +78,7 @@ text = "VSync"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.5
+theme = ExtResource("1_mpdn4")
 alignment = 1
 item_count = 2
 selected = 0
@@ -173,6 +88,7 @@ popup/item_1/text = "Off"
 popup/item_1/id = 1
 
 [node name="Resolution" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Visuals"]
+visible = false
 layout_mode = 2
 alignment = 1
 
@@ -198,52 +114,7 @@ popup/item_2/text = "1920x1080"
 popup/item_2/id = 2
 
 [node name="Audio" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-editor_description = ""
-visible = true
-modulate = Color(1, 1, 1, 1)
-self_modulate = Color(1, 1, 1, 1)
-show_behind_parent = false
-top_level = false
-clip_children = 0
-light_mask = 1
-visibility_layer = 1
-z_index = 0
-z_as_relative = true
-y_sort_enabled = false
-texture_filter = 0
-texture_repeat = 0
-material = null
-use_parent_material = false
-clip_contents = false
-custom_minimum_size = Vector2(0, 0)
-layout_direction = 0
 layout_mode = 2
-size_flags_horizontal = 1
-size_flags_vertical = 1
-size_flags_stretch_ratio = 1.0
-auto_translate = true
-localize_numeral_system = true
-tooltip_text = ""
-focus_neighbor_left = NodePath("")
-focus_neighbor_top = NodePath("")
-focus_neighbor_right = NodePath("")
-focus_neighbor_bottom = NodePath("")
-focus_next = NodePath("")
-focus_previous = NodePath("")
-focus_mode = 0
-mouse_filter = 1
-mouse_force_pass_scroll_events = true
-mouse_default_cursor_shape = 0
-theme = null
-theme_type_variation = &""
-alignment = 0
-script = null
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Audio"]
 layout_mode = 2
@@ -304,6 +175,7 @@ value = 50.0
 custom_minimum_size = Vector2(512, 64)
 layout_mode = 2
 size_flags_horizontal = 4
+theme = ExtResource("1_mpdn4")
 text = "Back"
 
 [connection signal="item_selected" from="MarginContainer/VBoxContainer/Visuals/Fullscreen/OptionButton" to="." method="_on_screen_toggle_toggled"]
