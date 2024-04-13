@@ -12,6 +12,5 @@ func back_button():
 	title.show()
 	options_menu.hide()
 
-
 func _on_start_pressed():
 	get_tree().change_scene_to_packed(game)
