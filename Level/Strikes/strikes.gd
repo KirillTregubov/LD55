@@ -18,7 +18,7 @@ func handle_restore() -> void:
 	if current_strike < 0:
 		return
 	container.get_child(current_strike).reset()
-	current_strike += 1
+	current_strike -= 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
