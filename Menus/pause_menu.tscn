@@ -8,6 +8,14 @@
 process_mode = 3
 script = ExtResource("1_ii6yf")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0, 0, 0.168627)
+
 [node name="Menu" type="MarginContainer" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
