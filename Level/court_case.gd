@@ -8,5 +8,4 @@ const test_lines : Array[String] = [
 ]
 
 func _ready():
-	DialogueManager.show()
 	DialogueManager.start_dialogue("Jaya", test_lines)
