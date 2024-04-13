@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://Level/court_case.gd" id="1_pkilm"]
 [ext_resource type="PackedScene" uid="uid://cgi8g0srvwpng" path="res://Menus/pause_menu.tscn" id="2_50iay"]
-[ext_resource type="PackedScene" uid="uid://b8iwg2etjghi" path="res://Menus/hud.tscn" id="2_ucfni"]
+[ext_resource type="PackedScene" uid="uid://cuvo3qqob8j6f" path="res://Level/Strikes/strikes.tscn" id="3_dev2d"]
 
 [node name="CourtCase" type="Node2D"]
 script = ExtResource("1_pkilm")
 
-[node name="HUD" parent="." instance=ExtResource("2_ucfni")]
-
 [node name="PauseMenu" parent="." instance=ExtResource("2_50iay")]
+
+[node name="Strikes" parent="." instance=ExtResource("3_dev2d")]
