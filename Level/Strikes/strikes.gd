@@ -1,7 +1,7 @@
 extends CanvasLayer
 class_name StrikeDisplay
 
-@onready var Strike = preload ("res://Level/Strikes/strike.tscn")
+@onready var strike_scene = preload ("res://Level/Strikes/strike.tscn")
 @onready var container: HBoxContainer = $MarginContainer/Container
 @export var NUM_STRIKES: int = 3
 
@@ -24,7 +24,7 @@ func _ready() -> void:
 	assert(NUM_STRIKES > 0)
 	current_strike = 0
 	for i in range(NUM_STRIKES):
-		var strike = Strike.instantiate()
+		var strike = strike_scene.instantiate()
 		container.add_child(strike)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

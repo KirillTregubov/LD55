@@ -7,6 +7,6 @@
 [node name="CourtCase" type="Node2D"]
 script = ExtResource("1_pkilm")
 
-[node name="PauseMenu" parent="." instance=ExtResource("2_50iay")]
-
 [node name="Strikes" parent="." instance=ExtResource("3_dev2d")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("2_50iay")]
