@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 @onready var start = preload("res://Menus/start_menu.tscn")
-@onready var bg = $ColorRect
+@onready var bg = $Background
 @onready var options = $OptionsMenu
 @onready var menu = $Menu
 @onready var button = $PauseButton

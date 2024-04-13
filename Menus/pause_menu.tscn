@@ -28,10 +28,23 @@ shader_parameter/noise = SubResource("NoiseTexture2D_lgxbl")
 process_mode = 3
 script = ExtResource("1_ii6yf")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-material = SubResource("ShaderMaterial_ktrkk")
+[node name="Background" type="Control" parent="."]
+layout_mode = 3
 anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Darken" type="ColorRect" parent="Background"]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 0.705882)
+
+[node name="Pattern" type="ColorRect" parent="Background"]
+material = SubResource("ShaderMaterial_ktrkk")
+layout_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
