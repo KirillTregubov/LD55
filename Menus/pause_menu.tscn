@@ -53,8 +53,16 @@ layout_mode = 2
 size_flags_vertical = 4
 text = "Options"
 
+[node name="Quit" type="Button" parent="Menu/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+size_flags_vertical = 4
+text = "Quit"
+
 [node name="OptionsMenu" parent="." instance=ExtResource("3_fupm4")]
 visible = false
 
 [connection signal="pressed" from="Menu/VBoxContainer/HBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Menu/VBoxContainer/HBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/HBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="exit" from="OptionsMenu" to="." method="back_button"]

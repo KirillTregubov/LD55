@@ -34,3 +34,8 @@ func back_button():
 func _input(_event):
 	if Input.is_action_just_pressed("pause"):
 		pauseMenu()
+
+
+func _on_quit_pressed():
+	await pauseMenu()
+	get_tree().change_scene_to_file("res://Menus/start_menu.tscn")
