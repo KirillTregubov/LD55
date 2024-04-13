@@ -2,9 +2,12 @@ extends CanvasLayer
 
 @onready var label = %Words
 @onready var speaker = %Name
-@onready var timer = $MarginContainer/VBoxContainer/VBoxContainer/Textbox/LetterDisplayTimer
+@onready var timer = $LetterDisplayTimer
+@onready var container = $Container
+@onready var choices = $ChoiceLayer
 
-var dialogue_lines: Array[String] = []
+
+var dialogue_lines: Dialogue
 var current_line_index = 0
 var is_dialogue_active = false
 var can_advance_line = false
@@ -17,10 +20,11 @@ var space_time = 0.06
 var punctuation_time = 0.2
 
 func _ready():
-	hide()
+	container.hide()
 	
-func display_text(text_to_display: String):
+func display_text(person: String, text_to_display: String):
 	text = text_to_display
+	speaker.text = person
 	label.text = ""
 	display_letter()
 	
@@ -44,29 +48,32 @@ func display_letter():
 func _on_letter_display_timer_timeout():
 	display_letter()
 
-func start_dialogue(person: String, lines: Array[String]):
+func start_dialogue(lines: Dialogue):
 	if is_dialogue_active:
 		return
 	
-	if visible == false:
-		show()
-	speaker.text = person
+	if container.visible == false:
+		container.show()
+
 	dialogue_lines = lines
-	
 	show_line()
 	is_dialogue_active = true
 	
 func show_line():
-	display_text(dialogue_lines[current_line_index])
+	display_text(dialogue_lines.lines[current_line_index].speaker, dialogue_lines.lines[current_line_index].message)
 	can_advance_line = false
 	
 func _unhandled_input(event):
 	if event.is_action_pressed("proceed") && can_advance_line && is_dialogue_active:
 		current_line_index += 1
-		if current_line_index >= dialogue_lines.size():
+		if current_line_index >= dialogue_lines.lines.size():
 			is_dialogue_active = false
 			current_line_index = 0
-			hide()
+			container.hide()
+			
+			if !dialogue_lines.end_choice_lines.is_empty():
+				var words = dialogue_lines.end_choice_lines
+				var pointers = dialogue_lines.end_choice_pointer
+				choices.display_choices(words, pointers)
 			return
 		show_line()
-	
