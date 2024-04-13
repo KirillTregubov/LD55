@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://cm8tidaqeibyl"]
+
+[ext_resource type="Script" path="res://Level/Strikes/strike.gd" id="1_80ai2"]
+[ext_resource type="Texture2D" uid="uid://krb5shdjs1k8" path="res://Assets/Strike.png" id="1_sybq5"]
+[ext_resource type="Texture2D" uid="uid://b1aanwmkppaug" path="res://Assets/StrikeUsed.png" id="2_tlbyt"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5fmvs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sybq5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_tlbyt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Strike" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(24, 24)
+offset_right = 24.0
+offset_bottom = 24.0
+script = ExtResource("1_80ai2")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5fmvs")
+centered = false
