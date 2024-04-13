@@ -71,9 +71,12 @@ func _unhandled_input(event):
 			current_line_index = 0
 			container.hide()
 			
-			if !dialogue_lines.end_choice_lines.is_empty():
-				var words = dialogue_lines.end_choice_lines
-				var pointers = dialogue_lines.end_choice_pointer
-				choices.display_choices(words, pointers)
+			if !dialogue_lines.end_choice_pointer.is_empty():
+				if dialogue_lines.end_choice_pointer.size() > 1:
+					var words = dialogue_lines.end_choice_lines
+					var pointers = dialogue_lines.end_choice_pointer
+					choices.display_choices(words, pointers)
+				else:
+					start_dialogue(dialogue_lines.end_choice_pointer[0])
 			return
 		show_line()
