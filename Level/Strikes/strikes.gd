@@ -9,15 +9,16 @@ var current_strike: int
 
 # TODO: connect to manager
 func handle_strike() -> void:
-	if current_strike > container.get_child_count() - 1:
+	if current_strike > container.get_child_count():
 		return
 	container.get_child(current_strike).set_used()
 	current_strike += 1
-
-# TODO: remove
-func _input(event: InputEvent) -> void:
-	if event is InputEventKey and event.is_action_pressed("test"):
-		handle_strike()
+	
+func handle_restore() -> void:
+	if current_strike < 0:
+		return
+	container.get_child(current_strike).reset()
+	current_strike += 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -26,7 +27,12 @@ func _ready() -> void:
 	for i in range(NUM_STRIKES):
 		var strike = strike_scene.instantiate()
 		container.add_child(strike)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta: float) -> void:
-	#pass
+		
+	DialogueManager.scripted_event.connect(strike_event)
+	
+func strike_event(event:String):
+	match event:
+		"strike":
+			handle_strike()
+		"restore":
+			handle_restore()

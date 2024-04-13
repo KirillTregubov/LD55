@@ -6,7 +6,6 @@ extends CanvasLayer
 @onready var container = $Container
 @onready var choices = $ChoiceLayer
 
-
 var dialogue_lines: Dialogue
 var current_line_index = 0
 var is_dialogue_active = false
@@ -18,6 +17,8 @@ var letter_index = 0
 var letter_time = 0.03
 var space_time = 0.06
 var punctuation_time = 0.2
+
+signal scripted_event(event:String)
 
 func _ready():
 	container.hide()
@@ -60,8 +61,15 @@ func start_dialogue(lines: Dialogue):
 	is_dialogue_active = true
 	
 func show_line():
+	if dialogue_lines.lines[current_line_index].speaker == "EVENT":
+		handle_scripted_event(dialogue_lines.lines[current_line_index].message)
+		current_line_index += 1
+		
 	display_text(dialogue_lines.lines[current_line_index].speaker, dialogue_lines.lines[current_line_index].message)
 	can_advance_line = false
+	
+func handle_scripted_event(event : String):
+	scripted_event.emit(event)
 	
 func _unhandled_input(event):
 	if event.is_action_pressed("proceed") && can_advance_line && is_dialogue_active:
