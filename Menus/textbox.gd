@@ -16,21 +16,23 @@ var letter_time = 0.03
 var space_time = 0.06
 var punctuation_time = 0.2
 
+var callback = null
+
 func _ready():
 	hide()
-	
+
 func display_text(text_to_display: String):
 	text = text_to_display
 	label.text = ""
 	display_letter()
-	
+
 func display_letter():
 	label.text += text[letter_index]
 	letter_index += 1
 	
 	if letter_index >= text.length():
 		can_advance_line = true
-		letter_index=0
+		letter_index = 0
 		return
 		
 	match text[letter_index]:
@@ -40,14 +42,16 @@ func display_letter():
 			timer.start(space_time)
 		_:
 			timer.start(letter_time)
-			
+
 func _on_letter_display_timer_timeout():
 	display_letter()
 
-func start_dialogue(person: String, lines: Array[String]):
+# NOTE: Callback must be of type Callable
+func start_dialogue(person: String, lines: Array[String], _callback=null):
 	if is_dialogue_active:
 		return
 	
+	callback = _callback
 	if visible == false:
 		show()
 	speaker.text = person
@@ -55,18 +59,19 @@ func start_dialogue(person: String, lines: Array[String]):
 	
 	show_line()
 	is_dialogue_active = true
-	
+
 func show_line():
 	display_text(dialogue_lines[current_line_index])
 	can_advance_line = false
-	
+
 func _unhandled_input(event):
-	if event.is_action_pressed("proceed") && can_advance_line && is_dialogue_active:
+	if event.is_action_pressed("proceed") and can_advance_line and is_dialogue_active:
 		current_line_index += 1
 		if current_line_index >= dialogue_lines.size():
 			is_dialogue_active = false
 			current_line_index = 0
 			hide()
+			if callback != null:
+				callback.call()
 			return
 		show_line()
-	
