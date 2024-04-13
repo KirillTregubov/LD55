@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-@onready var main = $"../"
+signal exit
 @onready var master = $MarginContainer/VBoxContainer/Audio/Master/HSlider
 @onready var music = $MarginContainer/VBoxContainer/Audio/Music/HSlider
 @onready var sfx = $MarginContainer/VBoxContainer/Audio/SFX/HSlider
@@ -12,7 +12,7 @@ const RESOLUTION_DISPLAY : Dictionary = {
 }
 
 func _on_back_button_pressed():
-	main.back_button()
+	exit.emit()
 
 
 func _on_screen_toggle_toggled(toggled_on):

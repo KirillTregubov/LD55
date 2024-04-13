@@ -58,3 +58,4 @@ visible = false
 
 [connection signal="pressed" from="TitleMenuContainer/VBoxContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="TitleMenuContainer/VBoxContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="exit" from="OptionsMenu" to="." method="back_button"]
