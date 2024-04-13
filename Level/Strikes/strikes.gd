@@ -30,6 +30,7 @@ func _ready() -> void:
 		
 	DialogueManager.scripted_event.connect(strike_event)
 	
+# handles scripted events from DialogueManager
 func strike_event(event:String):
 	match event:
 		"strike":
