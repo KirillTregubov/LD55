@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bv8rxwcvq7cwx"]
+
+[ext_resource type="Texture2D" uid="uid://dcbwstjwbhw55" path="res://Assets/frog_judge.png" id="1_xqju8"]
+
+[node name="Judge" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_xqju8")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

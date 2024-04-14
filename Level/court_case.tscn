@@ -1,15 +1,23 @@
-[gd_scene load_steps=7 format=3 uid="uid://bw7bp573fvdna"]
+[gd_scene load_steps=13 format=3 uid="uid://bw7bp573fvdna"]
 
 [ext_resource type="Script" path="res://Level/court_case.gd" id="1_pkilm"]
 [ext_resource type="PackedScene" uid="uid://cgi8g0srvwpng" path="res://Menus/pause_menu.tscn" id="2_50iay"]
 [ext_resource type="Resource" uid="uid://nte472b2krax" path="res://Script/starting_dialogue.tres" id="2_hnyw3"]
 [ext_resource type="PackedScene" uid="uid://cuvo3qqob8j6f" path="res://Level/Strikes/strikes.tscn" id="3_dev2d"]
+[ext_resource type="PackedScene" uid="uid://bv8rxwcvq7cwx" path="res://Actors/judge.tscn" id="4_6r8wl"]
 [ext_resource type="Texture2D" uid="uid://ds6gvx3pd4j20" path="res://Assets/Crowd.png" id="4_dhhdd"]
+[ext_resource type="Texture2D" uid="uid://cdutcglkydg1o" path="res://Assets/desk.png" id="5_eqkn0"]
 [ext_resource type="Texture2D" uid="uid://e0nkg0ehdkj2" path="res://Assets/background.png" id="5_sguh8"]
+[ext_resource type="Texture2D" uid="uid://cpj33cilvi42f" path="res://Assets/summoning_circle.png" id="6_nfg81"]
+[ext_resource type="PackedScene" uid="uid://bxqhdewrrr0w3" path="res://Summoning/summoning_circle.tscn" id="6_tlyd5"]
+[ext_resource type="Texture2D" uid="uid://bp0o268me54ys" path="res://Assets/stand.png" id="7_p0ma0"]
+[ext_resource type="PackedScene" uid="uid://je3aequkna2" path="res://Actors/bug.tscn" id="8_l58rr"]
 
 [node name="CourtCase" type="Node2D"]
 script = ExtResource("1_pkilm")
-dialogue = ExtResource("2_hnyw3")
+opening = ExtResource("2_hnyw3")
+metadata/_edit_vertical_guides_ = [959.0, -242.0]
+metadata/_edit_horizontal_guides_ = [611.0]
 
 [node name="Background" type="CanvasLayer" parent="."]
 layer = -1
@@ -21,6 +29,34 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_sguh8")
+
+[node name="Subjects" type="Node2D" parent="."]
+
+[node name="Judge" parent="Subjects" instance=ExtResource("4_6r8wl")]
+position = Vector2(960, 400)
+
+[node name="LeftDesk" type="Sprite2D" parent="Subjects"]
+position = Vector2(360, 730)
+texture = ExtResource("5_eqkn0")
+flip_h = true
+
+[node name="RightDesk" type="Sprite2D" parent="Subjects"]
+position = Vector2(1560, 730)
+texture = ExtResource("5_eqkn0")
+
+[node name="Circle" type="Sprite2D" parent="Subjects"]
+position = Vector2(960, 890)
+texture = ExtResource("6_nfg81")
+
+[node name="Stand" type="Sprite2D" parent="Subjects"]
+position = Vector2(960, 750)
+texture = ExtResource("7_p0ma0")
+
+[node name="BugWitness" parent="Subjects" instance=ExtResource("8_l58rr")]
+position = Vector2(960, 672)
+
+[node name="SummoningCircle" parent="Subjects" instance=ExtResource("6_tlyd5")]
+position = Vector2(960, 800)
 
 [node name="Foreground" type="CanvasLayer" parent="."]
 layer = 0
