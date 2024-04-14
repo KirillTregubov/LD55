@@ -56,6 +56,7 @@ func _input(_event):
 func _on_quit_pressed():
 	await pauseMenu()
 	DialogueManager.hide()
+	DialogueManager.clear_choices()
 	get_tree().change_scene_to_file("res://Menus/start_menu.tscn")
 
 
