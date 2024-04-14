@@ -55,7 +55,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Menu" type="MarginContainer" parent="."]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -81,19 +80,19 @@ size_flags_stretch_ratio = 0.5
 theme_override_constants/separation = 24
 
 [node name="Resume" type="Button" parent="Menu/VBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(256, 0)
+custom_minimum_size = Vector2(384, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Continue"
 
 [node name="Options2" type="Button" parent="Menu/VBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(256, 0)
+custom_minimum_size = Vector2(384, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Options"
 
 [node name="Quit" type="Button" parent="Menu/VBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(256, 0)
+custom_minimum_size = Vector2(384, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Quit to Menu"

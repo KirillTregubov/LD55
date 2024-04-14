@@ -50,9 +50,12 @@ size_flags_horizontal = 3
 theme_type_variation = &"HeaderSmall"
 text = "Display Mode"
 
-[node name="OptionButton" type="OptionButton" parent="MarginContainer/VBoxContainer/Visuals/Fullscreen"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Visuals/Fullscreen"]
+custom_minimum_size = Vector2(384, 0)
 layout_mode = 2
-size_flags_horizontal = 3
+
+[node name="OptionButton" type="OptionButton" parent="MarginContainer/VBoxContainer/Visuals/Fullscreen/MarginContainer"]
+layout_mode = 2
 size_flags_stretch_ratio = 0.5
 theme = ExtResource("1_mpdn4")
 alignment = 1
@@ -74,7 +77,11 @@ size_flags_horizontal = 3
 theme_type_variation = &"HeaderSmall"
 text = "VSync"
 
-[node name="OptionButton" type="OptionButton" parent="MarginContainer/VBoxContainer/Visuals/VSync"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Visuals/VSync"]
+custom_minimum_size = Vector2(384, 0)
+layout_mode = 2
+
+[node name="OptionButton" type="OptionButton" parent="MarginContainer/VBoxContainer/Visuals/VSync/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.5
@@ -172,14 +179,14 @@ size_flags_stretch_ratio = 0.5
 value = 50.0
 
 [node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(512, 64)
+custom_minimum_size = Vector2(384, 64)
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("1_mpdn4")
 text = "Back"
 
-[connection signal="item_selected" from="MarginContainer/VBoxContainer/Visuals/Fullscreen/OptionButton" to="." method="_on_screen_toggle_toggled"]
-[connection signal="item_selected" from="MarginContainer/VBoxContainer/Visuals/VSync/OptionButton" to="." method="_on_vs_toggle_toggled"]
+[connection signal="item_selected" from="MarginContainer/VBoxContainer/Visuals/Fullscreen/MarginContainer/OptionButton" to="." method="_on_screen_toggle_toggled"]
+[connection signal="item_selected" from="MarginContainer/VBoxContainer/Visuals/VSync/MarginContainer/OptionButton" to="." method="_on_vs_toggle_toggled"]
 [connection signal="item_selected" from="MarginContainer/VBoxContainer/Visuals/Resolution/OptionButton" to="." method="_on_resolution_selected"]
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/Audio/Master/HSlider" to="." method="_on_master_value_changed"]
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/Audio/Music/HSlider" to="." method="_on_music_value_changed"]

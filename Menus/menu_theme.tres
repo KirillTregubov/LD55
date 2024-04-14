@@ -1,19 +1,74 @@
-[gd_resource type="Theme" load_steps=4 format=3 uid="uid://dkqrfy3kvl768"]
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://dkqrfy3kvl768"]
 
 [ext_resource type="FontFile" uid="uid://cwaj557jghxpo" path="res://Theme/EB_Garamond/static/EBGaramond-Regular.ttf" id="1_l32wd"]
-[ext_resource type="Texture2D" uid="uid://cbtitr4wdkv5h" path="res://Assets/Button.png" id="2_8mq81"]
+[ext_resource type="Texture2D" uid="uid://bjpdbwpxjgxeh" path="res://Assets/Button.png" id="2_8mq81"]
+[ext_resource type="Texture2D" uid="uid://d0bdft5a2i5xf" path="res://Assets/ButtonHover.png" id="2_knrdn"]
+[ext_resource type="Texture2D" uid="uid://dir23tnjqlfne" path="res://Assets/ButtonActive.png" id="4_5xilb"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5eakn"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hkhqp"]
+draw_center = false
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.921569, 0.921569, 0.921569, 0.647059)
+border_blend = true
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1i54x"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+texture = ExtResource("2_knrdn")
+texture_margin_left = 32.0
+texture_margin_top = 32.0
+texture_margin_right = 32.0
+texture_margin_bottom = 32.0
+region_rect = Rect2(2, 2, 96, 96)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_en08x"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
 texture = ExtResource("2_8mq81")
+texture_margin_left = 32.0
+texture_margin_top = 32.0
+texture_margin_right = 32.0
+texture_margin_bottom = 32.0
+region_rect = Rect2(2, 2, 96, 96)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3pa87"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+texture = ExtResource("4_5xilb")
+texture_margin_left = 32.0
+texture_margin_top = 32.0
+texture_margin_right = 32.0
+texture_margin_bottom = 32.0
+region_rect = Rect2(2, 2, 96, 96)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_767el"]
+size = Vector2(0, 0)
 
 [resource]
 Button/font_sizes/font_size = 32
 Button/fonts/font = ExtResource("1_l32wd")
-Button/styles/normal = SubResource("StyleBoxTexture_5eakn")
+Button/styles/focus = SubResource("StyleBoxFlat_hkhqp")
+Button/styles/hover = SubResource("StyleBoxTexture_1i54x")
+Button/styles/normal = SubResource("StyleBoxTexture_en08x")
+Button/styles/pressed = SubResource("StyleBoxTexture_3pa87")
 HeaderLarge/font_sizes/font_size = 128
 HeaderMedium/font_sizes/font_size = 64
 HeaderSmall/font_sizes/font_size = 48
 Label/font_sizes/font_size = 32
 Label/fonts/font = ExtResource("1_l32wd")
-OptionButton/font_sizes/font_size = 48
+OptionButton/font_sizes/font_size = 32
 OptionButton/fonts/font = ExtResource("1_l32wd")
+OptionButton/icons/arrow = SubResource("PlaceholderTexture2D_767el")
