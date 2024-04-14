@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://d0f2a1qyxli21" path="res://Menus/choice_layer.tscn" id="3_ql4ss"]
 
 [node name="HUD" type="CanvasLayer"]
-layer = 5
 script = ExtResource("1_0c11q")
 
 [node name="Container" type="MarginContainer" parent="."]
