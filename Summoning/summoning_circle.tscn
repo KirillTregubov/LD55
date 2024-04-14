@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://bxqhdewrrr0w3"]
+
+[ext_resource type="Texture2D" uid="uid://fd62arnh31ct" path="res://Assets/flame_03.png" id="1_1jnb8"]
+[ext_resource type="Script" path="res://Summoning/summoning_circle.gd" id="1_nvlsq"]
+[ext_resource type="AudioStream" uid="uid://dqtpytrucrlo4" path="res://Assets/SFX/summoning_3.wav" id="3_0q710"]
+
+[sub_resource type="Gradient" id="Gradient_av8bq"]
+colors = PackedColorArray(0, 0, 0, 1, 0.776471, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_u51hc"]
+gradient = SubResource("Gradient_av8bq")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_gr1s8"]
+particle_flag_disable_z = true
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 150.0
+emission_ring_radius = 400.0
+emission_ring_inner_radius = 0.0
+direction = Vector3(0, 0, 0)
+gravity = Vector3(0, -980, 0)
+color_ramp = SubResource("GradientTexture1D_u51hc")
+
+[node name="SummoningCircle" type="Node2D"]
+script = ExtResource("1_nvlsq")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 200
+process_material = SubResource("ParticleProcessMaterial_gr1s8")
+texture = ExtResource("1_1jnb8")
+lifetime = 1.2
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 9.0
+one_shot = true
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_0q710")
+bus = &"SFX"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
