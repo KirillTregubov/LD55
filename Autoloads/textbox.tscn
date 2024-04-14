@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b8iwg2etjghi"]
+[gd_scene load_steps=5 format=3 uid="uid://b8iwg2etjghi"]
 
 [ext_resource type="Script" path="res://Autoloads/textbox.gd" id="1_0c11q"]
 [ext_resource type="Theme" uid="uid://dkqrfy3kvl768" path="res://Menus/menu_theme.tres" id="1_a6le3"]
 [ext_resource type="PackedScene" uid="uid://d0f2a1qyxli21" path="res://Menus/choice_layer.tscn" id="3_ql4ss"]
+[ext_resource type="FontFile" uid="uid://5mdnkiqe5rns" path="res://Theme/NotoSansBatak-Regular.ttf" id="3_ysj2i"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_0c11q")
@@ -48,6 +49,7 @@ theme_override_constants/margin_left = 16
 [node name="Name" type="Label" parent="Container/VBoxContainer/VBoxContainer/NameContainer/NameSpace/MarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ysj2i")
 
 [node name="Spacing" type="Control" parent="Container/VBoxContainer/VBoxContainer/NameContainer"]
 layout_mode = 2
@@ -76,6 +78,7 @@ custom_minimum_size = Vector2(1, 1)
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_ysj2i")
 autowrap_mode = 2
 
 [node name="ChoiceLayer" parent="." instance=ExtResource("3_ql4ss")]
