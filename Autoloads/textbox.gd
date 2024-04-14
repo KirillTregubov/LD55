@@ -5,6 +5,7 @@ extends CanvasLayer
 @onready var timer = $LetterDisplayTimer
 @onready var container = $Container
 @onready var choices = $ChoiceLayer
+@onready var dramatic_pause = $DramaticPauseTimer
 
 var dialogue_lines: Dialogue
 var current_line_index = 0
@@ -67,10 +68,19 @@ func _on_letter_display_timer_timeout():
 	
 # call display_text() for current line. If speaker is "EVENT", emit scripted_event and hanlde next line.
 func show_line():
-	if dialogue_lines.lines[current_line_index].speaker == "EVENT":
+	while dialogue_lines.lines[current_line_index].speaker == "EVENT":
+		print("EVENT: "+dialogue_lines.lines[current_line_index].message)
+		
+		if dialogue_lines.lines[current_line_index].message == "PAUSE":
+			container.hide()
+			can_advance_line = false
+			dramatic_pause.start(12)
+			current_line_index += 1
+			return
+		
 		handle_scripted_event(dialogue_lines.lines[current_line_index].message)
 		current_line_index += 1
-	
+
 	display_text(dialogue_lines.lines[current_line_index].speaker, dialogue_lines.lines[current_line_index].message)
 	can_advance_line = false
 	
@@ -99,3 +109,11 @@ func _unhandled_input(event):
 					start_dialogue(dialogue_lines.end_choice_pointer[0])
 			return
 		show_line()
+
+func clear_choices():
+	choices.clear_button()
+
+
+func _on_dramatic_pause_timer_timeout():
+	container.show()
+	show_line()

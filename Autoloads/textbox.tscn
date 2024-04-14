@@ -83,4 +83,8 @@ autowrap_mode = 2
 [node name="LetterDisplayTimer" type="Timer" parent="."]
 one_shot = true
 
+[node name="DramaticPauseTimer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="timeout" from="LetterDisplayTimer" to="." method="_on_letter_display_timer_timeout"]
+[connection signal="timeout" from="DramaticPauseTimer" to="." method="_on_dramatic_pause_timer_timeout"]
