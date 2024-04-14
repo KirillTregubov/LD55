@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bw7bp573fvdna"]
+[gd_scene load_steps=7 format=3 uid="uid://bw7bp573fvdna"]
 
 [ext_resource type="Script" path="res://Level/court_case.gd" id="1_pkilm"]
 [ext_resource type="PackedScene" uid="uid://cgi8g0srvwpng" path="res://Menus/pause_menu.tscn" id="2_50iay"]
 [ext_resource type="Resource" uid="uid://nte472b2krax" path="res://Script/starting_dialogue.tres" id="2_hnyw3"]
 [ext_resource type="PackedScene" uid="uid://cuvo3qqob8j6f" path="res://Level/Strikes/strikes.tscn" id="3_dev2d"]
+[ext_resource type="Texture2D" uid="uid://ds6gvx3pd4j20" path="res://Assets/Crowd.png" id="4_dhhdd"]
 [ext_resource type="Texture2D" uid="uid://e0nkg0ehdkj2" path="res://Assets/background.png" id="5_sguh8"]
 
 [node name="CourtCase" type="Node2D"]
@@ -19,6 +20,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_sguh8")
+
+[node name="Foreground" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="Foreground"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_dhhdd")
 
 [node name="Strikes" parent="." instance=ExtResource("3_dev2d")]
 
