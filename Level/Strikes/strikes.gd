@@ -9,21 +9,21 @@ var current_strike: int
 
 # TODO: connect to manager
 func handle_strike() -> void:
-	if current_strike > container.get_child_count():
-		return
-	container.get_child(current_strike).set_used()
-	current_strike += 1
-	
-func handle_restore() -> void:
 	if current_strike < 0:
 		return
-	container.get_child(current_strike).reset()
+	container.get_child(current_strike).set_used()
 	current_strike -= 1
+	
+func handle_restore() -> void:
+	if current_strike > NUM_STRIKES:
+		return
+	container.get_child(current_strike).reset()
+	current_strike += 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	assert(NUM_STRIKES > 0)
-	current_strike = 0
+	current_strike = NUM_STRIKES-1
 	for i in range(NUM_STRIKES):
 		var strike = strike_scene.instantiate()
 		container.add_child(strike)
