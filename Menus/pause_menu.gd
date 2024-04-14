@@ -2,7 +2,6 @@ extends CanvasLayer
 
 @onready var start = preload("res://Menus/start_menu.tscn")
 @onready var bg = $Background
-@onready var options = $OptionsMenu
 @onready var menu = $Menu
 @onready var button = $PauseButton
 var paused: bool
@@ -13,6 +12,7 @@ func _ready():
 	bg.hide()
 	menu.hide()
 	paused = false
+	OptionsMenu.exit.connect(back_button)
 
 
 func pauseMenu():
@@ -36,7 +36,7 @@ func _on_resume_pressed():
 func _on_options_pressed():
 	pauseActions = InputMap.action_get_events("pause")
 	InputMap.action_erase_events("pause")
-	options.show()
+	OptionsMenu.show()
 	menu.hide()
 
 
@@ -45,7 +45,7 @@ func back_button():
 		for event in pauseActions:
 			InputMap.action_add_event("pause", event)
 	menu.show()
-	options.hide()
+	OptionsMenu.hide()
 
 
 func _input(_event):

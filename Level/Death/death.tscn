@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvphsu5igd6xu"]
+
+[ext_resource type="Shader" path="res://Level/Death/death.gdshader" id="1_hyoxf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gj07d"]
+shader = ExtResource("1_hyoxf")
+shader_parameter/horizon = null
+shader_parameter/wave_frequency = null
+shader_parameter/wave_magnitude = null
+shader_parameter/tides_magnitude = null
+shader_parameter/noise_wave = null
+shader_parameter/tides_speed = null
+shader_parameter/wave_speed = null
+shader_parameter/shine_position = null
+shader_parameter/shine_itensity = null
+shader_parameter/shine_width = null
+shader_parameter/shine_color = null
+shader_parameter/water_color = null
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_gj07d")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

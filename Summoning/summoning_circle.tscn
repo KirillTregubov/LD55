@@ -37,6 +37,7 @@ one_shot = true
 
 [node name="SFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_0q710")
+volume_db = -20.0
 bus = &"SFX"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

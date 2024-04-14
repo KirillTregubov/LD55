@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Menus/start_menu.gd" id="1_cktmu"]
 [ext_resource type="Shader" path="res://Menus/pause_menu.gdshader" id="2_8eyi1"]
 [ext_resource type="Theme" uid="uid://dkqrfy3kvl768" path="res://Menus/menu_theme.tres" id="2_guvi4"]
-[ext_resource type="PackedScene" uid="uid://0j6h00qv1oe8" path="res://Menus/options_menu.tscn" id="3_dabwn"]
+[ext_resource type="AudioStream" uid="uid://ke5te2e3oxjw" path="res://Assets/Music/hammond_hill.wav" id="5_lnbxr"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_nuu60"]
 noise_type = 0
@@ -81,10 +81,12 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "Quit Game"
 
-[node name="OptionsMenu" parent="." instance=ExtResource("3_dabwn")]
-visible = false
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_lnbxr")
+volume_db = -20.0
+bus = &"Music"
 
 [connection signal="pressed" from="TitleMenuContainer/VBoxContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="TitleMenuContainer/VBoxContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="TitleMenuContainer/VBoxContainer/VBoxContainer/Quit Game" to="." method="_on_quit_game_pressed"]
-[connection signal="exit" from="OptionsMenu" to="." method="back_button"]
+[connection signal="finished" from="music" to="." method="_on_music_finished"]

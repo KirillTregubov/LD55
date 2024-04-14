@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cgi8g0srvwpng"]
+[gd_scene load_steps=7 format=3 uid="uid://cgi8g0srvwpng"]
 
 [ext_resource type="Script" path="res://Menus/pause_menu.gd" id="1_ii6yf"]
 [ext_resource type="Theme" uid="uid://dkqrfy3kvl768" path="res://Menus/menu_theme.tres" id="1_spalh"]
 [ext_resource type="Shader" path="res://Menus/pause_menu.gdshader" id="2_i42j4"]
-[ext_resource type="PackedScene" uid="uid://0j6h00qv1oe8" path="res://Menus/options_menu.tscn" id="3_fupm4"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_toweq"]
 noise_type = 0
@@ -118,12 +117,7 @@ size_flags_vertical = 4
 theme = ExtResource("1_spalh")
 text = "Call Recess"
 
-[node name="OptionsMenu" parent="." instance=ExtResource("3_fupm4")]
-layer = 2
-visible = false
-
 [connection signal="pressed" from="Menu/VBoxContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Menu/VBoxContainer/VBoxContainer/Options2" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Menu/VBoxContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="PauseButton/Button" to="." method="_on_button_pressed"]
-[connection signal="exit" from="OptionsMenu" to="." method="back_button"]

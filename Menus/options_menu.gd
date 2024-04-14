@@ -42,9 +42,9 @@ func _on_resolution_selected(index):
 
 func _on_master_value_changed(value):
 	if (value == master .min_value):
-		AudioServer.set_bus_mute(1, true)
+		AudioServer.set_bus_mute(0, true)
 	else:
-		volume(1, value)
+		volume(0, value)
 	
 func volume(bus_index, value):
 	AudioServer.set_bus_mute(bus_index, false)
@@ -52,15 +52,15 @@ func volume(bus_index, value):
 
 func _on_music_value_changed(value):
 	if (value == music.min_value):
-		AudioServer.set_bus_mute(2, true)
+		AudioServer.set_bus_mute(1, true)
 	else:
-		volume(2, value)
+		volume(1, value)
 
 func _on_sfx_value_changed(value):
 	if (value == sfx.min_value):
-		AudioServer.set_bus_mute(3, true)
+		AudioServer.set_bus_mute(2, true)
 	else:
-		volume(3, value)
+		volume(2, value)
 
 func _input(_event) -> void:
 	if Input.is_action_just_pressed("close"):

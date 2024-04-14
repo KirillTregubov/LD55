@@ -4,6 +4,9 @@
 [ext_resource type="Script" path="res://Menus/options_menu.gd" id="1_ufuy2"]
 
 [node name="OptionsMenu" type="CanvasLayer"]
+process_mode = 3
+layer = 2
+visible = false
 script = ExtResource("1_ufuy2")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -144,7 +147,9 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 size_flags_stretch_ratio = 0.5
-value = 50.0
+min_value = -20.0
+max_value = 20.0
+step = 0.1
 
 [node name="Music" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Audio"]
 layout_mode = 2
@@ -160,7 +165,9 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 size_flags_stretch_ratio = 0.5
-value = 50.0
+min_value = -20.0
+max_value = 20.0
+step = 0.1
 
 [node name="SFX" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Audio"]
 layout_mode = 2
@@ -176,7 +183,9 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 size_flags_stretch_ratio = 0.5
-value = 50.0
+min_value = -20.0
+max_value = 20.0
+step = 0.1
 
 [node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(384, 64)

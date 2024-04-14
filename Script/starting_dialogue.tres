@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=26 format=3 uid="uid://nte472b2krax"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=29 format=3 uid="uid://nte472b2krax"]
 
 [ext_resource type="Script" path="res://Resources/line.gd" id="1_gj68h"]
 [ext_resource type="Script" path="res://Resources/dialogue.gd" id="1_v1orp"]
@@ -8,9 +8,24 @@ script = ExtResource("1_gj68h")
 speaker = "Judge Belzebufo"
 message = "I will allow this."
 
+[sub_resource type="Resource" id="Resource_nt423"]
+script = ExtResource("1_gj68h")
+speaker = "Judge"
+message = "Let us begin."
+
+[sub_resource type="Resource" id="Resource_a4xag"]
+script = ExtResource("1_gj68h")
+speaker = "EVENT"
+message = "start_music"
+
+[sub_resource type="Resource" id="Resource_q0u0f"]
+script = ExtResource("1_gj68h")
+speaker = "Judge"
+message = "Tell us about what happened last Friday."
+
 [sub_resource type="Resource" id="Resource_yn8bk"]
 script = ExtResource("1_v1orp")
-lines = Array[ExtResource("1_gj68h")]([SubResource("Resource_kew5w")])
+lines = Array[ExtResource("1_gj68h")]([SubResource("Resource_kew5w"), SubResource("Resource_nt423"), SubResource("Resource_a4xag"), SubResource("Resource_q0u0f")])
 end_choice_lines = Array[String]([])
 end_choice_pointer = Array[ExtResource("1_v1orp")]([])
 

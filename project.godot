@@ -23,6 +23,7 @@ buses/default_bus_layout="res://bus_layout.tres"
 
 WindowManager="*res://Autoloads/window_manager.gd"
 DialogueManager="*res://Autoloads/textbox.tscn"
+OptionsMenu="*res://Menus/options_menu.tscn"
 
 [display]
 
