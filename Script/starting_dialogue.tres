@@ -1,7 +1,39 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=8 format=3 uid="uid://nte472b2krax"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=14 format=3 uid="uid://nte472b2krax"]
 
 [ext_resource type="Script" path="res://Resources/line.gd" id="1_gj68h"]
 [ext_resource type="Script" path="res://Resources/dialogue.gd" id="1_v1orp"]
+
+[sub_resource type="Resource" id="Resource_kew5w"]
+script = ExtResource("1_gj68h")
+speaker = "Judge Belzebufo"
+message = "I will allow this."
+
+[sub_resource type="Resource" id="Resource_yn8bk"]
+script = ExtResource("1_v1orp")
+lines = Array[ExtResource("1_gj68h")]([SubResource("Resource_kew5w")])
+end_choice_lines = Array[String]([])
+end_choice_pointer = Array[ExtResource("1_v1orp")]([])
+
+[sub_resource type="Resource" id="Resource_kropb"]
+script = ExtResource("1_gj68h")
+speaker = "Judge Belzebufo"
+message = "Neither am I."
+
+[sub_resource type="Resource" id="Resource_y7oxs"]
+script = ExtResource("1_gj68h")
+speaker = "EVENT"
+message = "strike"
+
+[sub_resource type="Resource" id="Resource_imjl6"]
+script = ExtResource("1_gj68h")
+speaker = "Judge Belzebufo"
+message = "You're on thin ice."
+
+[sub_resource type="Resource" id="Resource_7mtjf"]
+script = ExtResource("1_v1orp")
+lines = Array[ExtResource("1_gj68h")]([SubResource("Resource_kropb"), SubResource("Resource_y7oxs"), SubResource("Resource_imjl6")])
+end_choice_lines = Array[String]([])
+end_choice_pointer = Array[ExtResource("1_v1orp")]([])
 
 [sub_resource type="Resource" id="Resource_lciqk"]
 script = ExtResource("1_gj68h")
@@ -31,5 +63,5 @@ message = "The fuck?"
 [resource]
 script = ExtResource("1_v1orp")
 lines = Array[ExtResource("1_gj68h")]([SubResource("Resource_lciqk"), SubResource("Resource_jh7kb"), SubResource("Resource_038l2"), SubResource("Resource_wow8t"), SubResource("Resource_i8x8d")])
-end_choice_lines = Array[String]([])
-end_choice_pointer = Array[ExtResource("1_v1orp")]([])
+end_choice_lines = Array[String](["This is madness!", "He's not even wearing pants!"])
+end_choice_pointer = Array[ExtResource("1_v1orp")]([SubResource("Resource_yn8bk"), SubResource("Resource_7mtjf")])
