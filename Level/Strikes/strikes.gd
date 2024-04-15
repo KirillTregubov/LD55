@@ -4,11 +4,14 @@ class_name StrikeDisplay
 signal dead
 @onready var strike_scene = preload ("res://Level/Strikes/strike.tscn")
 @onready var container: HBoxContainer = $MarginContainer/Container
+@export var audio_track: AudioStream = preload("res://Assets/SFX/skull_shatter.wav")
+
 @export var NUM_STRIKES: int = 3
 
 var current_strike: int
 
 func handle_strike() -> void:
+	SoundPlayer.play_sound(audio_track)
 	if current_strike < 0:
 		return
 	if current_strike == 0:

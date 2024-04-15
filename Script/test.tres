@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=11 format=3 uid="uid://dqq3choal104q"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=12 format=3 uid="uid://dqq3choal104q"]
 
 [ext_resource type="Script" path="res://Resources/dialogue.gd" id="1_do2iu"]
 [ext_resource type="Script" path="res://Resources/line.gd" id="1_vef14"]
@@ -8,6 +8,11 @@ script = ExtResource("1_do2iu")
 lines = Array[ExtResource("1_vef14")]([])
 end_choice_lines = Array[String]([])
 end_choice_pointer = Array[ExtResource("1_do2iu")]([])
+
+[sub_resource type="Resource" id="Resource_i0h2i"]
+script = ExtResource("1_vef14")
+speaker = "EVENT"
+message = "strike"
 
 [sub_resource type="Resource" id="Resource_1xhkn"]
 script = ExtResource("1_vef14")
@@ -46,6 +51,6 @@ message = "strike"
 
 [resource]
 script = ExtResource("1_do2iu")
-lines = Array[ExtResource("1_vef14")]([SubResource("Resource_1xhkn"), SubResource("Resource_lkhfq"), SubResource("Resource_tw6gc"), SubResource("Resource_emlxr"), SubResource("Resource_73n31"), SubResource("Resource_8sqdp"), SubResource("Resource_imrsq")])
+lines = Array[ExtResource("1_vef14")]([SubResource("Resource_i0h2i"), SubResource("Resource_1xhkn"), SubResource("Resource_lkhfq"), SubResource("Resource_tw6gc"), SubResource("Resource_emlxr"), SubResource("Resource_73n31"), SubResource("Resource_8sqdp"), SubResource("Resource_imrsq")])
 end_choice_lines = Array[String]([])
 end_choice_pointer = Array[ExtResource("1_do2iu")]([SubResource("Resource_8k20g")])
