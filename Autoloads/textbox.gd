@@ -28,16 +28,16 @@ func _ready() -> void:
 
 # takes in a Dialogue to process
 func start_dialogue(lines: Dialogue) -> void:
+	if lines.lines.size() == 0 and lines.end_choice_pointer.is_empty():
+		print('Dialogue started incorrectly')
+		return
+	
 	if self.visible == false:
 		self.show()
 	if container.visible == false:
 		container.show()
 	
 	dialogue_lines = lines
-	
-	if lines.lines.size() == 0:
-		print('called incorrectly')
-		return
 	
 	#print(dialogue_lines.lines[0].message)
 	current_line_index = 0
@@ -143,6 +143,7 @@ func reset() -> void:
 
 func _on_dramatic_pause_timer_timeout() -> void:
 	if current_line_index < dialogue_lines.lines.size() - 1:
+		print('show')
 		container.show()
 
 func talk_emitter(isTalking: bool) -> void:
