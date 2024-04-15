@@ -8,6 +8,7 @@ extends CanvasLayer
 func _ready():
 	MusicPlayer.start_playing(track, -10)
 	OptionsMenu.exit.connect(back_button)
+	TransitionManager.fade_from_black()
 
 func _on_options_pressed() -> void:
 	background.hide()

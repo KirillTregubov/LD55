@@ -21,7 +21,7 @@ message = "I have reached a verdict."
 [sub_resource type="Resource" id="Resource_xqv8s"]
 script = ExtResource("1_rjkhu")
 speaker = "Judge Belzebufo"
-message = "I cast the defendant, Mr Abaddon, into the deepest pits of hell."
+message = "I cast the defendant, Mr. Abaddon, into the deepest pits of Hell."
 
 [sub_resource type="Resource" id="Resource_d4gwg"]
 script = ExtResource("1_rjkhu")

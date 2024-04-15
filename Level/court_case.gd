@@ -11,6 +11,10 @@ signal closeup(canTalk: bool)
 @onready var foreground = $Foreground
 
 func _ready():
+	var shown = TransitionManager.fade_from_black() as Signal
+	if not shown.is_null():
+		await shown
+	
 	DialogueManager.scripted_event.connect(handle_scripted_events)
 	DialogueManager.start_dialogue(opening)
 

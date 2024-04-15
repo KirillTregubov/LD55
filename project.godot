@@ -28,6 +28,7 @@ OptionsMenu="*res://Menus/options_menu.tscn"
 MusicPlayer="*res://Autoloads/music_player.tscn"
 SoundPlayer="*res://Autoloads/sound_player.tscn"
 GameManager="*res://Autoloads/game_manager.gd"
+TransitionManager="*res://Autoloads/transition_manager.tscn"
 
 [display]
 

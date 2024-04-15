@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-@onready var start = preload("res://Menus/start_menu.tscn")
+@onready var start = preload ("res://Menus/start_menu.tscn")
 @onready var bg = $Background
 @onready var menu = $Menu
 @onready var button = $PauseButton
@@ -48,8 +48,11 @@ func _input(_event):
 		pauseMenu()
 
 func _on_quit_pressed():
-	await pauseMenu()
 	GameManager.reset_game()
+	var hidden = TransitionManager.fade_to_black() as Signal
+	await pauseMenu()
+	if not hidden.is_null():
+		await hidden
 	get_tree().change_scene_to_file("res://Menus/start_menu.tscn")
 
 func _on_button_pressed() -> void:

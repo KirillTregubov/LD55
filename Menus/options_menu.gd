@@ -29,16 +29,16 @@ func _on_vs_toggle_toggled(toggled_on):
 		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
 
 func _on_resolution_selected(index):
-	print('before ', DisplayServer.window_get_size())
-	print(DisplayServer.window_get_mode())
+	# print('before ', DisplayServer.window_get_size())
+	# print(DisplayServer.window_get_mode())
 	#var window := get_window() as Window
 	#window.set_size(RESOLUTION_DISPLAY.values()[index])
 	#OS.window_size = RESOLUTION_DISPLAY.values()[index]
 	var new_size = RESOLUTION_DISPLAY.values()[index]
 	DisplayServer.window_set_size(new_size)
 	#get_window().content_scale_size = new_size
-	print(RESOLUTION_DISPLAY.values()[index])
-	print(DisplayServer.window_get_size())
+	# print(RESOLUTION_DISPLAY.values()[index])
+	# print(DisplayServer.window_get_size())
 
 func volume(bus_index, value):
 	AudioServer.set_bus_mute(bus_index, false)
