@@ -23,11 +23,11 @@ var punctuation_time = 0.2
 signal scripted_event(event: String)
 signal talk(isTalking: bool, person: String)
 
-func _ready():
+func _ready() -> void:
 	container.hide()
 
 # takes in a Dialogue to process
-func start_dialogue(lines: Dialogue):
+func start_dialogue(lines: Dialogue) -> void:
 	if self.visible == false:
 		self.show()
 	if container.visible == false:
@@ -35,14 +35,18 @@ func start_dialogue(lines: Dialogue):
 	
 	dialogue_lines = lines
 	
-	print(dialogue_lines.lines[0].message)
+	if lines.lines.size() == 0:
+		print('called incorrectly')
+		return
+	
+	#print(dialogue_lines.lines[0].message)
 	current_line_index = 0
 	is_dialogue_active = true
 	can_advance_line = false
 	show_line()
-	
+
 # display text message in textbox along with the speaker's name
-func display_text(person: String, text_to_display: String):
+func display_text(person: String, text_to_display: String) -> void:
 	text = text_to_display
 	speaker.text = person
 	talk_emitter(true)
@@ -50,7 +54,7 @@ func display_text(person: String, text_to_display: String):
 	display_letter()
 
 # display one letter of message at a time
-func display_letter():
+func display_letter() -> void:
 	label.text += text[letter_index]
 	letter_index += 1
 	
@@ -59,7 +63,7 @@ func display_letter():
 		can_advance_line = true
 		letter_index = 0
 		return
-		
+	
 	match text[letter_index]:
 		"!", ".", ",", "?":
 			timer.start(punctuation_time)
@@ -67,18 +71,18 @@ func display_letter():
 			timer.start(space_time)
 		_:
 			timer.start(letter_time)
-
+			
 			var pitch = randf_range(0.9, 1.1)
 			if text[letter_index] in ["a", "e", "i", "o", "u"]:
 				pitch += 0.2
 			SoundPlayer.play_sound(audio_track, pitch)
 
 # when timer runs out, display next letter of message
-func _on_letter_display_timer_timeout():
+func _on_letter_display_timer_timeout() -> void:
 	display_letter()
 
 # call display_text() for current line. If speaker is "EVENT", emit scripted_event and hanlde next line.
-func show_line():
+func show_line() -> void:
 	while dialogue_lines.lines[current_line_index].speaker == "EVENT":
 		print("EVENT: " + dialogue_lines.lines[current_line_index].message)
 		
@@ -88,47 +92,58 @@ func show_line():
 			can_advance_line = false
 			var time = int(dialogue_lines.lines[current_line_index].message.substr(6))
 			dramatic_pause.start(time)
-			current_line_index += 1
-			return
+			await dramatic_pause.timeout
+		else:
+			handle_scripted_event(dialogue_lines.lines[current_line_index].message)
 		
-		handle_scripted_event(dialogue_lines.lines[current_line_index].message)
 		current_line_index += 1
+		if current_line_index >= dialogue_lines.lines.size():
+			finish_dialogue()
+			return
 
 	display_text(dialogue_lines.lines[current_line_index].speaker, dialogue_lines.lines[current_line_index].message)
 	can_advance_line = false
-	
+
 # emit signal scripted_event, containing event type (such as "strike" or "restore")
-func handle_scripted_event(event: String):
+func handle_scripted_event(event: String) -> void:
 	scripted_event.emit(event)
-	
+
 # when clicking "proceed" button, move to next line if possible.
 # when at end of dialogue, check for new dialogue to process at end_choice_pointer
 # if multiple dialogue choices, spawn choice buttons
 # if one dialogue choice, just start processing that dialogue
-func _unhandled_input(event):
+func _unhandled_input(event) -> void:
 	if event.is_action_pressed("proceed") and can_advance_line and is_dialogue_active:
 		current_line_index += 1
 		if current_line_index >= dialogue_lines.lines.size():
-			is_dialogue_active = false
-			current_line_index = 0
-			container.hide()
-			
-			if not dialogue_lines.end_choice_pointer.is_empty():
-				if dialogue_lines.end_choice_pointer.size() > 1:
-					var words = dialogue_lines.end_choice_lines
-					var pointers = dialogue_lines.end_choice_pointer
-					choices.display_choices(words, pointers)
-				else:
-					start_dialogue(dialogue_lines.end_choice_pointer[0])
+			finish_dialogue()
 			return
+			
 		show_line()
 
-func clear_choices():
+func finish_dialogue() -> void:
+	is_dialogue_active = false
+	current_line_index = 0
+	container.hide()
+	
+	if dialogue_lines.end_choice_pointer.is_empty():
+		return
+
+	if dialogue_lines.end_choice_pointer.size() > 1:
+		var words = dialogue_lines.end_choice_lines
+		var pointers = dialogue_lines.end_choice_pointer
+		choices.display_choices(words, pointers)
+	else:
+		start_dialogue(dialogue_lines.end_choice_pointer[0])
+
+func reset() -> void:
+	hide()
+	current_line_index = dialogue_lines.lines.size()
 	choices.clear_button()
 
-func _on_dramatic_pause_timer_timeout():
-	container.show()
-	show_line()
+func _on_dramatic_pause_timer_timeout() -> void:
+	if current_line_index < dialogue_lines.lines.size() - 1:
+		container.show()
 
-func talk_emitter(isTalking: bool):
+func talk_emitter(isTalking: bool) -> void:
 	talk.emit(isTalking, speaker.text)

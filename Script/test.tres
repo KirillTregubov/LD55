@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=6 format=3 uid="uid://dqq3choal104q"]
+
+[ext_resource type="Script" path="res://Resources/dialogue.gd" id="1_do2iu"]
+[ext_resource type="Script" path="res://Resources/line.gd" id="1_vef14"]
+
+[sub_resource type="Resource" id="Resource_8k20g"]
+script = ExtResource("1_do2iu")
+lines = Array[ExtResource("1_vef14")]([])
+end_choice_lines = Array[String]([])
+end_choice_pointer = Array[ExtResource("1_do2iu")]([])
+
+[sub_resource type="Resource" id="Resource_1xhkn"]
+script = ExtResource("1_vef14")
+speaker = "Judge Belzebufo"
+message = "Ayo"
+
+[sub_resource type="Resource" id="Resource_53oic"]
+script = ExtResource("1_vef14")
+speaker = "EVENT"
+message = "strike"
+
+[resource]
+script = ExtResource("1_do2iu")
+lines = Array[ExtResource("1_vef14")]([SubResource("Resource_1xhkn"), SubResource("Resource_53oic"), SubResource("Resource_53oic"), SubResource("Resource_53oic")])
+end_choice_lines = Array[String]([])
+end_choice_pointer = Array[ExtResource("1_do2iu")]([SubResource("Resource_8k20g")])

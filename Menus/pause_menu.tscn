@@ -84,18 +84,21 @@ theme_override_constants/separation = 24
 custom_minimum_size = Vector2(384, 0)
 layout_mode = 2
 size_flags_horizontal = 4
+keep_pressed_outside = true
 text = "Continue"
 
 [node name="Options2" type="Button" parent="Menu/VBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(384, 0)
 layout_mode = 2
 size_flags_horizontal = 4
+keep_pressed_outside = true
 text = "Options"
 
 [node name="Quit" type="Button" parent="Menu/VBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(384, 0)
 layout_mode = 2
 size_flags_horizontal = 4
+keep_pressed_outside = true
 text = "Quit to Menu"
 
 [node name="PauseButton" type="MarginContainer" parent="."]

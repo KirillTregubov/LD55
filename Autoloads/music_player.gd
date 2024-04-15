@@ -6,12 +6,12 @@ var should_loop = false
 
 @export var fade_duration: float = 2.0
 
-func start_playing(stream: AudioStream, target_volume_db: float=0.0, loop: bool=true):
+func start_playing(_stream: AudioStream, target_volume_db: float=0.0, loop: bool=true):
 	get_tween()
 	if loop:
 		should_loop = true
 	is_audio_playing = true
-	set_stream(stream)
+	set_stream(_stream)
 	_set_volume(0.0)
 	play()
 	tween.tween_method(_set_volume, db_to_linear(volume_db), db_to_linear(target_volume_db), fade_duration)

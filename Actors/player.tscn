@@ -28,14 +28,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_mfyo1")
+"texture": ExtResource("3_ditql")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_ditql")
+"texture": ExtResource("1_mfyo1")
 }],
 "loop": true,
 "name": &"talking",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [node name="Player" type="Node2D"]
@@ -44,7 +44,6 @@ script = ExtResource("1_vwyji")
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_bv2pv")
-animation = &"nervous"
 flip_h = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

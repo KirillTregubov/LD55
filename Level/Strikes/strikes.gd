@@ -33,7 +33,7 @@ func _ready() -> void:
 	DialogueManager.scripted_event.connect(strike_event)
 
 # handles scripted events from DialogueManager
-func strike_event(event: String):
+func strike_event(event: String) -> void:
 	match event:
 		"strike":
 			handle_strike()

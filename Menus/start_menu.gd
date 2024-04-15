@@ -20,8 +20,7 @@ func back_button() -> void:
 	OptionsMenu.hide()
 
 func _on_start_pressed() -> void:
-	MusicPlayer.stop_playing()
-	get_tree().change_scene_to_file("res://Level/court_case.tscn")
+	GameManager.start_game()
 
 func _on_quit_game_pressed() -> void:
-	get_tree().quit()
+	GameManager.quit_game()
