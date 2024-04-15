@@ -4,6 +4,8 @@ extends Node2D
 @onready var small = $Player_small
 var canTalk = false
 
+@export var track: AudioStream = preload ("res://Assets/SFX/single_vowel.wav")
+
 func _ready():
 	sprite.visible = false
 	small.visible = true
@@ -13,6 +15,7 @@ func talk(isTalking:bool, person: String):
 	if person == character_name:
 		if isTalking and canTalk:
 			sprite.play("talking")
+			DialogueManager.set_voice(track)
 		else:
 			sprite.play("default")
 

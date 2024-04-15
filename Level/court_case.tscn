@@ -85,7 +85,6 @@ layer = 0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(1500, 575)
-enabled = false
 zoom = Vector2(3.5, 3.5)
 
 [connection signal="closeup" from="." to="Subjects/Player" method="_on_court_case_closeup"]

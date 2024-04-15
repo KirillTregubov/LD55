@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0oi3sidhrl6g"]
+
+[ext_resource type="Script" path="res://Level/prelude.gd" id="1_mjc3m"]
+[ext_resource type="Resource" uid="uid://bes2t065pmg8a" path="res://Script/prelude.tres" id="2_satfc"]
+
+[node name="Prelude" type="CanvasLayer"]
+layer = 0
+script = ExtResource("1_mjc3m")
+prelude_dialogue = ExtResource("2_satfc")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)

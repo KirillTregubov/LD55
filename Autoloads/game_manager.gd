@@ -6,7 +6,7 @@ func start_game() -> void:
 	if not hidden.is_null():
 		await hidden
 	
-	get_tree().change_scene_to_file("res://Level/court_case.tscn")
+	get_tree().change_scene_to_file("res://Level/prelude.tscn")
 
 func quit_game() -> void:
 	get_tree().quit()

@@ -9,6 +9,11 @@ var current_witness: Witness
 @onready var abaddon = $Abaddon
 @onready var mosquito = $Mosquito
 
+@export var bug_voice: AudioStream = preload ("res://Assets/SFX/bug_talking.wav")
+@export var fish_voice: AudioStream = preload("res://Assets/SFX/fish_talking.wav")
+@export var mosquito_voice: AudioStream = preload("res://Assets/SFX/mosquito_vowel.wav")
+@export var deer_voice: AudioStream = preload("res://Assets/SFX/typing.wav")
+
 func _ready():
 	DialogueManager.scripted_event.connect(handle_events)
 	DialogueManager.talk.connect(talk)
@@ -48,21 +53,25 @@ func talk(isTalking: bool, person: String):
 		"Bug":
 			if isTalking:
 				bug.play("talking")
+				DialogueManager.set_voice(bug_voice)
 			else:
 				bug.play("default")
 		"Chester":
 			if isTalking:
 				chester.play("talking")
+				DialogueManager.set_voice(fish_voice)
 			else:
 				chester.play("default")
 		"Abaddon":
 			if isTalking:
 				abaddon.play("talking")
+				DialogueManager.set_voice(deer_voice)
 			else:
 				abaddon.play("default")
 		"Mosquito":
 			if isTalking:
-				mosquito.play("talking")
+				mosquito.play("talking")				
+				DialogueManager.set_voice(mosquito_voice)
 			else:
 				mosquito.play("default")
 

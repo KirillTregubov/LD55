@@ -11,10 +11,9 @@ signal closeup(canTalk: bool)
 @onready var foreground = $Foreground
 @onready var witness_layer = $Witness
 func _ready():
-	var shown = TransitionManager.fade_from_black() as Signal
-	if not shown.is_null():
-		await shown
 	
+	foreground.visible = false
+	closeup.emit(true)
 	DialogueManager.scripted_event.connect(handle_scripted_events)
 	DialogueManager.start_dialogue(opening)
 

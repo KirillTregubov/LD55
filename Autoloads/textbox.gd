@@ -26,6 +26,9 @@ signal talk(isTalking: bool, person: String)
 func _ready() -> void:
 	container.hide()
 
+func set_voice(voice: AudioStream):
+	audio_track = voice
+
 # takes in a Dialogue to process
 func start_dialogue(lines: Dialogue) -> void:
 	if lines.lines.size() == 0 and lines.end_choice_pointer.is_empty():

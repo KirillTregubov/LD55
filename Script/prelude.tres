@@ -1,0 +1,55 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=12 format=3 uid="uid://bes2t065pmg8a"]
+
+[ext_resource type="Script" path="res://Resources/dialogue.gd" id="1_gg086"]
+[ext_resource type="Script" path="res://Resources/line.gd" id="1_xqy8k"]
+
+[sub_resource type="Resource" id="Resource_jmjyf"]
+script = ExtResource("1_xqy8k")
+speaker = ""
+message = "I know my purpose."
+
+[sub_resource type="Resource" id="Resource_1ugdn"]
+script = ExtResource("1_xqy8k")
+speaker = ""
+message = "A creature of the night."
+
+[sub_resource type="Resource" id="Resource_ibduv"]
+script = ExtResource("1_xqy8k")
+speaker = ""
+message = "A cog in the midst of vile machinations."
+
+[sub_resource type="Resource" id="Resource_kl35u"]
+script = ExtResource("1_xqy8k")
+speaker = ""
+message = "A humble servant to the profane."
+
+[sub_resource type="Resource" id="Resource_eq3b1"]
+script = ExtResource("1_xqy8k")
+speaker = ""
+message = "And today."
+
+[sub_resource type="Resource" id="Resource_s2wbw"]
+script = ExtResource("1_xqy8k")
+speaker = ""
+message = "I must act as per my nature…"
+
+[sub_resource type="Resource" id="Resource_l44xb"]
+script = ExtResource("1_xqy8k")
+speaker = "EVENT"
+message = "gavel"
+
+[sub_resource type="Resource" id="Resource_d6003"]
+script = ExtResource("1_xqy8k")
+speaker = "EVENT"
+message = "PAUSE_2"
+
+[sub_resource type="Resource" id="Resource_3svba"]
+script = ExtResource("1_xqy8k")
+speaker = "EVENT"
+message = "court_case"
+
+[resource]
+script = ExtResource("1_gg086")
+lines = Array[ExtResource("1_xqy8k")]([SubResource("Resource_jmjyf"), SubResource("Resource_1ugdn"), SubResource("Resource_ibduv"), SubResource("Resource_kl35u"), SubResource("Resource_eq3b1"), SubResource("Resource_s2wbw"), SubResource("Resource_l44xb"), SubResource("Resource_d6003"), SubResource("Resource_3svba")])
+end_choice_lines = Array[String]([])
+end_choice_pointer = Array[ExtResource("1_gg086")]([])
