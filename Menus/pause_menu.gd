@@ -51,13 +51,9 @@ func _input(_event):
 
 func _on_quit_pressed():
 	SoundPlayer.play_select_sound()
-	GameManager.reset_game()
-	var hidden = TransitionManager.fade_to_black() as Signal
 	await pauseMenu()
 	button.hide()
-	if not hidden.is_null():
-		await hidden
-	get_tree().change_scene_to_file("res://Menus/start_menu.tscn")
+	GameManager.quit_to_menu()
 
 func _on_button_pressed() -> void:
 	SoundPlayer.play_button_sound()

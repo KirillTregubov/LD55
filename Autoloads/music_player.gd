@@ -1,5 +1,7 @@
 extends AudioStreamPlayer
 
+signal stopped_playing
+
 var tween: Tween
 var is_audio_playing = false
 var should_loop = false
@@ -36,6 +38,8 @@ func _on_music_finished() -> void:
 		play()
 	else:
 		is_audio_playing = false
+	
+	stopped_playing.emit()
 
 func get_tween(type: Tween.EaseType=Tween.EASE_IN_OUT) -> void:
 	if tween:
