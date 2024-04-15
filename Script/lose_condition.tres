@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=10 format=3 uid="uid://blme3er80lfw8"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=11 format=3 uid="uid://blme3er80lfw8"]
 
 [ext_resource type="Script" path="res://Resources/dialogue.gd" id="1_82e1e"]
 [ext_resource type="Script" path="res://Resources/line.gd" id="1_rjkhu"]
@@ -28,6 +28,11 @@ script = ExtResource("1_rjkhu")
 speaker = "EVENT"
 message = "eat"
 
+[sub_resource type="Resource" id="Resource_0wl5n"]
+script = ExtResource("1_rjkhu")
+speaker = "EVENT"
+message = "PAUSE_1"
+
 [sub_resource type="Resource" id="Resource_t4gv7"]
 script = ExtResource("1_rjkhu")
 speaker = "EVENT"
@@ -40,6 +45,6 @@ message = "Ribbit."
 
 [resource]
 script = ExtResource("1_82e1e")
-lines = Array[ExtResource("1_rjkhu")]([SubResource("Resource_yntsi"), SubResource("Resource_214ep"), SubResource("Resource_y70js"), SubResource("Resource_xqv8s"), SubResource("Resource_d4gwg"), SubResource("Resource_t4gv7"), SubResource("Resource_e32um")])
+lines = Array[ExtResource("1_rjkhu")]([SubResource("Resource_yntsi"), SubResource("Resource_214ep"), SubResource("Resource_y70js"), SubResource("Resource_xqv8s"), SubResource("Resource_d4gwg"), SubResource("Resource_0wl5n"), SubResource("Resource_t4gv7"), SubResource("Resource_e32um")])
 end_choice_lines = Array[String]([])
 end_choice_pointer = Array[ExtResource("1_82e1e")]([])

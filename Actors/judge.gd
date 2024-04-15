@@ -13,3 +13,9 @@ func talk(isTalking:bool, person: String):
 			DialogueManager.set_voice(frog_voice)
 		else:
 			sprite.play("default")
+
+func mouth_open():
+	sprite.play("mouth_open")
+
+func mouth_close():
+	sprite.play("default")

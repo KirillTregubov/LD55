@@ -10,6 +10,7 @@ signal closeup(canTalk: bool)
 @onready var lose = preload ("res://Level/lose_condition.tscn")
 @onready var foreground = $Foreground
 @onready var witness_layer = $Witness
+
 func _ready():
 	MusicPlayer.stop_playing()
 	foreground.visible = false
