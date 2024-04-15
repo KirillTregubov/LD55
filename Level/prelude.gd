@@ -3,6 +3,9 @@ extends CanvasLayer
 @export var prelude_dialogue: Dialogue
 @export var gavel_sound:AudioStream = preload("res://Assets/SFX/gavel_impacts.wav")
 @onready var track = preload ("res://Assets/Music/hammond_hill.wav")
+
+@export var voice: AudioStream = preload ("res://Assets/SFX/single_vowel.wav")
+
 func _ready():
 	MusicPlayer.start_playing(track, -5)
 	var shown = TransitionManager.fade_from_black() as Signal
@@ -10,6 +13,7 @@ func _ready():
 		await shown
 	
 	DialogueManager.scripted_event.connect(handle_scripted_events)
+	DialogueManager.set_voice(voice)
 	DialogueManager.start_dialogue(prelude_dialogue)
 
 func handle_scripted_events(event: String):
