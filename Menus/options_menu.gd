@@ -13,6 +13,7 @@ const RESOLUTION_DISPLAY: Dictionary = {
 }
 
 func _on_back_button_pressed():
+	SoundPlayer.play_button_sound()
 	exit.emit()
 
 func _on_screen_toggle_toggled(display_mode):
@@ -22,11 +23,21 @@ func _on_screen_toggle_toggled(display_mode):
 		1:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
 
+func _on_screen_toggle_pressed(toggled_on: bool) -> void:
+	if not toggled_on:
+		return
+	SoundPlayer.play_button_sound()
+
 func _on_vs_toggle_toggled(toggled_on):
 	if toggled_on == 0:
 		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED)
 	else:
 		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
+
+func _on_vs_toggle_pressed(toggled_on: bool) -> void:
+	if not toggled_on:
+		return
+	SoundPlayer.play_button_sound()
 
 func _on_resolution_selected(index):
 	# print('before ', DisplayServer.window_get_size())
@@ -50,17 +61,26 @@ func _on_master_value_changed(value):
 	else:
 		volume(0, value)
 
+func _on_master_drag_started() -> void:
+	SoundPlayer.play_button_sound()
+
 func _on_music_value_changed(value):
 	if (value == music.min_value):
 		AudioServer.set_bus_mute(1, true)
 	else:
 		volume(1, value)
 
+func _on_music_drag_started() -> void:
+	SoundPlayer.play_button_sound()
+
 func _on_sfx_value_changed(value):
 	if (value == sfx.min_value):
 		AudioServer.set_bus_mute(2, true)
 	else:
 		volume(2, value)
+
+func _on_sfx_drag_started() -> void:
+	SoundPlayer.play_button_sound()
 
 func _input(_event) -> void:
 	if visible == true and Input.is_action_just_pressed("close"):

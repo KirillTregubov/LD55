@@ -28,9 +28,11 @@ func pauseMenu():
 	paused = !paused
 
 func _on_resume_pressed():
+	SoundPlayer.play_button_sound()
 	pauseMenu()
 
 func _on_options_pressed():
+	SoundPlayer.play_button_sound()
 	pauseActions = InputMap.action_get_events("pause")
 	InputMap.action_erase_events("pause")
 	OptionsMenu.show()
@@ -48,6 +50,7 @@ func _input(_event):
 		pauseMenu()
 
 func _on_quit_pressed():
+	SoundPlayer.play_select_sound()
 	GameManager.reset_game()
 	var hidden = TransitionManager.fade_to_black() as Signal
 	await pauseMenu()
@@ -56,4 +59,5 @@ func _on_quit_pressed():
 	get_tree().change_scene_to_file("res://Menus/start_menu.tscn")
 
 func _on_button_pressed() -> void:
+	SoundPlayer.play_button_sound()
 	pauseMenu()

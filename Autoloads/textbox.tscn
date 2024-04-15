@@ -1,11 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://b8iwg2etjghi"]
+[gd_scene load_steps=7 format=3 uid="uid://b8iwg2etjghi"]
 
 [ext_resource type="Script" path="res://Autoloads/textbox.gd" id="1_0c11q"]
 [ext_resource type="Theme" uid="uid://dkqrfy3kvl768" path="res://Menus/menu_theme.tres" id="1_a6le3"]
+[ext_resource type="Texture2D" uid="uid://bppurqhublmcd" path="res://Assets/ld55text_box_name.png" id="3_md8hf"]
 [ext_resource type="PackedScene" uid="uid://d0f2a1qyxli21" path="res://Menus/choice_layer.tscn" id="3_ql4ss"]
 [ext_resource type="FontFile" uid="uid://5mdnkiqe5rns" path="res://Theme/NotoSansBatak-Regular.ttf" id="3_ysj2i"]
+[ext_resource type="Texture2D" uid="uid://bfwhnrgoq5rcs" path="res://Assets/ld55text_box.png" id="5_o5jn1"]
 
 [node name="HUD" type="CanvasLayer"]
+layer = 3
 script = ExtResource("1_0c11q")
 
 [node name="Container" type="MarginContainer" parent="."]
@@ -27,7 +30,7 @@ size_flags_stretch_ratio = 2.0
 [node name="VBoxContainer" type="VBoxContainer" parent="Container/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_constants/separation = -1
+theme_override_constants/separation = 0
 
 [node name="NameContainer" type="HBoxContainer" parent="Container/VBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -37,14 +40,19 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 32
 
-[node name="ColorRect" type="ColorRect" parent="Container/VBoxContainer/VBoxContainer/NameContainer/NameSpace"]
-modulate = Color(1, 1, 1, 0.431373)
+[node name="NinePatchRect" type="NinePatchRect" parent="Container/VBoxContainer/VBoxContainer/NameContainer/NameSpace"]
 layout_mode = 2
-color = Color(1, 0, 0, 1)
+texture = ExtResource("3_md8hf")
+region_rect = Rect2(13, 12, 275, 275)
+patch_margin_left = 20
+patch_margin_top = 30
+patch_margin_right = 20
+patch_margin_bottom = 30
 
 [node name="MarginContainer" type="MarginContainer" parent="Container/VBoxContainer/VBoxContainer/NameContainer/NameSpace"]
 layout_mode = 2
 theme_override_constants/margin_left = 16
+theme_override_constants/margin_bottom = 4
 
 [node name="Name" type="Label" parent="Container/VBoxContainer/VBoxContainer/NameContainer/NameSpace/MarginContainer"]
 unique_name_in_owner = true
@@ -60,15 +68,25 @@ size_flags_stretch_ratio = 5.0
 layout_mode = 2
 size_flags_vertical = 3
 
+[node name="NinePatchRect" type="NinePatchRect" parent="Container/VBoxContainer/VBoxContainer/Textbox"]
+layout_mode = 2
+texture = ExtResource("5_o5jn1")
+region_rect = Rect2(13, 12, 275, 275)
+patch_margin_left = 100
+patch_margin_top = 100
+patch_margin_right = 100
+patch_margin_bottom = 100
+
 [node name="ColorRect" type="ColorRect" parent="Container/VBoxContainer/VBoxContainer/Textbox"]
+visible = false
 modulate = Color(1, 1, 1, 0.431373)
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="Container/VBoxContainer/VBoxContainer/Textbox"]
 layout_mode = 2
-theme_override_constants/margin_left = 32
+theme_override_constants/margin_left = 48
 theme_override_constants/margin_top = 32
-theme_override_constants/margin_right = 32
+theme_override_constants/margin_right = 48
 theme_override_constants/margin_bottom = 32
 
 [node name="Words" type="Label" parent="Container/VBoxContainer/VBoxContainer/Textbox/MarginContainer"]
@@ -77,7 +95,7 @@ clip_contents = true
 custom_minimum_size = Vector2(1, 1)
 layout_mode = 2
 size_flags_vertical = 1
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_ysj2i")
 autowrap_mode = 2
 

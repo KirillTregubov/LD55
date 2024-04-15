@@ -30,6 +30,7 @@ func _on_dead_timer_timeout():
 	animation.play("dead")
 
 func _on_retry_button_pressed() -> void:
+	SoundPlayer.play_select_sound()
 	GameManager.start_game()
 
 func _on_quit_button_pressed() -> void:
