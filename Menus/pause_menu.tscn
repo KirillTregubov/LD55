@@ -25,7 +25,7 @@ shader_parameter/noise = SubResource("NoiseTexture2D_lgxbl")
 
 [node name="PauseMenu" type="CanvasLayer"]
 process_mode = 3
-layer = 3
+layer = 4
 script = ExtResource("1_ii6yf")
 
 [node name="Background" type="Control" parent="."]

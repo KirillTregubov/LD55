@@ -5,7 +5,7 @@
 
 [node name="OptionsMenu" type="CanvasLayer"]
 process_mode = 3
-layer = 2
+layer = 5
 visible = false
 script = ExtResource("1_ufuy2")
 

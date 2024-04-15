@@ -43,6 +43,7 @@ animations = [{
 script = ExtResource("1_vwyji")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -10)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_bv2pv")
 flip_h = true
@@ -50,5 +51,6 @@ flip_h = true
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [node name="Player_small" type="Sprite2D" parent="."]
+position = Vector2(0, -2)
 texture = ExtResource("5_3276e")
 flip_h = true

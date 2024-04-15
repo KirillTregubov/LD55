@@ -54,6 +54,7 @@ func _on_quit_pressed():
 	GameManager.reset_game()
 	var hidden = TransitionManager.fade_to_black() as Signal
 	await pauseMenu()
+	button.hide()
 	if not hidden.is_null():
 		await hidden
 	get_tree().change_scene_to_file("res://Menus/start_menu.tscn")
