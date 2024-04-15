@@ -9,7 +9,7 @@ signal closeup(canTalk: bool)
 @onready var camera = $Camera2D
 @onready var lose = preload ("res://Level/lose_condition.tscn")
 @onready var foreground = $Foreground
-
+@onready var witness_layer = $Witness
 func _ready():
 	var shown = TransitionManager.fade_from_black() as Signal
 	if not shown.is_null():
@@ -29,10 +29,12 @@ func handle_scripted_events(event: String):
 		"camera_enabled":
 			camera.enabled = true
 			foreground.visible = false
+			witness_layer.visible = false
 			closeup.emit(true)
 		"camera_disabled":
 			camera.enabled = false
 			foreground.visible = true
+			witness_layer.visible = true
 			closeup.emit(false)
 
 func handle_summon1():
