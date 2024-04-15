@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=10 format=3 uid="uid://dkqrfy3kvl768"]
+[gd_resource type="Theme" load_steps=12 format=3 uid="uid://dkqrfy3kvl768"]
 
 [ext_resource type="FontFile" uid="uid://cwaj557jghxpo" path="res://Theme/EB_Garamond/static/EBGaramond-Regular.ttf" id="1_l32wd"]
 [ext_resource type="Texture2D" uid="uid://bjpdbwpxjgxeh" path="res://Assets/Button.png" id="2_8mq81"]
@@ -57,6 +57,24 @@ region_rect = Rect2(2, 2, 96, 96)
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_767el"]
 size = Vector2(0, 0)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x6q6w"]
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_36feq"]
+bg_color = Color(0.239216, 0.239216, 0.239216, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.239216, 0.239216, 0.239216, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
 [resource]
 Button/font_sizes/font_size = 32
 Button/fonts/font = ExtResource("1_l32wd")
@@ -72,3 +90,6 @@ Label/fonts/font = ExtResource("1_l32wd")
 OptionButton/font_sizes/font_size = 32
 OptionButton/fonts/font = ExtResource("1_l32wd")
 OptionButton/icons/arrow = SubResource("PlaceholderTexture2D_767el")
+PopupMenu/font_sizes/font_size = 20
+PopupMenu/styles/hover = SubResource("StyleBoxFlat_x6q6w")
+PopupMenu/styles/panel = SubResource("StyleBoxFlat_36feq")

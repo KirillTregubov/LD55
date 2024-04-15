@@ -14,7 +14,6 @@ func _ready():
 	paused = false
 	OptionsMenu.exit.connect(back_button)
 
-
 func pauseMenu():
 	if paused:
 		button.show()
@@ -28,17 +27,14 @@ func pauseMenu():
 		get_tree().paused = true
 	paused = !paused
 
-
 func _on_resume_pressed():
 	pauseMenu()
-
 
 func _on_options_pressed():
 	pauseActions = InputMap.action_get_events("pause")
 	InputMap.action_erase_events("pause")
 	OptionsMenu.show()
 	menu.hide()
-
 
 func back_button():
 	if pauseActions != null:
@@ -47,18 +43,15 @@ func back_button():
 	menu.show()
 	OptionsMenu.hide()
 
-
 func _input(_event):
 	if Input.is_action_just_pressed("pause"):
 		pauseMenu()
-
 
 func _on_quit_pressed():
 	await pauseMenu()
 	DialogueManager.hide()
 	DialogueManager.clear_choices()
 	get_tree().change_scene_to_file("res://Menus/start_menu.tscn")
-
 
 func _on_button_pressed() -> void:
 	pauseMenu()

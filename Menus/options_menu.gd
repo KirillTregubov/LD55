@@ -63,7 +63,7 @@ func _on_sfx_value_changed(value):
 		volume(2, value)
 
 func _input(_event) -> void:
-	if Input.is_action_just_pressed("close"):
+	if visible == true and Input.is_action_just_pressed("close"):
 		exit.emit()
 
 func _ready() -> void:
