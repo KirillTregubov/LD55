@@ -2,9 +2,9 @@ extends CanvasLayer
 
 signal exit
 @onready var DisplaySettings = $MarginContainer/VBoxContainer/Visuals
-@onready var master = $MarginContainer/VBoxContainer/Audio/Master/HSlider
-@onready var music = $MarginContainer/VBoxContainer/Audio/Music/HSlider
-@onready var sfx = $MarginContainer/VBoxContainer/Audio/SFX/HSlider
+@onready var master = $MarginContainer/VBoxContainer/Audio/Master/MarginContainer/HSlider
+@onready var music = $MarginContainer/VBoxContainer/Audio/Music/MarginContainer/HSlider
+@onready var sfx = $MarginContainer/VBoxContainer/Audio/SFX/MarginContainer/HSlider
 
 const RESOLUTION_DISPLAY: Dictionary = {
 	"640x360": Vector2i(640, 360),
@@ -40,15 +40,15 @@ func _on_resolution_selected(index):
 	print(RESOLUTION_DISPLAY.values()[index])
 	print(DisplayServer.window_get_size())
 
+func volume(bus_index, value):
+	AudioServer.set_bus_mute(bus_index, false)
+	AudioServer.set_bus_volume_db(bus_index, linear_to_db(value))
+
 func _on_master_value_changed(value):
 	if (value == master .min_value):
 		AudioServer.set_bus_mute(0, true)
 	else:
 		volume(0, value)
-	
-func volume(bus_index, value):
-	AudioServer.set_bus_mute(bus_index, false)
-	AudioServer.set_bus_volume_db(bus_index, value)
 
 func _on_music_value_changed(value):
 	if (value == music.min_value):

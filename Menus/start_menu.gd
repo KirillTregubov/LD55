@@ -1,14 +1,16 @@
 extends CanvasLayer
 
 @onready var title = $TitleMenuContainer
-@onready var music = $music
 @onready var background = $TextureRect
 @onready var blood = $ColorRect
+@onready var track = preload ("res://Assets/Music/hammond_hill.wav")
 
 func _ready():
-	music.play()
+	MusicPlayer.set_target_volume(-10)
+	MusicPlayer.set_track(track)
+	MusicPlayer.start_playing()
 	OptionsMenu.exit.connect(back_button)
-	
+
 func _on_options_pressed() -> void:
 	background.hide()
 	title.hide()
@@ -20,11 +22,8 @@ func back_button() -> void:
 	OptionsMenu.hide()
 
 func _on_start_pressed() -> void:
+	MusicPlayer.stop_playing()
 	get_tree().change_scene_to_file("res://Level/court_case.tscn")
 
 func _on_quit_game_pressed() -> void:
 	get_tree().quit()
-
-
-func _on_music_finished():
-	music.play()

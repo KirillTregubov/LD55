@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dyk04nogt5tk7"]
+[gd_scene load_steps=8 format=3 uid="uid://dyk04nogt5tk7"]
 
 [ext_resource type="Script" path="res://Menus/start_menu.gd" id="1_cktmu"]
 [ext_resource type="Shader" path="res://Menus/pause_menu.gdshader" id="2_8eyi1"]
 [ext_resource type="Texture2D" uid="uid://did55hevut1bm" path="res://Assets/title_screen.png" id="2_jalqg"]
 [ext_resource type="Theme" uid="uid://bpy41c0s1ej60" path="res://Menus/title_theme.tres" id="4_u4k1c"]
-[ext_resource type="AudioStream" uid="uid://ke5te2e3oxjw" path="res://Assets/Music/hammond_hill.wav" id="5_lnbxr"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_nuu60"]
 noise_type = 0
@@ -63,22 +62,19 @@ theme_override_constants/separation = 64
 
 [node name="Start" type="Button" parent="TitleMenuContainer/VBoxContainer"]
 layout_mode = 2
+keep_pressed_outside = true
 text = "Begin"
 
 [node name="Options" type="Button" parent="TitleMenuContainer/VBoxContainer"]
 layout_mode = 2
+keep_pressed_outside = true
 text = "Options"
 
 [node name="Quit Game" type="Button" parent="TitleMenuContainer/VBoxContainer"]
 layout_mode = 2
+keep_pressed_outside = true
 text = "Quit Game"
-
-[node name="music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_lnbxr")
-volume_db = -20.0
-bus = &"Music"
 
 [connection signal="pressed" from="TitleMenuContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="TitleMenuContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="TitleMenuContainer/VBoxContainer/Quit Game" to="." method="_on_quit_game_pressed"]
-[connection signal="finished" from="music" to="." method="_on_music_finished"]

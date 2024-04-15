@@ -58,7 +58,7 @@ region_rect = Rect2(8, 8, 184, 184)
 size = Vector2(0, 0)
 
 [resource]
-Button/font_sizes/font_size = 40
+Button/font_sizes/font_size = 36
 Button/fonts/font = ExtResource("1_l32wd")
 Button/styles/focus = SubResource("StyleBoxFlat_hkhqp")
 Button/styles/hover = SubResource("StyleBoxTexture_uc1yu")
