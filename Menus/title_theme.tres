@@ -1,0 +1,74 @@
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://bpy41c0s1ej60"]
+
+[ext_resource type="FontFile" uid="uid://cwaj557jghxpo" path="res://Theme/EB_Garamond/static/EBGaramond-Regular.ttf" id="1_l32wd"]
+[ext_resource type="Texture2D" uid="uid://t6uheb3y1gq7" path="res://Assets/ButtonHoverLarge.png" id="2_0g28c"]
+[ext_resource type="Texture2D" uid="uid://pdbvfo5id3n8" path="res://Assets/ButtonLarge.png" id="3_lg5y1"]
+[ext_resource type="Texture2D" uid="uid://ctmx3rk44grsd" path="res://Assets/ButtonActiveLarge.png" id="4_02dbs"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hkhqp"]
+draw_center = false
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.921569, 0.921569, 0.921569, 0.647059)
+border_blend = true
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uc1yu"]
+content_margin_left = 36.0
+content_margin_top = 36.0
+content_margin_right = 36.0
+content_margin_bottom = 36.0
+texture = ExtResource("2_0g28c")
+texture_margin_left = 62.0
+texture_margin_top = 62.0
+texture_margin_right = 62.0
+texture_margin_bottom = 62.0
+region_rect = Rect2(8, 8, 184, 184)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j00w2"]
+content_margin_left = 36.0
+content_margin_top = 36.0
+content_margin_right = 36.0
+content_margin_bottom = 36.0
+texture = ExtResource("3_lg5y1")
+texture_margin_left = 62.0
+texture_margin_top = 62.0
+texture_margin_right = 62.0
+texture_margin_bottom = 62.0
+region_rect = Rect2(8, 8, 184, 184)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_74idb"]
+content_margin_left = 36.0
+content_margin_top = 36.0
+content_margin_right = 36.0
+content_margin_bottom = 36.0
+texture = ExtResource("4_02dbs")
+texture_margin_left = 62.0
+texture_margin_top = 62.0
+texture_margin_right = 62.0
+texture_margin_bottom = 62.0
+region_rect = Rect2(8, 8, 184, 184)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_767el"]
+size = Vector2(0, 0)
+
+[resource]
+Button/font_sizes/font_size = 40
+Button/fonts/font = ExtResource("1_l32wd")
+Button/styles/focus = SubResource("StyleBoxFlat_hkhqp")
+Button/styles/hover = SubResource("StyleBoxTexture_uc1yu")
+Button/styles/normal = SubResource("StyleBoxTexture_j00w2")
+Button/styles/pressed = SubResource("StyleBoxTexture_74idb")
+HeaderLarge/font_sizes/font_size = 128
+HeaderMedium/font_sizes/font_size = 64
+HeaderSmall/font_sizes/font_size = 48
+Label/font_sizes/font_size = 32
+Label/fonts/font = ExtResource("1_l32wd")
+OptionButton/font_sizes/font_size = 32
+OptionButton/fonts/font = ExtResource("1_l32wd")
+OptionButton/icons/arrow = SubResource("PlaceholderTexture2D_767el")

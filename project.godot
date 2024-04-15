@@ -13,6 +13,7 @@ config_version=5
 config/name="LD55 Game"
 run/main_scene="res://Menus/start_menu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
+boot_splash/bg_color=Color(0.164706, 0.164706, 0.164706, 1)
 config/icon="res://icon.svg"
 
 [audio]
@@ -65,3 +66,4 @@ newGame={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.164706, 0.164706, 0.164706, 1)
