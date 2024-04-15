@@ -212,9 +212,14 @@ keep_pressed_outside = true
 text = "Back"
 
 [connection signal="item_selected" from="MarginContainer/VBoxContainer/Visuals/Fullscreen/MarginContainer/OptionButton" to="." method="_on_screen_toggle_toggled"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/Visuals/Fullscreen/MarginContainer/OptionButton" to="." method="_on_screen_toggle_pressed"]
 [connection signal="item_selected" from="MarginContainer/VBoxContainer/Visuals/VSync/MarginContainer/OptionButton" to="." method="_on_vs_toggle_toggled"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/Visuals/VSync/MarginContainer/OptionButton" to="." method="_on_vs_toggle_pressed"]
 [connection signal="item_selected" from="MarginContainer/VBoxContainer/Visuals/Resolution/OptionButton" to="." method="_on_resolution_selected"]
+[connection signal="drag_started" from="MarginContainer/VBoxContainer/Audio/Master/MarginContainer/HSlider" to="." method="_on_master_drag_started"]
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/Audio/Master/MarginContainer/HSlider" to="." method="_on_master_value_changed"]
+[connection signal="drag_started" from="MarginContainer/VBoxContainer/Audio/Music/MarginContainer/HSlider" to="." method="_on_music_drag_started"]
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/Audio/Music/MarginContainer/HSlider" to="." method="_on_music_value_changed"]
+[connection signal="drag_started" from="MarginContainer/VBoxContainer/Audio/SFX/MarginContainer/HSlider" to="." method="_on_sfx_drag_started"]
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/Audio/SFX/MarginContainer/HSlider" to="." method="_on_sfx_value_changed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/BackButton" to="." method="_on_back_button_pressed"]

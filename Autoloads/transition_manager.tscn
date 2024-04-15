@@ -55,7 +55,7 @@ _data = {
 }
 
 [node name="TransitionManager" type="CanvasLayer"]
-layer = 100
+layer = 2
 script = ExtResource("1_qimb3")
 
 [node name="TextureRect" type="ColorRect" parent="."]
