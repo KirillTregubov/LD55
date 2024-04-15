@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=7 format=3 uid="uid://587s205d1oe0"]
+
+[ext_resource type="Script" path="res://Resources/dialogue.gd" id="1_04h5x"]
+[ext_resource type="Resource" uid="uid://c3yvyitv2cc54" path="res://Script/bug/bug_witness_4a.tres" id="1_4tlr0"]
+[ext_resource type="Resource" uid="uid://bjqli2tgb1tjp" path="res://Script/bug/bug_witness_4b.tres" id="2_vmgyq"]
+[ext_resource type="Script" path="res://Resources/line.gd" id="3_rpx74"]
+
+[sub_resource type="Resource" id="Resource_qcfqp"]
+script = ExtResource("3_rpx74")
+speaker = "EVENT"
+message = "bug_appear"
+
+[sub_resource type="Resource" id="Resource_ss5hh"]
+script = ExtResource("3_rpx74")
+speaker = "Bug"
+message = "I couldn’t get a good look, but I saw footprints leading away from the fox."
+
+[resource]
+script = ExtResource("1_04h5x")
+lines = Array[ExtResource("3_rpx74")]([SubResource("Resource_qcfqp"), SubResource("Resource_ss5hh")])
+end_choice_lines = Array[String](["What was their shape?", "Objection: needless presentation"])
+end_choice_pointer = Array[ExtResource("1_04h5x")]([ExtResource("1_4tlr0"), ExtResource("2_vmgyq")])

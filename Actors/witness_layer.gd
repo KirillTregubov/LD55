@@ -17,11 +17,6 @@ var current_witness: Witness
 func _ready():
 	DialogueManager.scripted_event.connect(handle_events)
 	DialogueManager.talk.connect(talk)
-	background.visible = false
-	bug.visible = false
-	chester.visible = false
-	abaddon.visible = false
-	mosquito.visible = false
 	
 func handle_events(event: String):
 	match event:

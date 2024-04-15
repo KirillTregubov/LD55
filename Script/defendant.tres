@@ -1,9 +1,131 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://bjiydkrj27twi"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=28 format=3 uid="uid://bjiydkrj27twi"]
 
 [ext_resource type="Script" path="res://Resources/dialogue.gd" id="1_0oyys"]
+[ext_resource type="Script" path="res://Resources/line.gd" id="1_jf4mj"]
+[ext_resource type="Resource" uid="uid://cojb4pfbin3wm" path="res://Script/bug/bug_witness_1.tres" id="1_xn6da"]
+
+[sub_resource type="Resource" id="Resource_hxxgj"]
+script = ExtResource("1_jf4mj")
+speaker = "Judge Belzebufo"
+message = "I now call the defendant to the stand."
+
+[sub_resource type="Resource" id="Resource_dhec6"]
+script = ExtResource("1_jf4mj")
+speaker = "EVENT"
+message = "summon_abaddon"
+
+[sub_resource type="Resource" id="Resource_4k21v"]
+script = ExtResource("1_jf4mj")
+speaker = "EVENT"
+message = "PAUSE_12"
+
+[sub_resource type="Resource" id="Resource_38rti"]
+script = ExtResource("1_jf4mj")
+speaker = "Judge Belzebufo"
+message = "Confess your sins from last Saturday, June 9th."
+
+[sub_resource type="Resource" id="Resource_1hgn5"]
+script = ExtResource("1_jf4mj")
+speaker = "EVENT"
+message = "abaddon_appear"
+
+[sub_resource type="Resource" id="Resource_h41sf"]
+script = ExtResource("1_jf4mj")
+speaker = "Abaddon"
+message = "Where am I?"
+
+[sub_resource type="Resource" id="Resource_x6llj"]
+script = ExtResource("1_jf4mj")
+speaker = "EVENT"
+message = "camera_enabled"
+
+[sub_resource type="Resource" id="Resource_ey8ow"]
+script = ExtResource("1_jf4mj")
+speaker = "Jaya"
+message = "Psst, over here."
+
+[sub_resource type="Resource" id="Resource_ik31c"]
+script = ExtResource("1_jf4mj")
+speaker = "Jaya"
+message = "If you don’t want to be boiled alive until the stars burn out, listen up."
+
+[sub_resource type="Resource" id="Resource_m1xk1"]
+script = ExtResource("1_jf4mj")
+speaker = "EVENT"
+message = "camera_disabled"
+
+[sub_resource type="Resource" id="Resource_cpw07"]
+script = ExtResource("1_jf4mj")
+speaker = "Abaddon"
+message = "Oh sure thing."
+
+[sub_resource type="Resource" id="Resource_67kmn"]
+script = ExtResource("1_jf4mj")
+speaker = "EVENT"
+message = "camera_enabled"
+
+[sub_resource type="Resource" id="Resource_jphjx"]
+script = ExtResource("1_jf4mj")
+speaker = "Jaya"
+message = "All you need to know is that I’m your attorney. I want you to recall the other day in the best possible light. I don’t know what you did; just give a quick recap."
+
+[sub_resource type="Resource" id="Resource_nf6ol"]
+script = ExtResource("1_jf4mj")
+speaker = "EVENT"
+message = "camera_disabled"
+
+[sub_resource type="Resource" id="Resource_7j42a"]
+script = ExtResource("1_jf4mj")
+speaker = "Abaddon"
+message = "Oh okay. Let’s see…"
+
+[sub_resource type="Resource" id="Resource_nafk2"]
+script = ExtResource("1_jf4mj")
+speaker = "Abaddon"
+message = "I woke up, went out for some pizza, got a ticket from some cop for jaywalking, and then I got said pizza afterward."
+
+[sub_resource type="Resource" id="Resource_qlcd5"]
+script = ExtResource("1_jf4mj")
+speaker = "Abaddon"
+message = "Am I in traffic court?"
+
+[sub_resource type="Resource" id="Resource_c3cia"]
+script = ExtResource("1_jf4mj")
+speaker = "EVENT"
+message = "disappear"
+
+[sub_resource type="Resource" id="Resource_j12bm"]
+script = ExtResource("1_jf4mj")
+speaker = "Judge Belzebufo"
+message = "I see."
+
+[sub_resource type="Resource" id="Resource_jjk8h"]
+script = ExtResource("1_jf4mj")
+speaker = "TYPING"
+message = "The Judge reads the defendant's file."
+
+[sub_resource type="Resource" id="Resource_ajmqw"]
+script = ExtResource("1_jf4mj")
+speaker = "Judge Belzebufo"
+message = "I now understand the seriousness of your crime."
+
+[sub_resource type="Resource" id="Resource_ivtm1"]
+script = ExtResource("1_jf4mj")
+speaker = "EVENT"
+message = "camera_enabled"
+
+[sub_resource type="Resource" id="Resource_yy6ue"]
+script = ExtResource("1_jf4mj")
+speaker = "Jaya"
+message = "(You can’t be serious.)"
+
+[sub_resource type="Resource" id="Resource_dg43x"]
+script = ExtResource("1_jf4mj")
+speaker = "EVENT"
+message = "camera_disabled"
 
 [resource]
 script = ExtResource("1_0oyys")
-lines = Array[Resource("res://Resources/line.gd")]([])
+lines = Array[ExtResource("1_jf4mj")]([SubResource("Resource_hxxgj"), SubResource("Resource_dhec6"), SubResource("Resource_4k21v"), SubResource("Resource_38rti"), SubResource("Resource_1hgn5"), SubResource("Resource_h41sf"), SubResource("Resource_x6llj"), SubResource("Resource_ey8ow"), SubResource("Resource_ik31c"), SubResource("Resource_m1xk1"), SubResource("Resource_cpw07"), SubResource("Resource_67kmn"), SubResource("Resource_jphjx"), SubResource("Resource_nf6ol"), SubResource("Resource_7j42a"), SubResource("Resource_nafk2"), SubResource("Resource_qlcd5"), SubResource("Resource_c3cia"), SubResource("Resource_j12bm"), SubResource("Resource_jjk8h"), SubResource("Resource_ajmqw"), SubResource("Resource_ivtm1"), SubResource("Resource_yy6ue"), SubResource("Resource_dg43x")])
 end_choice_lines = Array[String]([])
-end_choice_pointer = Array[ExtResource("1_0oyys")]([])
+end_choice_pointer = Array[ExtResource("1_0oyys")]([ExtResource("1_xn6da")])

@@ -1,0 +1,56 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=13 format=3 uid="uid://b6qv8b02aeenf"]
+
+[ext_resource type="Resource" uid="uid://cp52a651t33si" path="res://Script/bug/bug_witness_3.tres" id="1_oefs7"]
+[ext_resource type="Script" path="res://Resources/dialogue.gd" id="1_ppc2g"]
+[ext_resource type="Script" path="res://Resources/line.gd" id="2_qnpvs"]
+
+[sub_resource type="Resource" id="Resource_av232"]
+script = ExtResource("2_qnpvs")
+speaker = "EVENT"
+message = "camera_enabled"
+
+[sub_resource type="Resource" id="Resource_a5wpf"]
+script = ExtResource("2_qnpvs")
+speaker = "Jaya"
+message = "You’re so small, are you sure you don’t have an eyesight prescription? Is your testimony even admissible?"
+
+[sub_resource type="Resource" id="Resource_04nxf"]
+script = ExtResource("2_qnpvs")
+speaker = "EVENT"
+message = "camera_disabled"
+
+[sub_resource type="Resource" id="Resource_nsaxw"]
+script = ExtResource("2_qnpvs")
+speaker = "EVENT"
+message = "strike"
+
+[sub_resource type="Resource" id="Resource_bp0cj"]
+script = ExtResource("2_qnpvs")
+speaker = "EVENT"
+message = "disappear"
+
+[sub_resource type="Resource" id="Resource_s6f3e"]
+script = ExtResource("2_qnpvs")
+speaker = "Judge Belzebufo"
+message = "Jaya, you do not need eyes to see in Hell. Do not speak out of line."
+
+[sub_resource type="Resource" id="Resource_cdome"]
+script = ExtResource("2_qnpvs")
+speaker = "EVENT"
+message = "camera_enabled"
+
+[sub_resource type="Resource" id="Resource_x30dm"]
+script = ExtResource("2_qnpvs")
+speaker = "Jaya"
+message = "(Damn it! I knew that one was reaching…)"
+
+[sub_resource type="Resource" id="Resource_j2nbb"]
+script = ExtResource("2_qnpvs")
+speaker = "EVENT"
+message = "camera_disabled"
+
+[resource]
+script = ExtResource("1_ppc2g")
+lines = Array[ExtResource("2_qnpvs")]([SubResource("Resource_av232"), SubResource("Resource_a5wpf"), SubResource("Resource_04nxf"), SubResource("Resource_nsaxw"), SubResource("Resource_bp0cj"), SubResource("Resource_s6f3e"), SubResource("Resource_cdome"), SubResource("Resource_x30dm"), SubResource("Resource_j2nbb")])
+end_choice_lines = Array[String]([])
+end_choice_pointer = Array[ExtResource("1_ppc2g")]([ExtResource("1_oefs7")])

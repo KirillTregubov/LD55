@@ -1,0 +1,46 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=11 format=3 uid="uid://5asalqmxnk6u"]
+
+[ext_resource type="Script" path="res://Resources/dialogue.gd" id="1_eshil"]
+[ext_resource type="Resource" uid="uid://bbsnemk5u1m1n" path="res://Script/bug/bug_witness_2.tres" id="1_sn7xa"]
+[ext_resource type="Script" path="res://Resources/line.gd" id="2_hruvc"]
+
+[sub_resource type="Resource" id="Resource_uvpw6"]
+script = ExtResource("2_hruvc")
+speaker = "TYPING"
+message = "One hour passes…"
+
+[sub_resource type="Resource" id="Resource_jctkh"]
+script = ExtResource("2_hruvc")
+speaker = "Bug"
+message = "And then after the academy-"
+
+[sub_resource type="Resource" id="Resource_smtj0"]
+script = ExtResource("2_hruvc")
+speaker = "Judge Belzebufo"
+message = "Bug, I did not ask for your incredibly short life story. Please answer only the questions you’ve been asked."
+
+[sub_resource type="Resource" id="Resource_m5w8n"]
+script = ExtResource("2_hruvc")
+speaker = "Bug"
+message = "My apologies, Your Honor. I will answer the questions directly."
+
+[sub_resource type="Resource" id="Resource_7cvgv"]
+script = ExtResource("2_hruvc")
+speaker = "EVENT"
+message = "camera_enabled"
+
+[sub_resource type="Resource" id="Resource_v78a7"]
+script = ExtResource("2_hruvc")
+speaker = "Jaya"
+message = "(What even is his lifespan for a bug to talk so long?)"
+
+[sub_resource type="Resource" id="Resource_5cdjn"]
+script = ExtResource("2_hruvc")
+speaker = "EVENT"
+message = "camera_disabled"
+
+[resource]
+script = ExtResource("1_eshil")
+lines = Array[ExtResource("2_hruvc")]([SubResource("Resource_uvpw6"), SubResource("Resource_jctkh"), SubResource("Resource_smtj0"), SubResource("Resource_m5w8n"), SubResource("Resource_7cvgv"), SubResource("Resource_v78a7"), SubResource("Resource_5cdjn")])
+end_choice_lines = Array[String]([])
+end_choice_pointer = Array[ExtResource("1_eshil")]([ExtResource("1_sn7xa")])

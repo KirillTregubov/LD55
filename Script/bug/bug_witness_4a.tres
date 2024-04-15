@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=8 format=3 uid="uid://c3yvyitv2cc54"]
+
+[ext_resource type="Resource" uid="uid://bb6uk2m8xweds" path="res://Script/bug/bug_witness_4ai.tres" id="1_qxcvr"]
+[ext_resource type="Script" path="res://Resources/dialogue.gd" id="1_xwlcy"]
+[ext_resource type="Resource" uid="uid://cnxi1kn3pvj5j" path="res://Script/bug/bug_witness_4aii.tres" id="2_cmfdm"]
+[ext_resource type="Script" path="res://Resources/line.gd" id="3_x5vhv"]
+
+[sub_resource type="Resource" id="Resource_rbf47"]
+script = ExtResource("3_x5vhv")
+speaker = "EVENT"
+message = "camera_enabled"
+
+[sub_resource type="Resource" id="Resource_7bso0"]
+script = ExtResource("3_x5vhv")
+speaker = "Jaya"
+message = "And did you get a good look at the shape of the footprints?"
+
+[sub_resource type="Resource" id="Resource_1o3lm"]
+script = ExtResource("3_x5vhv")
+speaker = "Bug"
+message = "I did. They looked like a bird’s. Or maybe.. a flying bug’s?"
+
+[resource]
+script = ExtResource("1_xwlcy")
+lines = Array[ExtResource("3_x5vhv")]([SubResource("Resource_rbf47"), SubResource("Resource_7bso0"), SubResource("Resource_1o3lm")])
+end_choice_lines = Array[String](["A bug like you?", "My client is clearly not either of those things."])
+end_choice_pointer = Array[ExtResource("1_xwlcy")]([ExtResource("1_qxcvr"), ExtResource("2_cmfdm")])

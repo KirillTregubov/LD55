@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=10 format=3 uid="uid://bo1kuh6affvy0"]
+
+[ext_resource type="Script" path="res://Resources/dialogue.gd" id="1_1lbkr"]
+[ext_resource type="Resource" uid="uid://587s205d1oe0" path="res://Script/bug/bug_witness_4.tres" id="1_35rr0"]
+[ext_resource type="Script" path="res://Resources/line.gd" id="1_r5n3p"]
+
+[sub_resource type="Resource" id="Resource_8cpi5"]
+script = ExtResource("1_r5n3p")
+speaker = "EVENT"
+message = "camera_enabled"
+
+[sub_resource type="Resource" id="Resource_4eo6b"]
+script = ExtResource("1_r5n3p")
+speaker = "Jaya"
+message = "As your counsel, I would like to remind you that it is counter-productive for us if you speak out of turn."
+
+[sub_resource type="Resource" id="Resource_8hj2e"]
+script = ExtResource("1_r5n3p")
+speaker = "EVENT"
+message = "camera_disabled"
+
+[sub_resource type="Resource" id="Resource_47iq5"]
+script = ExtResource("1_r5n3p")
+speaker = "EVENT"
+message = "strike"
+
+[sub_resource type="Resource" id="Resource_txbkt"]
+script = ExtResource("1_r5n3p")
+speaker = "EVENT"
+message = "disappear"
+
+[sub_resource type="Resource" id="Resource_wyj83"]
+script = ExtResource("1_r5n3p")
+speaker = "Judge Belzebufo"
+message = "Thank you, Advocate Jaya."
+
+[resource]
+script = ExtResource("1_1lbkr")
+lines = Array[ExtResource("1_r5n3p")]([SubResource("Resource_8cpi5"), SubResource("Resource_4eo6b"), SubResource("Resource_8hj2e"), SubResource("Resource_47iq5"), SubResource("Resource_txbkt"), SubResource("Resource_wyj83")])
+end_choice_lines = Array[String]([])
+end_choice_pointer = Array[ExtResource("1_1lbkr")]([ExtResource("1_35rr0")])

@@ -1,0 +1,56 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=13 format=3 uid="uid://bkqqqwmhlpl2m"]
+
+[ext_resource type="Script" path="res://Resources/dialogue.gd" id="1_h8x75"]
+[ext_resource type="Resource" uid="uid://587s205d1oe0" path="res://Script/bug/bug_witness_4.tres" id="1_kiy3q"]
+[ext_resource type="Script" path="res://Resources/line.gd" id="2_0cahe"]
+
+[sub_resource type="Resource" id="Resource_nof8x"]
+script = ExtResource("2_0cahe")
+speaker = "EVENT"
+message = "camera_enabled"
+
+[sub_resource type="Resource" id="Resource_shlfl"]
+script = ExtResource("2_0cahe")
+speaker = "Jaya"
+message = "(I will not let that intrusive thought out into this world!)"
+
+[sub_resource type="Resource" id="Resource_6a47x"]
+script = ExtResource("2_0cahe")
+speaker = "EVENT"
+message = "camera_disabled"
+
+[sub_resource type="Resource" id="Resource_e8xw4"]
+script = ExtResource("2_0cahe")
+speaker = "EVENT"
+message = "disappear"
+
+[sub_resource type="Resource" id="Resource_4qbuk"]
+script = ExtResource("2_0cahe")
+speaker = "Judge Belzebufo"
+message = "Advocate, please control your client or there will be ramifications."
+
+[sub_resource type="Resource" id="Resource_msd1i"]
+script = ExtResource("2_0cahe")
+speaker = "EVENT"
+message = "camera_enabled"
+
+[sub_resource type="Resource" id="Resource_n56n0"]
+script = ExtResource("2_0cahe")
+speaker = "Jaya"
+message = "As your counsel, I would like to remind you that it is counter-productive for us if you speak out of turn."
+
+[sub_resource type="Resource" id="Resource_10cdt"]
+script = ExtResource("2_0cahe")
+speaker = "EVENT"
+message = "camera_disabled"
+
+[sub_resource type="Resource" id="Resource_mkguq"]
+script = ExtResource("2_0cahe")
+speaker = "Judge Belzebufo"
+message = "Continue, Bug."
+
+[resource]
+script = ExtResource("1_h8x75")
+lines = Array[ExtResource("2_0cahe")]([SubResource("Resource_nof8x"), SubResource("Resource_shlfl"), SubResource("Resource_6a47x"), SubResource("Resource_e8xw4"), SubResource("Resource_4qbuk"), SubResource("Resource_msd1i"), SubResource("Resource_n56n0"), SubResource("Resource_10cdt"), SubResource("Resource_mkguq")])
+end_choice_lines = Array[String]([])
+end_choice_pointer = Array[ExtResource("1_h8x75")]([ExtResource("1_kiy3q")])

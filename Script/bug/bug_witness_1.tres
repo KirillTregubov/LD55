@@ -1,0 +1,57 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=14 format=3 uid="uid://cojb4pfbin3wm"]
+
+[ext_resource type="Resource" uid="uid://cvwnklnj1d80y" path="res://Script/bug/bug_witness_1a.tres" id="1_c51eo"]
+[ext_resource type="Script" path="res://Resources/line.gd" id="1_rctsa"]
+[ext_resource type="Resource" uid="uid://5asalqmxnk6u" path="res://Script/bug/bug_witness_1b.tres" id="2_cdf4s"]
+[ext_resource type="Script" path="res://Resources/dialogue.gd" id="2_fnvto"]
+
+[sub_resource type="Resource" id="Resource_mluwc"]
+script = ExtResource("1_rctsa")
+speaker = "Judge Belzebufo"
+message = "The court now calls in its first witness to the stand."
+
+[sub_resource type="Resource" id="Resource_1cns0"]
+script = ExtResource("1_rctsa")
+speaker = "EVENT"
+message = "summon_bug"
+
+[sub_resource type="Resource" id="Resource_718al"]
+script = ExtResource("1_rctsa")
+speaker = "EVENT"
+message = "PAUSE_12"
+
+[sub_resource type="Resource" id="Resource_cs71u"]
+script = ExtResource("1_rctsa")
+speaker = "EVENT"
+message = "camera_enabled"
+
+[sub_resource type="Resource" id="Resource_hmh6q"]
+script = ExtResource("1_rctsa")
+speaker = "Jaya"
+message = "(Okay, now I KNOW this isn’t serious.)"
+
+[sub_resource type="Resource" id="Resource_63v07"]
+script = ExtResource("1_rctsa")
+speaker = "EVENT"
+message = "camera_disabled"
+
+[sub_resource type="Resource" id="Resource_ar2b2"]
+script = ExtResource("1_rctsa")
+speaker = "Judge Belzebufo"
+message = "Please state your name and occupation for the record."
+
+[sub_resource type="Resource" id="Resource_ryvqx"]
+script = ExtResource("1_rctsa")
+speaker = "EVENT"
+message = "bug_appear"
+
+[sub_resource type="Resource" id="Resource_ed71f"]
+script = ExtResource("1_rctsa")
+speaker = "Bug"
+message = "My name is Bug, an esteemed detective with 11 years of-"
+
+[resource]
+script = ExtResource("2_fnvto")
+lines = Array[ExtResource("1_rctsa")]([SubResource("Resource_mluwc"), SubResource("Resource_1cns0"), SubResource("Resource_718al"), SubResource("Resource_cs71u"), SubResource("Resource_hmh6q"), SubResource("Resource_63v07"), SubResource("Resource_ar2b2"), SubResource("Resource_ryvqx"), SubResource("Resource_ed71f")])
+end_choice_lines = Array[String](["Check credentials", "Do nothing"])
+end_choice_pointer = Array[ExtResource("2_fnvto")]([ExtResource("1_c51eo"), ExtResource("2_cdf4s")])

@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=8 format=3 uid="uid://bt7h4kd7uk773"]
+
+[ext_resource type="Script" path="res://Resources/dialogue.gd" id="1_024iq"]
+[ext_resource type="Resource" uid="uid://cp52a651t33si" path="res://Script/bug/bug_witness_3.tres" id="1_g0cyo"]
+[ext_resource type="Script" path="res://Resources/line.gd" id="2_msdg6"]
+
+[sub_resource type="Resource" id="Resource_f6p07"]
+script = ExtResource("2_msdg6")
+speaker = "EVENT"
+message = "camera_enabled"
+
+[sub_resource type="Resource" id="Resource_2s87g"]
+script = ExtResource("2_msdg6")
+speaker = "Jaya"
+message = "There are many noises on the street and many possible sources."
+
+[sub_resource type="Resource" id="Resource_ayqy8"]
+script = ExtResource("2_msdg6")
+speaker = "EVENT"
+message = "camera_disabled"
+
+[sub_resource type="Resource" id="Resource_3xyq5"]
+script = ExtResource("2_msdg6")
+speaker = "Judge Belzebufo"
+message = "Jaya, please do not cut off Bug."
+
+[resource]
+script = ExtResource("1_024iq")
+lines = Array[ExtResource("2_msdg6")]([SubResource("Resource_f6p07"), SubResource("Resource_2s87g"), SubResource("Resource_ayqy8"), SubResource("Resource_3xyq5")])
+end_choice_lines = Array[String]([])
+end_choice_pointer = Array[ExtResource("1_024iq")]([ExtResource("1_g0cyo")])

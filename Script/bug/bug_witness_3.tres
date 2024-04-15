@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=8 format=3 uid="uid://cp52a651t33si"]
+
+[ext_resource type="Script" path="res://Resources/dialogue.gd" id="1_cu7y0"]
+[ext_resource type="Resource" uid="uid://bo1kuh6affvy0" path="res://Script/bug/bug_witness_3a.tres" id="1_lokv5"]
+[ext_resource type="Script" path="res://Resources/line.gd" id="1_rox2x"]
+[ext_resource type="Resource" uid="uid://bkqqqwmhlpl2m" path="res://Script/bug/bug_witness_3b.tres" id="2_u2w8t"]
+
+[sub_resource type="Resource" id="Resource_urm5t"]
+script = ExtResource("1_rox2x")
+speaker = "EVENT"
+message = "bug_appear"
+
+[sub_resource type="Resource" id="Resource_6c8q2"]
+script = ExtResource("1_rox2x")
+speaker = "Bug"
+message = "As I was saying, I pursued the noise and saw a fox-looking woman bleeding out on the ground."
+
+[sub_resource type="Resource" id="Resource_tlxs7"]
+script = ExtResource("1_rox2x")
+speaker = "Abaddon"
+message = "That could have been a car!"
+
+[resource]
+script = ExtResource("1_cu7y0")
+lines = Array[ExtResource("1_rox2x")]([SubResource("Resource_urm5t"), SubResource("Resource_6c8q2"), SubResource("Resource_tlxs7")])
+end_choice_lines = Array[String](["Please only speak when addressed", "Or a plane coming in for an emergency landing!"])
+end_choice_pointer = Array[ExtResource("1_cu7y0")]([ExtResource("1_lokv5"), ExtResource("2_u2w8t")])

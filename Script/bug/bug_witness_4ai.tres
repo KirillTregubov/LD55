@@ -1,0 +1,56 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=13 format=3 uid="uid://bb6uk2m8xweds"]
+
+[ext_resource type="Script" path="res://Resources/line.gd" id="1_0n6rl"]
+[ext_resource type="Script" path="res://Resources/dialogue.gd" id="1_6d6r7"]
+[ext_resource type="Resource" uid="uid://djvav8l6rutog" path="res://Script/bug/bug_witness_5.tres" id="1_ygkid"]
+
+[sub_resource type="Resource" id="Resource_nv2v0"]
+script = ExtResource("1_0n6rl")
+speaker = "EVENT"
+message = "camera_enabled"
+
+[sub_resource type="Resource" id="Resource_qxh6u"]
+script = ExtResource("1_0n6rl")
+speaker = "Jaya"
+message = "A bug such as yourself?"
+
+[sub_resource type="Resource" id="Resource_w5mhf"]
+script = ExtResource("1_0n6rl")
+speaker = "EVENT"
+message = "camera_disabled"
+
+[sub_resource type="Resource" id="Resource_fhunv"]
+script = ExtResource("1_0n6rl")
+speaker = "EVENT"
+message = "bug_appear"
+
+[sub_resource type="Resource" id="Resource_50m0m"]
+script = ExtResource("1_0n6rl")
+speaker = "Bug"
+message = "No.. not at all! It couldn’t have been me, I’ve been dead since January!"
+
+[sub_resource type="Resource" id="Resource_a6tui"]
+script = ExtResource("1_0n6rl")
+speaker = "EVENT"
+message = "disappear"
+
+[sub_resource type="Resource" id="Resource_pyo18"]
+script = ExtResource("1_0n6rl")
+speaker = "Judge Belzebufo"
+message = "Advocate, I won't accept such careless interpretations in my courtroom."
+
+[sub_resource type="Resource" id="Resource_k1055"]
+script = ExtResource("1_0n6rl")
+speaker = "EVENT"
+message = "camera_enabled"
+
+[sub_resource type="Resource" id="Resource_7nlqv"]
+script = ExtResource("1_0n6rl")
+speaker = "Jaya"
+message = "(But careless interpretations are my go-to…)"
+
+[resource]
+script = ExtResource("1_6d6r7")
+lines = Array[ExtResource("1_0n6rl")]([SubResource("Resource_nv2v0"), SubResource("Resource_qxh6u"), SubResource("Resource_w5mhf"), SubResource("Resource_fhunv"), SubResource("Resource_50m0m"), SubResource("Resource_a6tui"), SubResource("Resource_pyo18"), SubResource("Resource_k1055"), SubResource("Resource_7nlqv")])
+end_choice_lines = Array[String]([])
+end_choice_pointer = Array[ExtResource("1_6d6r7")]([ExtResource("1_ygkid")])

@@ -1,0 +1,46 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=11 format=3 uid="uid://bjqli2tgb1tjp"]
+
+[ext_resource type="Resource" uid="uid://djvav8l6rutog" path="res://Script/bug/bug_witness_5.tres" id="1_bcm2d"]
+[ext_resource type="Script" path="res://Resources/dialogue.gd" id="1_uedsu"]
+[ext_resource type="Script" path="res://Resources/line.gd" id="2_6801a"]
+
+[sub_resource type="Resource" id="Resource_tut8v"]
+script = ExtResource("2_6801a")
+speaker = "EVENT"
+message = "camera_enabled"
+
+[sub_resource type="Resource" id="Resource_vnc30"]
+script = ExtResource("2_6801a")
+speaker = "Jaya"
+message = "We haven’t even discussed the body and we’re already moving on. This is needless presentation!"
+
+[sub_resource type="Resource" id="Resource_mwwwu"]
+script = ExtResource("2_6801a")
+speaker = "EVENT"
+message = "camera_disabled"
+
+[sub_resource type="Resource" id="Resource_vr0uq"]
+script = ExtResource("2_6801a")
+speaker = "EVENT"
+message = "disappear"
+
+[sub_resource type="Resource" id="Resource_i4xyk"]
+script = ExtResource("2_6801a")
+speaker = "Judge Belzebufo"
+message = "Bug, please return to the body you came across."
+
+[sub_resource type="Resource" id="Resource_qidx3"]
+script = ExtResource("2_6801a")
+speaker = "EVENT"
+message = "bug_appear"
+
+[sub_resource type="Resource" id="Resource_mu0k1"]
+script = ExtResource("2_6801a")
+speaker = "Bug"
+message = "Well… It was orange-colored, waaay taller than me…"
+
+[resource]
+script = ExtResource("1_uedsu")
+lines = Array[ExtResource("2_6801a")]([SubResource("Resource_tut8v"), SubResource("Resource_vnc30"), SubResource("Resource_mwwwu"), SubResource("Resource_vr0uq"), SubResource("Resource_i4xyk"), SubResource("Resource_qidx3"), SubResource("Resource_mu0k1")])
+end_choice_lines = Array[String]([])
+end_choice_pointer = Array[ExtResource("1_uedsu")]([ExtResource("1_bcm2d")])

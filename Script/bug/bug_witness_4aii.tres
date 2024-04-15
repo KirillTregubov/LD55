@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=9 format=3 uid="uid://cnxi1kn3pvj5j"]
+
+[ext_resource type="Script" path="res://Resources/dialogue.gd" id="1_f7foi"]
+[ext_resource type="Resource" uid="uid://djvav8l6rutog" path="res://Script/bug/bug_witness_5.tres" id="1_t3mbo"]
+[ext_resource type="Script" path="res://Resources/line.gd" id="2_0pfvh"]
+
+[sub_resource type="Resource" id="Resource_twh4a"]
+script = ExtResource("2_0pfvh")
+speaker = "EVENT"
+message = "camera_enabled"
+
+[sub_resource type="Resource" id="Resource_07p57"]
+script = ExtResource("2_0pfvh")
+speaker = "Jaya"
+message = "Your Honour, my client is clearly a goat! Relevance!"
+
+[sub_resource type="Resource" id="Resource_plyyi"]
+script = ExtResource("2_0pfvh")
+speaker = "EVENT"
+message = "camera_disabled"
+
+[sub_resource type="Resource" id="Resource_1f4pc"]
+script = ExtResource("2_0pfvh")
+speaker = "Judge Belzebufo"
+message = "Bug, please keep your testimony to facts only concerning the defendant."
+
+[sub_resource type="Resource" id="Resource_qjcws"]
+script = ExtResource("2_0pfvh")
+speaker = "Bug"
+message = "Sorry, Judge. But that is the only thing I saw!"
+
+[resource]
+script = ExtResource("1_f7foi")
+lines = Array[ExtResource("2_0pfvh")]([SubResource("Resource_twh4a"), SubResource("Resource_07p57"), SubResource("Resource_plyyi"), SubResource("Resource_1f4pc"), SubResource("Resource_qjcws")])
+end_choice_lines = Array[String]([])
+end_choice_pointer = Array[ExtResource("1_f7foi")]([ExtResource("1_t3mbo")])

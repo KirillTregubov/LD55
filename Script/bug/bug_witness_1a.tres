@@ -1,0 +1,81 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=18 format=3 uid="uid://cvwnklnj1d80y"]
+
+[ext_resource type="Resource" uid="uid://bbsnemk5u1m1n" path="res://Script/bug/bug_witness_2.tres" id="1_37g53"]
+[ext_resource type="Script" path="res://Resources/line.gd" id="2_80g3h"]
+[ext_resource type="Script" path="res://Resources/dialogue.gd" id="3_0dpd6"]
+
+[sub_resource type="Resource" id="Resource_cdb8f"]
+script = ExtResource("2_80g3h")
+speaker = "EVENT"
+message = "camera_enabled"
+
+[sub_resource type="Resource" id="Resource_wytna"]
+script = ExtResource("2_80g3h")
+speaker = "Jaya"
+message = "I challenge the credentials of this bug!"
+
+[sub_resource type="Resource" id="Resource_tvksp"]
+script = ExtResource("2_80g3h")
+speaker = "EVENT"
+message = "camera_disabled"
+
+[sub_resource type="Resource" id="Resource_u7ocm"]
+script = ExtResource("2_80g3h")
+speaker = "Bug"
+message = "I was never assigned to this case."
+
+[sub_resource type="Resource" id="Resource_mpui2"]
+script = ExtResource("2_80g3h")
+speaker = "Jaya"
+message = "(Then why would he…)"
+
+[sub_resource type="Resource" id="Resource_uh3dx"]
+script = ExtResource("2_80g3h")
+speaker = "Bug"
+message = "Your Honor, here are my credentials."
+
+[sub_resource type="Resource" id="Resource_exrr7"]
+script = ExtResource("2_80g3h")
+speaker = "EVENT"
+message = "camera_disabled"
+
+[sub_resource type="Resource" id="Resource_7st7y"]
+script = ExtResource("2_80g3h")
+speaker = "EVENT"
+message = "disappear"
+
+[sub_resource type="Resource" id="Resource_a2pfs"]
+script = ExtResource("2_80g3h")
+speaker = "Judge Belzebufo"
+message = "These credentials appear to be in order. Jaya, please only raise appropriate objections in my courtroom."
+
+[sub_resource type="Resource" id="Resource_80nlg"]
+script = ExtResource("2_80g3h")
+speaker = "EVENT"
+message = "strike"
+
+[sub_resource type="Resource" id="Resource_kg8i2"]
+script = ExtResource("2_80g3h")
+speaker = "EVENT"
+message = "camera_enabled"
+
+[sub_resource type="Resource" id="Resource_t4yby"]
+script = ExtResource("2_80g3h")
+speaker = "Jaya"
+message = "Judge, this bug clearly-"
+
+[sub_resource type="Resource" id="Resource_83lid"]
+script = ExtResource("2_80g3h")
+speaker = "EVENT"
+message = "camera_disabled"
+
+[sub_resource type="Resource" id="Resource_80ce0"]
+script = ExtResource("2_80g3h")
+speaker = "Judge Belzebufo"
+message = "I don’t want to hear it. Bug, please continue with your testimony."
+
+[resource]
+script = ExtResource("3_0dpd6")
+lines = Array[ExtResource("2_80g3h")]([SubResource("Resource_cdb8f"), SubResource("Resource_wytna"), SubResource("Resource_tvksp"), SubResource("Resource_u7ocm"), SubResource("Resource_mpui2"), SubResource("Resource_uh3dx"), SubResource("Resource_exrr7"), SubResource("Resource_7st7y"), SubResource("Resource_a2pfs"), SubResource("Resource_80nlg"), SubResource("Resource_kg8i2"), SubResource("Resource_t4yby"), SubResource("Resource_83lid"), SubResource("Resource_80ce0")])
+end_choice_lines = Array[String]([])
+end_choice_pointer = Array[ExtResource("3_0dpd6")]([ExtResource("1_37g53")])

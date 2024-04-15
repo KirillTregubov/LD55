@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=12 format=3 uid="uid://dkgwerdldgpux"]
+
+[ext_resource type="Resource" uid="uid://wh78ue21hto7" path="res://Script/chester/fish_witness_1.tres" id="1_sdofx"]
+[ext_resource type="Script" path="res://Resources/dialogue.gd" id="1_xkh30"]
+[ext_resource type="Script" path="res://Resources/line.gd" id="2_hgw4i"]
+
+[sub_resource type="Resource" id="Resource_twliq"]
+script = ExtResource("2_hgw4i")
+speaker = "EVENT"
+message = "camera_enabled"
+
+[sub_resource type="Resource" id="Resource_upeed"]
+script = ExtResource("2_hgw4i")
+speaker = "Jaya"
+message = "I’m sorry, how many? Are we really expecting a bug to have missed that many stab wounds during his “observations”?"
+
+[sub_resource type="Resource" id="Resource_cm87q"]
+script = ExtResource("2_hgw4i")
+speaker = "EVENT"
+message = "camera_disabled"
+
+[sub_resource type="Resource" id="Resource_d030r"]
+script = ExtResource("2_hgw4i")
+speaker = "Judge Belzebufo"
+message = "Council, do not use that tone in my courtroom."
+
+[sub_resource type="Resource" id="Resource_0ygfq"]
+script = ExtResource("2_hgw4i")
+speaker = "EVENT"
+message = "restore"
+
+[sub_resource type="Resource" id="Resource_ay3ks"]
+script = ExtResource("2_hgw4i")
+speaker = "Judge Belzebufo"
+message = "However, you bring up a valid point. I am afraid we have an incompetent witness here."
+
+[sub_resource type="Resource" id="Resource_jvgeg"]
+script = ExtResource("2_hgw4i")
+speaker = "EVENT"
+message = "bug_appear"
+
+[sub_resource type="Resource" id="Resource_6ukho"]
+script = ExtResource("2_hgw4i")
+speaker = "Bug"
+message = "What? But I’m a detective of-"
+
+[resource]
+script = ExtResource("1_xkh30")
+lines = Array[ExtResource("2_hgw4i")]([SubResource("Resource_twliq"), SubResource("Resource_upeed"), SubResource("Resource_cm87q"), SubResource("Resource_d030r"), SubResource("Resource_0ygfq"), SubResource("Resource_ay3ks"), SubResource("Resource_jvgeg"), SubResource("Resource_6ukho")])
+end_choice_lines = Array[String]([])
+end_choice_pointer = Array[ExtResource("1_xkh30")]([ExtResource("1_sdofx")])
