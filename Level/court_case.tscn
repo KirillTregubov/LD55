@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Level/court_case.gd" id="1_pkilm"]
 [ext_resource type="PackedScene" uid="uid://cgi8g0srvwpng" path="res://Menus/pause_menu.tscn" id="2_50iay"]
-[ext_resource type="Resource" uid="uid://dqq3choal104q" path="res://Script/test.tres" id="2_x75o2"]
+[ext_resource type="Resource" uid="uid://dohbbbmmv6ljx" path="res://Script/opening.tres" id="2_xkdtj"]
 [ext_resource type="PackedScene" uid="uid://cuvo3qqob8j6f" path="res://Level/Strikes/strikes.tscn" id="3_dev2d"]
 [ext_resource type="PackedScene" uid="uid://bv8rxwcvq7cwx" path="res://Actors/judge.tscn" id="4_6r8wl"]
 [ext_resource type="Texture2D" uid="uid://ds6gvx3pd4j20" path="res://Assets/Crowd.png" id="4_dhhdd"]
@@ -18,7 +18,7 @@
 
 [node name="CourtCase" type="Node2D"]
 script = ExtResource("1_pkilm")
-opening = ExtResource("2_x75o2")
+opening = ExtResource("2_xkdtj")
 metadata/_edit_vertical_guides_ = [959.0, -242.0]
 metadata/_edit_horizontal_guides_ = [611.0]
 

@@ -11,7 +11,7 @@ signal closeup(canTalk: bool)
 @onready var foreground = $Foreground
 @onready var witness_layer = $Witness
 func _ready():
-	
+	MusicPlayer.stop_playing()
 	foreground.visible = false
 	closeup.emit(true)
 	DialogueManager.scripted_event.connect(handle_scripted_events)
