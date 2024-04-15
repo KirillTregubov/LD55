@@ -8,6 +8,8 @@ extends CanvasLayer
 @onready var dramatic_pause = $DramaticPauseTimer
 @export var audio_track: AudioStream = preload ("res://Assets/SFX/single_vowel.wav")
 
+var inner_voice = false
+
 var dialogue_lines: Dialogue
 var current_line_index = 0
 var is_dialogue_active = false
@@ -52,7 +54,11 @@ func start_dialogue(lines: Dialogue) -> void:
 func display_text(person: String, text_to_display: String) -> void:
 	text = text_to_display
 	speaker.text = person
-	talk_emitter(true)
+	if text[0] != "(":
+		talk_emitter(true)
+		inner_voice = false
+	else:
+		inner_voice = true
 	label.text = ""
 	display_letter()
 
@@ -78,7 +84,9 @@ func display_letter() -> void:
 			var pitch = randf_range(0.9, 1.1)
 			if text[letter_index] in ["a", "e", "i", "o", "u"]:
 				pitch += 0.2
-			SoundPlayer.play_sound(audio_track, pitch)
+				
+			if !inner_voice:
+				SoundPlayer.play_sound(audio_track, pitch)
 
 # when timer runs out, display next letter of message
 func _on_letter_display_timer_timeout() -> void:
