@@ -1,142 +1,65 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=29 format=3 uid="uid://nte472b2krax"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=14 format=3 uid="uid://nte472b2krax"]
 
 [ext_resource type="Script" path="res://Resources/line.gd" id="1_gj68h"]
 [ext_resource type="Script" path="res://Resources/dialogue.gd" id="1_v1orp"]
 
-[sub_resource type="Resource" id="Resource_kew5w"]
+[sub_resource type="Resource" id="Resource_e4xfp"]
 script = ExtResource("1_gj68h")
 speaker = "Judge Belzebufo"
-message = "I will allow this."
+message = "Here is a little test. Speak Bug."
 
-[sub_resource type="Resource" id="Resource_nt423"]
-script = ExtResource("1_gj68h")
-speaker = "Judge"
-message = "Let us begin."
-
-[sub_resource type="Resource" id="Resource_a4xag"]
+[sub_resource type="Resource" id="Resource_pq4tp"]
 script = ExtResource("1_gj68h")
 speaker = "EVENT"
-message = "start_music"
+message = "bug_appear"
 
-[sub_resource type="Resource" id="Resource_q0u0f"]
+[sub_resource type="Resource" id="Resource_0dchl"]
 script = ExtResource("1_gj68h")
-speaker = "Judge"
-message = "Tell us about what happened last Friday."
+speaker = "Bug"
+message = "Howdy! I am a bug!"
 
-[sub_resource type="Resource" id="Resource_yn8bk"]
-script = ExtResource("1_v1orp")
-lines = Array[ExtResource("1_gj68h")]([SubResource("Resource_kew5w"), SubResource("Resource_nt423"), SubResource("Resource_a4xag"), SubResource("Resource_q0u0f")])
-end_choice_lines = Array[String]([])
-end_choice_pointer = Array[ExtResource("1_v1orp")]([])
+[sub_resource type="Resource" id="Resource_36o6q"]
+script = ExtResource("1_gj68h")
+speaker = "EVENT"
+message = "disappear"
 
-[sub_resource type="Resource" id="Resource_kropb"]
+[sub_resource type="Resource" id="Resource_q2piy"]
 script = ExtResource("1_gj68h")
 speaker = "Judge Belzebufo"
-message = "Neither am I."
+message = "Good. Now come back."
 
-[sub_resource type="Resource" id="Resource_y7oxs"]
+[sub_resource type="Resource" id="Resource_g18um"]
 script = ExtResource("1_gj68h")
 speaker = "EVENT"
-message = "strike"
+message = "bug_appear"
 
-[sub_resource type="Resource" id="Resource_imjl6"]
+[sub_resource type="Resource" id="Resource_7r3nq"]
+script = ExtResource("1_gj68h")
+speaker = "Bug"
+message = "Hello! I'm back again!"
+
+[sub_resource type="Resource" id="Resource_iio0l"]
+script = ExtResource("1_gj68h")
+speaker = "EVENT"
+message = "disappear"
+
+[sub_resource type="Resource" id="Resource_0xq0l"]
 script = ExtResource("1_gj68h")
 speaker = "Judge Belzebufo"
-message = "You're on thin ice."
+message = "Now the defendant."
 
-[sub_resource type="Resource" id="Resource_hk2u5"]
+[sub_resource type="Resource" id="Resource_yi3ca"]
 script = ExtResource("1_gj68h")
 speaker = "EVENT"
-message = "restore"
+message = "abaddon_appear"
 
-[sub_resource type="Resource" id="Resource_b4mv0"]
+[sub_resource type="Resource" id="Resource_865jx"]
 script = ExtResource("1_gj68h")
-speaker = "Judge"
-message = "jk"
-
-[sub_resource type="Resource" id="Resource_mkhkf"]
-script = ExtResource("1_gj68h")
-speaker = "EVENT"
-message = "strike"
-
-[sub_resource type="Resource" id="Resource_8fbcn"]
-script = ExtResource("1_gj68h")
-speaker = "EVENT"
-message = "strike"
-
-[sub_resource type="Resource" id="Resource_1b7y8"]
-script = ExtResource("1_gj68h")
-speaker = "EVENT"
-message = "strike"
-
-[sub_resource type="Resource" id="Resource_pmvj1"]
-script = ExtResource("1_gj68h")
-speaker = "Judge"
-message = "or am I?"
-
-[sub_resource type="Resource" id="Resource_dg11p"]
-script = ExtResource("1_gj68h")
-speaker = "EVENT"
-message = "strike"
-
-[sub_resource type="Resource" id="Resource_1i2h8"]
-script = ExtResource("1_gj68h")
-speaker = "EVENT"
-message = "restore"
-
-[sub_resource type="Resource" id="Resource_vgpk8"]
-script = ExtResource("1_gj68h")
-speaker = "EVENT"
-message = "restore"
-
-[sub_resource type="Resource" id="Resource_cxdik"]
-script = ExtResource("1_gj68h")
-speaker = "EVENT"
-message = "restore"
-
-[sub_resource type="Resource" id="Resource_loin2"]
-script = ExtResource("1_gj68h")
-speaker = "EVENT"
-message = "restore"
-
-[sub_resource type="Resource" id="Resource_cq0tr"]
-script = ExtResource("1_gj68h")
-speaker = "Judge"
-message = "jk again, it's just a test."
-
-[sub_resource type="Resource" id="Resource_7mtjf"]
-script = ExtResource("1_v1orp")
-lines = Array[ExtResource("1_gj68h")]([SubResource("Resource_kropb"), SubResource("Resource_y7oxs"), SubResource("Resource_imjl6"), SubResource("Resource_hk2u5"), SubResource("Resource_b4mv0"), SubResource("Resource_mkhkf"), SubResource("Resource_8fbcn"), SubResource("Resource_1b7y8"), SubResource("Resource_pmvj1"), SubResource("Resource_dg11p"), SubResource("Resource_1i2h8"), SubResource("Resource_vgpk8"), SubResource("Resource_cxdik"), SubResource("Resource_loin2"), SubResource("Resource_cq0tr")])
-end_choice_lines = Array[String]([])
-end_choice_pointer = Array[ExtResource("1_v1orp")]([])
-
-[sub_resource type="Resource" id="Resource_lciqk"]
-script = ExtResource("1_gj68h")
-speaker = "Judge Belzebufo"
-message = "Ribbit."
-
-[sub_resource type="Resource" id="Resource_jh7kb"]
-script = ExtResource("1_gj68h")
-speaker = "Judge Belzebufo"
-message = "Bring in the first witness."
-
-[sub_resource type="Resource" id="Resource_038l2"]
-script = ExtResource("1_gj68h")
-speaker = "EVENT"
-message = "summon_witness_1"
-
-[sub_resource type="Resource" id="Resource_wow8t"]
-script = ExtResource("1_gj68h")
-speaker = "EVENT"
-message = "PAUSE_12"
-
-[sub_resource type="Resource" id="Resource_i8x8d"]
-script = ExtResource("1_gj68h")
-speaker = "Judge Belzebufo"
-message = "The fuck?"
+speaker = "Abaddon"
+message = "What's up gamers?"
 
 [resource]
 script = ExtResource("1_v1orp")
-lines = Array[ExtResource("1_gj68h")]([SubResource("Resource_lciqk"), SubResource("Resource_jh7kb"), SubResource("Resource_038l2"), SubResource("Resource_wow8t"), SubResource("Resource_i8x8d")])
-end_choice_lines = Array[String](["This is madness!", "He's not even wearing pants!"])
-end_choice_pointer = Array[ExtResource("1_v1orp")]([SubResource("Resource_yn8bk"), SubResource("Resource_7mtjf")])
+lines = Array[ExtResource("1_gj68h")]([SubResource("Resource_e4xfp"), SubResource("Resource_pq4tp"), SubResource("Resource_0dchl"), SubResource("Resource_36o6q"), SubResource("Resource_q2piy"), SubResource("Resource_g18um"), SubResource("Resource_7r3nq"), SubResource("Resource_iio0l"), SubResource("Resource_0xq0l"), SubResource("Resource_yi3ca"), SubResource("Resource_865jx")])
+end_choice_lines = Array[String]([])
+end_choice_pointer = Array[ExtResource("1_v1orp")]([])

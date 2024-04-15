@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://je3aequkna2"]
 
-[ext_resource type="Texture2D" uid="uid://bjucqaoq27yfi" path="res://Assets/bug_back.png" id="1_68nus"]
 [ext_resource type="Script" path="res://Actors/bug.gd" id="1_m20g0"]
+[ext_resource type="Texture2D" uid="uid://bjucqaoq27yfi" path="res://Assets/Bug/bug_back.png" id="2_4yd7m"]
 
 [sub_resource type="Animation" id="Animation_2e5ca"]
 length = 0.001
@@ -39,7 +39,7 @@ _data = {
 "summon": SubResource("Animation_uqfy7")
 }
 
-[node name="BugWItness" type="Node2D"]
+[node name="BugWitness" type="Node2D"]
 script = ExtResource("1_m20g0")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -49,4 +49,4 @@ libraries = {
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)
-texture = ExtResource("1_68nus")
+texture = ExtResource("2_4yd7m")

@@ -1,10 +1,61 @@
-[gd_scene load_steps=2 format=3 uid="uid://bv8rxwcvq7cwx"]
+[gd_scene load_steps=6 format=3 uid="uid://dwxdtlcqel4pr"]
 
-[ext_resource type="Texture2D" uid="uid://dcbwstjwbhw55" path="res://Assets/frog_judge.png" id="1_xqju8"]
+[ext_resource type="Texture2D" uid="uid://bhr0voxrmvdhf" path="res://Assets/Judge/frog_judge_angy.png" id="1_by85b"]
+[ext_resource type="Script" path="res://Actors/judge.gd" id="1_qrv2x"]
+[ext_resource type="Texture2D" uid="uid://dcbwstjwbhw55" path="res://Assets/Judge/frog_judge.png" id="2_3csov"]
+[ext_resource type="Texture2D" uid="uid://bncxpcjhfyvqx" path="res://Assets/Judge/frog_judge_mouth_open.png" id="3_ahqda"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kmf2q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_by85b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3csov")
+}],
+"loop": true,
+"name": &"angry",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3csov")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3csov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ahqda")
+}],
+"loop": false,
+"name": &"mouth_open",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3csov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ahqda")
+}],
+"loop": true,
+"name": &"talking",
+"speed": 5.0
+}]
 
 [node name="Judge" type="Node2D"]
+script = ExtResource("1_qrv2x")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_xqju8")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_kmf2q")
+animation = &"angry"
+frame = 1
+frame_progress = 1.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

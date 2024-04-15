@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cdutcglkydg1o" path="res://Assets/desk.png" id="5_1nnbq"]
 [ext_resource type="Texture2D" uid="uid://cpj33cilvi42f" path="res://Assets/summoning_circle.png" id="6_blgmp"]
 [ext_resource type="Texture2D" uid="uid://bp0o268me54ys" path="res://Assets/stand.png" id="7_2y3tb"]
-[ext_resource type="Texture2D" uid="uid://c0ig8smk114ah" path="res://Assets/defendant_back.png" id="8_if2m5"]
+[ext_resource type="Texture2D" uid="uid://c0ig8smk114ah" path="res://Assets/Abaddon/defendant_back.png" id="8_if2m5"]
 [ext_resource type="Texture2D" uid="uid://curnkypsfc62u" path="res://Assets/ld55smalllawyer.png" id="9_2xylc"]
 [ext_resource type="Texture2D" uid="uid://ds6gvx3pd4j20" path="res://Assets/Crowd.png" id="10_s14mt"]
 [ext_resource type="PackedScene" uid="uid://cgi8g0srvwpng" path="res://Menus/pause_menu.tscn" id="12_cvjfj"]

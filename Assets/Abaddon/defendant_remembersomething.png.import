@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://baaeeguxwwcbd"
-path="res://.godot/imported/chesterback.png-a3bb7c9e9585cd5ddccfd27156496bbf.ctex"
+uid="uid://ou0qwws0ec1s"
+path="res://.godot/imported/defendant_remembersomething.png-7b3ae485993d081034d6ba9c7591b558.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/chesterback.png"
-dest_files=["res://.godot/imported/chesterback.png-a3bb7c9e9585cd5ddccfd27156496bbf.ctex"]
+source_file="res://Assets/Abaddon/defendant_remembersomething.png"
+dest_files=["res://.godot/imported/defendant_remembersomething.png-7b3ae485993d081034d6ba9c7591b558.ctex"]
 
 [params]
 

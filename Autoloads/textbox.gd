@@ -20,6 +20,7 @@ var space_time = 0.06
 var punctuation_time = 0.2
 
 signal scripted_event(event: String)
+signal talk(isTalking: bool, person: String)
 
 func _ready():
 	container.hide()
@@ -43,6 +44,7 @@ func start_dialogue(lines: Dialogue):
 func display_text(person: String, text_to_display: String):
 	text = text_to_display
 	speaker.text = person
+	talk_emitter(true)
 	label.text = ""
 	display_letter()
 
@@ -52,6 +54,7 @@ func display_letter():
 	letter_index += 1
 	
 	if letter_index >= text.length():
+		talk_emitter(false)
 		can_advance_line = true
 		letter_index = 0
 		return
@@ -78,7 +81,6 @@ func show_line():
 			container.hide()
 			can_advance_line = false
 			var time = int(dialogue_lines.lines[current_line_index].message.substr(6))
-			print(time)
 			dramatic_pause.start(time)
 			current_line_index += 1
 			return
@@ -118,7 +120,9 @@ func _unhandled_input(event):
 func clear_choices():
 	choices.clear_button()
 
-
 func _on_dramatic_pause_timer_timeout():
 	container.show()
 	show_line()
+
+func talk_emitter(isTalking: bool):
+	talk.emit(isTalking, speaker.text)

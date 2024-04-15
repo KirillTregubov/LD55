@@ -1,0 +1,141 @@
+[gd_scene load_steps=16 format=3 uid="uid://cshrl8h25y0ye"]
+
+[ext_resource type="Script" path="res://Actors/witness_layer.gd" id="1_r7cs5"]
+[ext_resource type="Texture2D" uid="uid://bb5pa1h4e0ncb" path="res://Assets/Bug/beetle.png" id="1_vuou3"]
+[ext_resource type="Shader" path="res://Actors/witness_layer.gdshader" id="1_wyuvj"]
+[ext_resource type="Texture2D" uid="uid://bdfx14uvxncst" path="res://Assets/Bug/beetle_talk.png" id="3_0sdrv"]
+[ext_resource type="Texture2D" uid="uid://2ccq4e5v7hni" path="res://Assets/Angler/ld55chestersprites.png" id="3_8dbem"]
+[ext_resource type="Texture2D" uid="uid://b7h4052c76huv" path="res://Assets/Angler/ld55chestershiteatinggrin.png" id="4_ufko2"]
+[ext_resource type="Texture2D" uid="uid://c5m7yntg4bstg" path="res://Assets/Angler/ld55chestertalk.png" id="5_cix8v"]
+[ext_resource type="Texture2D" uid="uid://tni8rixt1ft6" path="res://Assets/Abaddon/defendant_sprite.png" id="6_w1oex"]
+[ext_resource type="Texture2D" uid="uid://lvdxm61g8fnk" path="res://Assets/Abaddon/defendant_clueless.png" id="7_2g4ck"]
+[ext_resource type="Texture2D" uid="uid://ou0qwws0ec1s" path="res://Assets/Abaddon/defendant_remembersomething.png" id="8_7uejf"]
+[ext_resource type="Texture2D" uid="uid://c817sl1k6xjuh" path="res://Assets/Abaddon/defendant_talking.png" id="9_vw45j"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_erp6e"]
+shader = ExtResource("1_wyuvj")
+shader_parameter/lod = 2.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lws1o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_vuou3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_vuou3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0sdrv")
+}],
+"loop": true,
+"name": &"talking",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0at2l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_8dbem")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_8dbem")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ufko2")
+}],
+"loop": false,
+"name": &"smile",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_8dbem")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_cix8v")
+}],
+"loop": true,
+"name": &"talking",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tkjiy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_w1oex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_2g4ck")
+}],
+"loop": false,
+"name": &"clueless",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_w1oex")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_w1oex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_7uejf")
+}],
+"loop": false,
+"name": &"remembers",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_w1oex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_vw45j")
+}],
+"loop": true,
+"name": &"talking",
+"speed": 5.0
+}]
+
+[node name="Stand" type="CanvasLayer"]
+script = ExtResource("1_r7cs5")
+
+[node name="Background" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_erp6e")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Bug" type="AnimatedSprite2D" parent="."]
+position = Vector2(960, 540)
+sprite_frames = SubResource("SpriteFrames_lws1o")
+
+[node name="Chester" type="AnimatedSprite2D" parent="."]
+position = Vector2(960, 540)
+sprite_frames = SubResource("SpriteFrames_0at2l")
+animation = &"talking"
+
+[node name="Abaddon" type="AnimatedSprite2D" parent="."]
+position = Vector2(960, 540)
+sprite_frames = SubResource("SpriteFrames_tkjiy")
+animation = &"talking"

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tni8rixt1ft6"
-path="res://.godot/imported/defendant_sprite.png-df936f878680fa26def2b08bfaef59b6.ctex"
+uid="uid://23a4gga3ewt0"
+path="res://.godot/imported/frog_judge_eat.png-8f8fa37dbfea4705f3507f8ec64af8b8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/defendant_sprite.png"
-dest_files=["res://.godot/imported/defendant_sprite.png-df936f878680fa26def2b08bfaef59b6.ctex"]
+source_file="res://Assets/Judge/frog_judge_eat.png"
+dest_files=["res://.godot/imported/frog_judge_eat.png-8f8fa37dbfea4705f3507f8ec64af8b8.ctex"]
 
 [params]
 

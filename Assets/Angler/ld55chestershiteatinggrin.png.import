@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjucqaoq27yfi"
-path="res://.godot/imported/bug_back.png-1399422d88b11e70183a68177a26a295.ctex"
+uid="uid://b7h4052c76huv"
+path="res://.godot/imported/ld55chestershiteatinggrin.png-14a65b28a931f7bd7b669475f2eb5585.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/bug_back.png"
-dest_files=["res://.godot/imported/bug_back.png-1399422d88b11e70183a68177a26a295.ctex"]
+source_file="res://Assets/Angler/ld55chestershiteatinggrin.png"
+dest_files=["res://.godot/imported/ld55chestershiteatinggrin.png-14a65b28a931f7bd7b669475f2eb5585.ctex"]
 
 [params]
 
