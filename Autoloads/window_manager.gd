@@ -3,6 +3,10 @@ extends Node
 var SCALE: float = 1.0
 
 func _ready() -> void:
+	match OS.get_name():
+		"Web":
+			return
+	
 	var window := get_window() as Window
 	var screen_scale = DisplayServer.screen_get_scale()
 	if (window.content_scale_factor != screen_scale):
