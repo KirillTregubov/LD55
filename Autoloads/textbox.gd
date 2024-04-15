@@ -9,6 +9,7 @@ extends CanvasLayer
 @export var audio_track: AudioStream = preload ("res://Assets/SFX/single_vowel.wav")
 
 var inner_voice = false
+var skip = false
 
 var dialogue_lines: Dialogue
 var current_line_index = 0
@@ -59,6 +60,8 @@ func display_text(person: String, text_to_display: String) -> void:
 		inner_voice = false
 	else:
 		inner_voice = true
+		
+	skip = false
 	label.text = ""
 	display_letter()
 
@@ -90,7 +93,13 @@ func display_letter() -> void:
 
 # when timer runs out, display next letter of message
 func _on_letter_display_timer_timeout() -> void:
-	display_letter()
+	if !skip:
+		display_letter()
+	else:
+		label.text = text
+		talk_emitter(false)
+		can_advance_line = true
+		letter_index = 0
 
 # call display_text() for current line. If speaker is "EVENT", emit scripted_event and hanlde next line.
 func show_line() -> void:
@@ -131,6 +140,8 @@ func _unhandled_input(event) -> void:
 			return
 			
 		show_line()
+	elif event.is_action_pressed("proceed") and is_dialogue_active:
+		skip = true
 
 func finish_dialogue() -> void:
 	is_dialogue_active = false
