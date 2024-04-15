@@ -1,11 +1,15 @@
 extends Node2D
 
+signal closeup(canTalk : bool)
+
 @export var opening: Dialogue
 @onready var witness_1 = $Subjects/BugWitness
 @onready var circle = $Subjects/SummoningCircle
 @onready var music = $Music
-
+@onready var camera = $Camera2D
 @onready var lose = preload ("res://Level/lose_condition.tscn")
+@onready var foreground = $Foreground
+
 
 func _ready():
 	DialogueManager.scripted_event.connect(handle_scripted_events)
@@ -18,6 +22,15 @@ func handle_scripted_events(event: String):
 			
 		"start_music":
 			start_music()
+			
+		"camera_enabled":
+			camera.enabled = true
+			foreground.visible = false
+			closeup.emit(true)
+		"camera_disabled":
+			camera.enabled = false
+			foreground.visible = true
+			closeup.emit(false)
 
 func handle_summon1():
 	circle.start_summoning()

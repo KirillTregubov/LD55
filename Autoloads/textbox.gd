@@ -6,6 +6,7 @@ extends CanvasLayer
 @onready var container = $Container
 @onready var choices = $ChoiceLayer
 @onready var dramatic_pause = $DramaticPauseTimer
+@onready var audio = $audio
 
 var dialogue_lines: Dialogue
 var current_line_index = 0
@@ -66,6 +67,17 @@ func display_letter():
 			timer.start(space_time)
 		_:
 			timer.start(letter_time)
+			
+			var new_audio = audio.duplicate()
+			var pitch = randf_range(0.9,1.1)
+			new_audio.set_pitch_scale(pitch)
+			if text[letter_index] in ["a","e","i","o","u"]:
+				new_audio.pitch_scale += 0.2
+				
+			get_tree().root.add_child(new_audio)
+			new_audio.play()
+			await new_audio.finished
+			new_audio.queue_free()
 	
 # when timer runs out, display next letter of message
 func _on_letter_display_timer_timeout():

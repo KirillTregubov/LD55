@@ -119,6 +119,7 @@ animations = [{
 script = ExtResource("1_r7cs5")
 
 [node name="Background" type="ColorRect" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_erp6e")
 anchors_preset = 15
 anchor_right = 1.0
@@ -127,15 +128,18 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Bug" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(960, 540)
 sprite_frames = SubResource("SpriteFrames_lws1o")
 
 [node name="Chester" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(960, 540)
 sprite_frames = SubResource("SpriteFrames_0at2l")
 animation = &"talking"
 
 [node name="Abaddon" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(960, 540)
 sprite_frames = SubResource("SpriteFrames_tkjiy")
 animation = &"talking"
