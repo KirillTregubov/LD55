@@ -1,65 +1,40 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=14 format=3 uid="uid://nte472b2krax"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=9 format=3 uid="uid://nte472b2krax"]
 
 [ext_resource type="Script" path="res://Resources/line.gd" id="1_gj68h"]
 [ext_resource type="Script" path="res://Resources/dialogue.gd" id="1_v1orp"]
 
-[sub_resource type="Resource" id="Resource_e4xfp"]
+[sub_resource type="Resource" id="Resource_ko6sw"]
 script = ExtResource("1_gj68h")
 speaker = "Judge Belzebufo"
-message = "Here is a little test. Speak Bug."
+message = "Smile for the camera!"
 
-[sub_resource type="Resource" id="Resource_pq4tp"]
+[sub_resource type="Resource" id="Resource_21gqn"]
 script = ExtResource("1_gj68h")
 speaker = "EVENT"
-message = "bug_appear"
+message = "camera_enabled"
 
-[sub_resource type="Resource" id="Resource_0dchl"]
+[sub_resource type="Resource" id="Resource_j58mu"]
 script = ExtResource("1_gj68h")
-speaker = "Bug"
-message = "Howdy! I am a bug!"
+speaker = "Jaya"
+message = "Can I talk now?"
 
-[sub_resource type="Resource" id="Resource_36o6q"]
+[sub_resource type="Resource" id="Resource_2yme3"]
 script = ExtResource("1_gj68h")
 speaker = "EVENT"
-message = "disappear"
+message = "camera_disabled"
 
-[sub_resource type="Resource" id="Resource_q2piy"]
+[sub_resource type="Resource" id="Resource_ywjqj"]
+script = ExtResource("1_gj68h")
+speaker = "Jaya"
+message = "What about now?"
+
+[sub_resource type="Resource" id="Resource_p1nsl"]
 script = ExtResource("1_gj68h")
 speaker = "Judge Belzebufo"
-message = "Good. Now come back."
-
-[sub_resource type="Resource" id="Resource_g18um"]
-script = ExtResource("1_gj68h")
-speaker = "EVENT"
-message = "bug_appear"
-
-[sub_resource type="Resource" id="Resource_7r3nq"]
-script = ExtResource("1_gj68h")
-speaker = "Bug"
-message = "Hello! I'm back again!"
-
-[sub_resource type="Resource" id="Resource_iio0l"]
-script = ExtResource("1_gj68h")
-speaker = "EVENT"
-message = "disappear"
-
-[sub_resource type="Resource" id="Resource_0xq0l"]
-script = ExtResource("1_gj68h")
-speaker = "Judge Belzebufo"
-message = "Now the defendant."
-
-[sub_resource type="Resource" id="Resource_yi3ca"]
-script = ExtResource("1_gj68h")
-speaker = "EVENT"
-message = "abaddon_appear"
-
-[sub_resource type="Resource" id="Resource_865jx"]
-script = ExtResource("1_gj68h")
-speaker = "Abaddon"
-message = "What's up gamers?"
+message = "Nope!"
 
 [resource]
 script = ExtResource("1_v1orp")
-lines = Array[ExtResource("1_gj68h")]([SubResource("Resource_e4xfp"), SubResource("Resource_pq4tp"), SubResource("Resource_0dchl"), SubResource("Resource_36o6q"), SubResource("Resource_q2piy"), SubResource("Resource_g18um"), SubResource("Resource_7r3nq"), SubResource("Resource_iio0l"), SubResource("Resource_0xq0l"), SubResource("Resource_yi3ca"), SubResource("Resource_865jx")])
+lines = Array[ExtResource("1_gj68h")]([SubResource("Resource_ko6sw"), SubResource("Resource_21gqn"), SubResource("Resource_j58mu"), SubResource("Resource_2yme3"), SubResource("Resource_ywjqj"), SubResource("Resource_p1nsl")])
 end_choice_lines = Array[String]([])
 end_choice_pointer = Array[ExtResource("1_v1orp")]([])
