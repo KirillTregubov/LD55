@@ -3,7 +3,7 @@ extends Node2D
 signal closeup(canTalk: bool)
 
 @export var opening: Dialogue
-@onready var witness_1 = $Subjects/BugWitness
+@onready var small_witness = $Subjects/SmallWitness
 @onready var circle = $Subjects/SummoningCircle
 @export var track = preload ("res://Assets/Music/Courtcase Music loop .wav")
 @onready var camera = $Camera2D
@@ -20,8 +20,12 @@ func _ready():
 
 func handle_scripted_events(event: String):
 	match event:
-		"summon_witness_1":
-			handle_summon1()
+		"summon_bug":
+			summon_bug_witness()	
+		"summon_chester":
+			summon_chester_witness()
+		"summon_abaddon":
+			summon_abaddon_witness()
 			
 		"start_music":
 			start_music()
@@ -37,9 +41,18 @@ func handle_scripted_events(event: String):
 			witness_layer.visible = true
 			closeup.emit(false)
 
-func handle_summon1():
+func summon_bug_witness():
 	circle.start_summoning()
-	witness_1.summon()
+	small_witness.summon_bug()
+
+func summon_chester_witness():
+	circle.start_summoning()
+	small_witness.summon_chester()
+	
+func summon_abaddon_witness():
+	circle.start_summoning()
+	small_witness.summon_abaddon()
+
 
 func start_music():
 	MusicPlayer.start_playing(track, -10)
