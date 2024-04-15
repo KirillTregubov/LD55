@@ -6,7 +6,7 @@
 [sub_resource type="Resource" id="Resource_gd4ui"]
 script = ExtResource("1_vef14")
 speaker = "Jaya"
-message = "(... as a court-summoned attorney.)"
+message = "... as a court-summoned attorney."
 
 [sub_resource type="Resource" id="Resource_mcuau"]
 script = ExtResource("1_vef14")

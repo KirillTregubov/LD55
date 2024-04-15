@@ -1,7 +1,7 @@
 extends Node2D
 @export var character_name: String = "Judge Belzebufo"
 @onready var sprite = $Sprite2D
-@export var frog_voice: AudioStream = preload("res://Assets/SFX/fish_talking.wav")
+@export var frog_voice: AudioStream = preload("res://Assets/SFX/frog_1_vowel.wav")
 
 func _ready():
 	DialogueManager.talk.connect(talk)
