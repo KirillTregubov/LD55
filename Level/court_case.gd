@@ -22,8 +22,10 @@ func handle_scripted_events(event: String):
 	match event:
 		"summon_bug":
 			summon_bug_witness()	
+			
 		"summon_chester":
 			summon_chester_witness()
+			
 		"summon_abaddon":
 			summon_abaddon_witness()
 			
@@ -35,11 +37,18 @@ func handle_scripted_events(event: String):
 			foreground.visible = false
 			witness_layer.visible = false
 			closeup.emit(true)
+			
 		"camera_disabled":
 			camera.enabled = false
 			foreground.visible = true
 			witness_layer.visible = true
 			closeup.emit(false)
+			
+		"crowd_pleased":
+			foreground.crowd_pleased()
+			
+		"crowd_surprised":
+			foreground.crowd_surprised()
 
 func summon_bug_witness():
 	circle.start_summoning()
