@@ -8,6 +8,8 @@ extends CanvasLayer
 @onready var dramatic_pause = $DramaticPauseTimer
 @export var audio_track: AudioStream = preload ("res://Assets/SFX/single_vowel.wav")
 
+@export var typing: AudioStream = preload("res://Assets/SFX/typing.wav")
+
 var inner_voice = false
 var skip = false
 
@@ -121,7 +123,12 @@ func show_line() -> void:
 			finish_dialogue()
 			return
 
-	display_text(dialogue_lines.lines[current_line_index].speaker, dialogue_lines.lines[current_line_index].message)
+	# if speaker is "TYPING", use typing voice
+	if(dialogue_lines.lines[current_line_index].speaker == "TYPING"):
+		set_voice(typing)
+		display_text("", dialogue_lines.lines[current_line_index].message)
+	else:
+		display_text(dialogue_lines.lines[current_line_index].speaker, dialogue_lines.lines[current_line_index].message)
 	can_advance_line = false
 
 # emit signal scripted_event, containing event type (such as "strike" or "restore")

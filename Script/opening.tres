@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=35 format=3 uid="uid://dohbbbmmv6ljx"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=36 format=3 uid="uid://dohbbbmmv6ljx"]
 
 [ext_resource type="Script" path="res://Resources/line.gd" id="1_e3lhf"]
 [ext_resource type="Script" path="res://Resources/dialogue.gd" id="1_o0ytv"]
+[ext_resource type="Resource" uid="uid://bjiydkrj27twi" path="res://Script/defendant.tres" id="1_uej1e"]
 
 [sub_resource type="Resource" id="Resource_a5a2d"]
 script = ExtResource("1_e3lhf")
@@ -167,4 +168,4 @@ message = "I understand the sports analogy, Your Honor. The defense is ready."
 script = ExtResource("1_o0ytv")
 lines = Array[ExtResource("1_e3lhf")]([SubResource("Resource_a5a2d"), SubResource("Resource_745xi"), SubResource("Resource_e07e0"), SubResource("Resource_l8xfx"), SubResource("Resource_dr3e1"), SubResource("Resource_uhhrr"), SubResource("Resource_4bnxj"), SubResource("Resource_gsth3"), SubResource("Resource_w23bd"), SubResource("Resource_e77sl"), SubResource("Resource_ufoyp"), SubResource("Resource_18cjl"), SubResource("Resource_shc75"), SubResource("Resource_rw8o3"), SubResource("Resource_51mnk"), SubResource("Resource_aunl8"), SubResource("Resource_b6i58"), SubResource("Resource_ap53i"), SubResource("Resource_ys0br"), SubResource("Resource_664od"), SubResource("Resource_j1ovt"), SubResource("Resource_6pewh"), SubResource("Resource_qx4t1"), SubResource("Resource_mqixv"), SubResource("Resource_rgkbw"), SubResource("Resource_dhhfa"), SubResource("Resource_fld8l"), SubResource("Resource_02uuh"), SubResource("Resource_4egp6"), SubResource("Resource_337rq"), SubResource("Resource_ox7e7"), SubResource("Resource_htyb8")])
 end_choice_lines = Array[String]([])
-end_choice_pointer = Array[ExtResource("1_o0ytv")]([])
+end_choice_pointer = Array[ExtResource("1_o0ytv")]([ExtResource("1_uej1e")])
