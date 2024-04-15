@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dyk04nogt5tk7"]
+[gd_scene load_steps=9 format=3 uid="uid://dyk04nogt5tk7"]
 
 [ext_resource type="Script" path="res://Menus/start_menu.gd" id="1_cktmu"]
 [ext_resource type="Shader" path="res://Menus/pause_menu.gdshader" id="2_8eyi1"]
 [ext_resource type="Theme" uid="uid://dkqrfy3kvl768" path="res://Menus/menu_theme.tres" id="2_guvi4"]
+[ext_resource type="Texture2D" uid="uid://did55hevut1bm" path="res://Assets/title_screen.png" id="2_jalqg"]
 [ext_resource type="AudioStream" uid="uid://ke5te2e3oxjw" path="res://Assets/Music/hammond_hill.wav" id="5_lnbxr"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_nuu60"]
@@ -16,8 +17,8 @@ noise = SubResource("FastNoiseLite_nuu60")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rqssw"]
 shader = ExtResource("2_8eyi1")
-shader_parameter/octaves = 4
-shader_parameter/starting_amplitude = 0.5
+shader_parameter/octaves = 1
+shader_parameter/starting_amplitude = 0.4
 shader_parameter/starting_frequency = 1.0
 shader_parameter/shift = 0.0
 shader_parameter/velocity = Vector2(-0.03, 0.03)
@@ -29,6 +30,14 @@ script = ExtResource("1_cktmu")
 metadata/_edit_horizontal_guides_ = [643.0]
 metadata/_edit_vertical_guides_ = [1146.0]
 
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_jalqg")
+
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_rqssw")
 anchors_preset = 15
@@ -38,44 +47,34 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TitleMenuContainer" type="MarginContainer" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = 9
 anchor_bottom = 1.0
-grow_horizontal = 2
+offset_right = 780.0
 grow_vertical = 2
 theme = ExtResource("2_guvi4")
-metadata/_edit_use_anchors_ = true
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_bottom = 64
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TitleMenuContainer"]
 layout_mode = 2
-
-[node name="Title" type="Label" parent="TitleMenuContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 6
-theme_type_variation = &"HeaderLarge"
-text = "Title of Game"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="VBoxContainer" type="VBoxContainer" parent="TitleMenuContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-size_flags_stretch_ratio = 0.5
+size_flags_horizontal = 0
+size_flags_vertical = 8
+size_flags_stretch_ratio = 2.81
 theme_override_constants/separation = 24
 
-[node name="Start" type="Button" parent="TitleMenuContainer/VBoxContainer/VBoxContainer"]
+[node name="Start" type="Button" parent="TitleMenuContainer/VBoxContainer"]
 custom_minimum_size = Vector2(384, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Begin"
 
-[node name="Options" type="Button" parent="TitleMenuContainer/VBoxContainer/VBoxContainer"]
+[node name="Options" type="Button" parent="TitleMenuContainer/VBoxContainer"]
 custom_minimum_size = Vector2(384, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Options"
 
-[node name="Quit Game" type="Button" parent="TitleMenuContainer/VBoxContainer/VBoxContainer"]
+[node name="Quit Game" type="Button" parent="TitleMenuContainer/VBoxContainer"]
 custom_minimum_size = Vector2(384, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -86,7 +85,7 @@ stream = ExtResource("5_lnbxr")
 volume_db = -20.0
 bus = &"Music"
 
-[connection signal="pressed" from="TitleMenuContainer/VBoxContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="TitleMenuContainer/VBoxContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="TitleMenuContainer/VBoxContainer/VBoxContainer/Quit Game" to="." method="_on_quit_game_pressed"]
+[connection signal="pressed" from="TitleMenuContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="TitleMenuContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="TitleMenuContainer/VBoxContainer/Quit Game" to="." method="_on_quit_game_pressed"]
 [connection signal="finished" from="music" to="." method="_on_music_finished"]

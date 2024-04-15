@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bw7bp573fvdna"]
+[gd_scene load_steps=15 format=3 uid="uid://bw7bp573fvdna"]
 
 [ext_resource type="Script" path="res://Level/court_case.gd" id="1_pkilm"]
 [ext_resource type="PackedScene" uid="uid://cgi8g0srvwpng" path="res://Menus/pause_menu.tscn" id="2_50iay"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bxqhdewrrr0w3" path="res://Summoning/summoning_circle.tscn" id="6_tlyd5"]
 [ext_resource type="Texture2D" uid="uid://bp0o268me54ys" path="res://Assets/stand.png" id="7_p0ma0"]
 [ext_resource type="PackedScene" uid="uid://je3aequkna2" path="res://Actors/bug.tscn" id="8_l58rr"]
+[ext_resource type="Texture2D" uid="uid://curnkypsfc62u" path="res://Assets/ld55smalllawyer.png" id="10_ix5oa"]
 [ext_resource type="AudioStream" uid="uid://c2kb08pc22qgy" path="res://Assets/Music/Courtcase Music loop .wav" id="13_kf1s7"]
 
 [node name="CourtCase" type="Node2D"]
@@ -59,6 +60,11 @@ position = Vector2(960, 672)
 [node name="SummoningCircle" parent="Subjects" instance=ExtResource("6_tlyd5")]
 position = Vector2(960, 800)
 
+[node name="Player" type="Sprite2D" parent="Subjects"]
+position = Vector2(1576, 520)
+texture = ExtResource("10_ix5oa")
+flip_h = true
+
 [node name="Foreground" type="CanvasLayer" parent="."]
 layer = 0
 
@@ -80,4 +86,5 @@ stream = ExtResource("13_kf1s7")
 volume_db = -20.0
 bus = &"Music"
 
+[connection signal="dead" from="Strikes" to="." method="_on_strikes_dead"]
 [connection signal="finished" from="Music" to="." method="_on_music_finished"]

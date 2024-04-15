@@ -1,6 +1,7 @@
 extends CanvasLayer
 class_name StrikeDisplay
 
+signal dead
 @onready var strike_scene = preload ("res://Level/Strikes/strike.tscn")
 @onready var container: HBoxContainer = $MarginContainer/Container
 @export var NUM_STRIKES: int = 3
@@ -11,6 +12,8 @@ var current_strike: int
 func handle_strike() -> void:
 	if current_strike < 0:
 		return
+	if current_strike == 0:
+		dead.emit()
 	container.get_child(current_strike).set_used()
 	current_strike -= 1
 	

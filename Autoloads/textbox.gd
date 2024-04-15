@@ -30,8 +30,10 @@ func start_dialogue(lines: Dialogue):
 		self.show()
 	if container.visible == false:
 		container.show()
-
+	
 	dialogue_lines = lines
+	
+	print(dialogue_lines.lines[0].message)
 	current_line_index = 0
 	is_dialogue_active = true
 	can_advance_line = false
@@ -71,10 +73,13 @@ func show_line():
 	while dialogue_lines.lines[current_line_index].speaker == "EVENT":
 		print("EVENT: "+dialogue_lines.lines[current_line_index].message)
 		
-		if dialogue_lines.lines[current_line_index].message == "PAUSE":
+		#EVENT PAUSE_[some number] triggers a dramatic pause for that amount of seconds
+		if dialogue_lines.lines[current_line_index].message.contains("PAUSE"):
 			container.hide()
 			can_advance_line = false
-			dramatic_pause.start(12)
+			var time = int(dialogue_lines.lines[current_line_index].message.substr(6))
+			print(time)
+			dramatic_pause.start(time)
 			current_line_index += 1
 			return
 		

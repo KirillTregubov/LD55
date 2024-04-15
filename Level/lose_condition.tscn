@@ -1,0 +1,77 @@
+[gd_scene load_steps=13 format=3 uid="uid://cd87bcpqevolg"]
+
+[ext_resource type="Script" path="res://Level/lose_condition.gd" id="1_5hg75"]
+[ext_resource type="Resource" uid="uid://dmue4gar2bfof" path="res://Script/lose_condition.tres" id="2_uo0ov"]
+[ext_resource type="Texture2D" uid="uid://e0nkg0ehdkj2" path="res://Assets/background.png" id="3_ntqcc"]
+[ext_resource type="PackedScene" uid="uid://bv8rxwcvq7cwx" path="res://Actors/judge.tscn" id="4_53soy"]
+[ext_resource type="Texture2D" uid="uid://cdutcglkydg1o" path="res://Assets/desk.png" id="5_1nnbq"]
+[ext_resource type="Texture2D" uid="uid://cpj33cilvi42f" path="res://Assets/summoning_circle.png" id="6_blgmp"]
+[ext_resource type="Texture2D" uid="uid://bp0o268me54ys" path="res://Assets/stand.png" id="7_2y3tb"]
+[ext_resource type="Texture2D" uid="uid://c0ig8smk114ah" path="res://Assets/defendant_back.png" id="8_if2m5"]
+[ext_resource type="Texture2D" uid="uid://curnkypsfc62u" path="res://Assets/ld55smalllawyer.png" id="9_2xylc"]
+[ext_resource type="Texture2D" uid="uid://ds6gvx3pd4j20" path="res://Assets/Crowd.png" id="10_s14mt"]
+[ext_resource type="PackedScene" uid="uid://cgi8g0srvwpng" path="res://Menus/pause_menu.tscn" id="12_cvjfj"]
+[ext_resource type="PackedScene" uid="uid://bvphsu5igd6xu" path="res://Level/Death/death.tscn" id="15_w3jnj"]
+
+[node name="LoseCondition" type="Node2D"]
+script = ExtResource("1_5hg75")
+opening = ExtResource("2_uo0ov")
+metadata/_edit_vertical_guides_ = [959.0, -242.0]
+metadata/_edit_horizontal_guides_ = [611.0]
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_ntqcc")
+
+[node name="Subjects" type="Node2D" parent="."]
+
+[node name="Judge" parent="Subjects" instance=ExtResource("4_53soy")]
+position = Vector2(960, 400)
+
+[node name="LeftDesk" type="Sprite2D" parent="Subjects"]
+position = Vector2(360, 730)
+texture = ExtResource("5_1nnbq")
+flip_h = true
+
+[node name="RightDesk" type="Sprite2D" parent="Subjects"]
+position = Vector2(1560, 730)
+texture = ExtResource("5_1nnbq")
+
+[node name="Circle" type="Sprite2D" parent="Subjects"]
+position = Vector2(960, 890)
+texture = ExtResource("6_blgmp")
+
+[node name="Stand" type="Sprite2D" parent="Subjects"]
+position = Vector2(960, 750)
+texture = ExtResource("7_2y3tb")
+
+[node name="Defendant" type="Sprite2D" parent="Subjects"]
+position = Vector2(960, 710)
+texture = ExtResource("8_if2m5")
+
+[node name="Player" type="Sprite2D" parent="Subjects"]
+position = Vector2(1576, 520)
+texture = ExtResource("9_2xylc")
+flip_h = true
+
+[node name="Foreground" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="TextureRect" type="TextureRect" parent="Foreground"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_s14mt")
+
+[node name="PauseMenu" parent="." instance=ExtResource("12_cvjfj")]
+
+[node name="DeathScreen" parent="." instance=ExtResource("15_w3jnj")]

@@ -1,28 +1,261 @@
-[gd_scene load_steps=3 format=3 uid="uid://bvphsu5igd6xu"]
+[gd_scene load_steps=12 format=3 uid="uid://bvphsu5igd6xu"]
 
 [ext_resource type="Shader" path="res://Level/Death/death.gdshader" id="1_hyoxf"]
+[ext_resource type="Script" path="res://Level/Death/death.gd" id="1_u2u4w"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_gx7qq"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_jfywt"]
+noise = SubResource("FastNoiseLite_gx7qq")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_e2xdp"]
+noise_type = 4
+frequency = 0.0233
+fractal_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_4u7wm"]
+noise = SubResource("FastNoiseLite_e2xdp")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gj07d"]
 shader = ExtResource("1_hyoxf")
-shader_parameter/horizon = null
-shader_parameter/wave_frequency = null
-shader_parameter/wave_magnitude = null
-shader_parameter/tides_magnitude = null
-shader_parameter/noise_wave = null
-shader_parameter/tides_speed = null
-shader_parameter/wave_speed = null
-shader_parameter/shine_position = null
-shader_parameter/shine_itensity = null
-shader_parameter/shine_width = null
-shader_parameter/shine_color = null
-shader_parameter/water_color = null
+shader_parameter/horizon = 0.0
+shader_parameter/wave_frequency = 5.0
+shader_parameter/wave_magnitude = 0.05
+shader_parameter/tides_magnitude = 0.05
+shader_parameter/noise_wave = 3.0
+shader_parameter/tides_speed = 2.0
+shader_parameter/wave_speed = 2.0
+shader_parameter/shine_position = 0.496
+shader_parameter/shine_itensity = 0.325
+shader_parameter/shine_width = 0.712
+shader_parameter/shine_color = Color(0, 0, 0, 1)
+shader_parameter/water_color = Color(0.4, 0, 0, 1)
+shader_parameter/noise = SubResource("NoiseTexture2D_jfywt")
+shader_parameter/noise2 = SubResource("NoiseTexture2D_4u7wm")
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[sub_resource type="Animation" id="Animation_6swro"]
+resource_name = "dead"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Blood:material:shader_parameter/horizon")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Blood:material:shader_parameter/wave_frequency")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [5.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Blood:material:shader_parameter/wave_magnitude")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.05, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Blood:material:shader_parameter/tides_magnitude")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.05, 0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Blood:material:shader_parameter/noise_wave")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [3.0, 0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Background:color")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[sub_resource type="Animation" id="Animation_yhpvn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Blood:material:shader_parameter/horizon")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Blood:material:shader_parameter/wave_frequency")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [5.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Blood:material:shader_parameter/wave_magnitude")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.05]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Blood:material:shader_parameter/tides_magnitude")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.05]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Blood:material:shader_parameter/noise_wave")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Background:color")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Foreground:color")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_kgp1i"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Foreground:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yimmn"]
+_data = {
+"RESET": SubResource("Animation_yhpvn"),
+"dead": SubResource("Animation_6swro"),
+"fade_out": SubResource("Animation_kgp1i")
+}
+
+[node name="DeathScreen" type="CanvasLayer"]
+script = ExtResource("1_u2u4w")
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="Blood" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_gj07d")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_yimmn")
+}
+
+[node name="BlackTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Foreground" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="DeadTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="timeout" from="BlackTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="DeadTimer" to="." method="_on_dead_timer_timeout"]

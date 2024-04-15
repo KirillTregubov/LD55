@@ -1,0 +1,45 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=10 format=3 uid="uid://dmue4gar2bfof"]
+
+[ext_resource type="Script" path="res://Resources/dialogue.gd" id="1_82e1e"]
+[ext_resource type="Script" path="res://Resources/line.gd" id="1_rjkhu"]
+
+[sub_resource type="Resource" id="Resource_yntsi"]
+script = ExtResource("1_rjkhu")
+speaker = "EVENT"
+message = "PAUSE_1"
+
+[sub_resource type="Resource" id="Resource_214ep"]
+script = ExtResource("1_rjkhu")
+speaker = "Judge Belzebufo"
+message = "That's enough!"
+
+[sub_resource type="Resource" id="Resource_y70js"]
+script = ExtResource("1_rjkhu")
+speaker = "Judge Belzebufo"
+message = "I’ve made my verdict."
+
+[sub_resource type="Resource" id="Resource_xqv8s"]
+script = ExtResource("1_rjkhu")
+speaker = "Judge Belzebufo"
+message = "I cast the defendant, Mr Abaddon, into the deepest pits of hell."
+
+[sub_resource type="Resource" id="Resource_d4gwg"]
+script = ExtResource("1_rjkhu")
+speaker = "EVENT"
+message = "eat"
+
+[sub_resource type="Resource" id="Resource_t4gv7"]
+script = ExtResource("1_rjkhu")
+speaker = "EVENT"
+message = "dead"
+
+[sub_resource type="Resource" id="Resource_e32um"]
+script = ExtResource("1_rjkhu")
+speaker = "Judge Belzebufo"
+message = "Ribbit."
+
+[resource]
+script = ExtResource("1_82e1e")
+lines = Array[ExtResource("1_rjkhu")]([SubResource("Resource_yntsi"), SubResource("Resource_214ep"), SubResource("Resource_y70js"), SubResource("Resource_xqv8s"), SubResource("Resource_d4gwg"), SubResource("Resource_t4gv7"), SubResource("Resource_e32um")])
+end_choice_lines = Array[String]([])
+end_choice_pointer = Array[ExtResource("1_82e1e")]([])
