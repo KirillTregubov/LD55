@@ -2,7 +2,7 @@ extends CanvasLayer
 
 @onready var container = $VBoxContainer/MarginContainer/ButtonContainer
 @onready var button_scene = preload("res://Menus/choice_button.tscn")
-@export var audio_track: AudioStream = preload("res://Assets/SFX/option_click.wav")
+@export var audio_track: AudioStream = preload("res://Assets/SFX/select.wav")
 
 func display_choices(words: Array[String], choices: Array[Dialogue]):
 	var index = 0
