@@ -86,5 +86,7 @@ stream = ExtResource("13_kf1s7")
 volume_db = -20.0
 bus = &"Music"
 
+[node name="Node2D" type="Node2D" parent="."]
+
 [connection signal="dead" from="Strikes" to="." method="_on_strikes_dead"]
 [connection signal="finished" from="Music" to="." method="_on_music_finished"]

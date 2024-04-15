@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 @onready var animation = $AnimationPlayer
+var done = false
 
 func _ready():
 	visible = false
@@ -13,9 +14,7 @@ func _on_animation_player_animation_finished(anim_name):
 		"dead":
 			$BlackTimer.start(.5)
 		"fade_out":
-			animation.stop()
-			get_tree().change_scene_to_file("res://Menus/start_menu.tscn")
-	
+			done = true
 
 func _on_timer_timeout():
 	$Foreground.visible = true
@@ -25,3 +24,7 @@ func _on_timer_timeout():
 func _on_dead_timer_timeout():
 	visible = true
 	animation.play("dead")
+
+func _input(event):
+	if event.is_action_pressed("newGame") && done:
+		get_tree().change_scene_to_file("res://Menus/start_menu.tscn")
