@@ -1,13 +1,13 @@
 extends CanvasLayer
 
-enum Witness {Abaddon, Bug, Chester}
+enum Witness {Abaddon, Bug, Chester, Mosquito}
 var current_witness: Witness
 
 @onready var background = $Background
 @onready var bug = $Bug
 @onready var chester = $Chester
 @onready var abaddon = $Abaddon
-
+@onready var mosquito = $Mosquito
 
 func _ready():
 	DialogueManager.scripted_event.connect(handle_events)
@@ -16,6 +16,7 @@ func _ready():
 	bug.visible = false
 	chester.visible = false
 	abaddon.visible = false
+	mosquito.visible = false
 	
 func handle_events(event: String):
 	match event:
@@ -25,6 +26,8 @@ func handle_events(event: String):
 			chester_appear()
 		"abaddon_appear":
 			abaddon_appear()
+		"mosquito_appear":
+			mosquito_appear()
 		"disappear":
 			witness_visiblity(false)
 	
@@ -37,6 +40,8 @@ func witness_visiblity(seen: bool):
 			chester.visible = seen
 		Witness.Abaddon:
 			abaddon.visible = seen	
+		Witness.Mosquito:
+			mosquito.visible = seen	
 
 func talk(isTalking: bool, person: String):
 	match person:
@@ -55,6 +60,11 @@ func talk(isTalking: bool, person: String):
 				abaddon.play("talking")
 			else:
 				abaddon.play("default")
+		"Mosquito":
+			if isTalking:
+				mosquito.play("talking")
+			else:
+				mosquito.play("default")
 
 func bug_appear():
 	current_witness = Witness.Bug
@@ -66,4 +76,8 @@ func chester_appear():
 	
 func abaddon_appear():
 	current_witness = Witness.Abaddon
+	witness_visiblity(true)
+	
+func mosquito_appear():
+	current_witness = Witness.Mosquito
 	witness_visiblity(true)

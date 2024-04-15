@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=6 format=3 uid="uid://dqq3choal104q"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=10 format=3 uid="uid://dqq3choal104q"]
 
 [ext_resource type="Script" path="res://Resources/dialogue.gd" id="1_do2iu"]
 [ext_resource type="Script" path="res://Resources/line.gd" id="1_vef14"]
@@ -14,13 +14,33 @@ script = ExtResource("1_vef14")
 speaker = "Judge Belzebufo"
 message = "Ayo"
 
-[sub_resource type="Resource" id="Resource_53oic"]
+[sub_resource type="Resource" id="Resource_6aq7m"]
+script = ExtResource("1_vef14")
+speaker = "EVENT"
+message = "mosquito_appear"
+
+[sub_resource type="Resource" id="Resource_h55ta"]
+script = ExtResource("1_vef14")
+speaker = "Mosquito"
+message = "Hello deary."
+
+[sub_resource type="Resource" id="Resource_73n31"]
+script = ExtResource("1_vef14")
+speaker = "EVENT"
+message = "strike"
+
+[sub_resource type="Resource" id="Resource_8sqdp"]
+script = ExtResource("1_vef14")
+speaker = "EVENT"
+message = "strike"
+
+[sub_resource type="Resource" id="Resource_imrsq"]
 script = ExtResource("1_vef14")
 speaker = "EVENT"
 message = "strike"
 
 [resource]
 script = ExtResource("1_do2iu")
-lines = Array[ExtResource("1_vef14")]([SubResource("Resource_1xhkn"), SubResource("Resource_53oic"), SubResource("Resource_53oic"), SubResource("Resource_53oic")])
+lines = Array[ExtResource("1_vef14")]([SubResource("Resource_1xhkn"), SubResource("Resource_6aq7m"), SubResource("Resource_h55ta"), SubResource("Resource_73n31"), SubResource("Resource_8sqdp"), SubResource("Resource_imrsq")])
 end_choice_lines = Array[String]([])
 end_choice_pointer = Array[ExtResource("1_do2iu")]([SubResource("Resource_8k20g")])

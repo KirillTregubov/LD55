@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cshrl8h25y0ye"]
+[gd_scene load_steps=18 format=3 uid="uid://cshrl8h25y0ye"]
 
 [ext_resource type="Script" path="res://Actors/witness_layer.gd" id="1_r7cs5"]
 [ext_resource type="Texture2D" uid="uid://bb5pa1h4e0ncb" path="res://Assets/Bug/beetle.png" id="1_vuou3"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://lvdxm61g8fnk" path="res://Assets/Abaddon/defendant_clueless.png" id="7_2g4ck"]
 [ext_resource type="Texture2D" uid="uid://ou0qwws0ec1s" path="res://Assets/Abaddon/defendant_remembersomething.png" id="8_7uejf"]
 [ext_resource type="Texture2D" uid="uid://c817sl1k6xjuh" path="res://Assets/Abaddon/defendant_talking.png" id="9_vw45j"]
+[ext_resource type="Texture2D" uid="uid://v7athv1rms4p" path="res://Assets/Mosquito/ld55_mosquito.png" id="12_p2jkl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_erp6e"]
 shader = ExtResource("1_wyuvj")
@@ -115,6 +116,25 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_cx652"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_p2jkl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_p2jkl")
+}],
+"loop": true,
+"name": &"talking",
+"speed": 5.0
+}]
+
 [node name="Stand" type="CanvasLayer"]
 script = ExtResource("1_r7cs5")
 
@@ -142,4 +162,10 @@ animation = &"talking"
 visible = false
 position = Vector2(960, 540)
 sprite_frames = SubResource("SpriteFrames_tkjiy")
+animation = &"talking"
+
+[node name="Mosquito" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(960, 540)
+sprite_frames = SubResource("SpriteFrames_cx652")
 animation = &"talking"
