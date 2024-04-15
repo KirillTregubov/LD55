@@ -6,9 +6,7 @@ extends CanvasLayer
 @onready var track = preload ("res://Assets/Music/hammond_hill.wav")
 
 func _ready():
-	MusicPlayer.set_target_volume(-10)
-	MusicPlayer.set_track(track)
-	MusicPlayer.start_playing()
+	MusicPlayer.start_playing(track, -10)
 	OptionsMenu.exit.connect(back_button)
 
 func _on_options_pressed() -> void:

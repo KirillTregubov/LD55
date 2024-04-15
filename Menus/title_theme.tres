@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=10 format=3 uid="uid://cka8166tlappp"]
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://bpy41c0s1ej60"]
 
 [ext_resource type="FontFile" uid="uid://cwaj557jghxpo" path="res://Theme/EB_Garamond/static/EBGaramond-Regular.ttf" id="1_l32wd"]
 [ext_resource type="Texture2D" uid="uid://t6uheb3y1gq7" path="res://Assets/ButtonHoverLarge.png" id="2_0g28c"]

@@ -6,7 +6,7 @@ extends CanvasLayer
 @onready var container = $Container
 @onready var choices = $ChoiceLayer
 @onready var dramatic_pause = $DramaticPauseTimer
-@onready var audio = $audio
+@export var audio_track: AudioStream = preload ("res://Assets/SFX/single_vowel.wav")
 
 var dialogue_lines: Dialogue
 var current_line_index = 0
@@ -67,26 +67,20 @@ func display_letter():
 			timer.start(space_time)
 		_:
 			timer.start(letter_time)
-			
-			var new_audio = audio.duplicate()
-			var pitch = randf_range(0.9,1.1)
-			new_audio.set_pitch_scale(pitch)
-			if text[letter_index] in ["a","e","i","o","u"]:
-				new_audio.pitch_scale += 0.2
-				
-			get_tree().root.add_child(new_audio)
-			new_audio.play()
-			await new_audio.finished
-			new_audio.queue_free()
-	
+
+			var pitch = randf_range(0.9, 1.1)
+			if text[letter_index] in ["a", "e", "i", "o", "u"]:
+				pitch += 0.2
+			SoundPlayer.play_sound(audio_track, pitch)
+
 # when timer runs out, display next letter of message
 func _on_letter_display_timer_timeout():
 	display_letter()
-	
+
 # call display_text() for current line. If speaker is "EVENT", emit scripted_event and hanlde next line.
 func show_line():
 	while dialogue_lines.lines[current_line_index].speaker == "EVENT":
-		print("EVENT: "+dialogue_lines.lines[current_line_index].message)
+		print("EVENT: " + dialogue_lines.lines[current_line_index].message)
 		
 		#EVENT PAUSE_[some number] triggers a dramatic pause for that amount of seconds
 		if dialogue_lines.lines[current_line_index].message.contains("PAUSE"):

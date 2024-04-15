@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bxqhdewrrr0w3"]
+[gd_scene load_steps=6 format=3 uid="uid://bxqhdewrrr0w3"]
 
 [ext_resource type="Texture2D" uid="uid://fd62arnh31ct" path="res://Assets/flame_03.png" id="1_1jnb8"]
 [ext_resource type="Script" path="res://Summoning/summoning_circle.gd" id="1_nvlsq"]
-[ext_resource type="AudioStream" uid="uid://dqtpytrucrlo4" path="res://Assets/SFX/summoning_3.wav" id="3_0q710"]
 
 [sub_resource type="Gradient" id="Gradient_av8bq"]
 colors = PackedColorArray(0, 0, 0, 1, 0.776471, 0, 0, 1)
@@ -34,10 +33,5 @@ lifetime = 1.2
 [node name="Timer" type="Timer" parent="."]
 wait_time = 9.0
 one_shot = true
-
-[node name="SFX" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_0q710")
-volume_db = -20.0
-bus = &"SFX"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -5,7 +5,7 @@ signal closeup(canTalk: bool)
 @export var opening: Dialogue
 @onready var witness_1 = $Subjects/BugWitness
 @onready var circle = $Subjects/SummoningCircle
-@onready var track = preload ("res://Assets/Music/Courtcase Music loop .wav")
+@export var track = preload ("res://Assets/Music/Courtcase Music loop .wav")
 @onready var camera = $Camera2D
 @onready var lose = preload ("res://Level/lose_condition.tscn")
 @onready var foreground = $Foreground
@@ -36,10 +36,7 @@ func handle_summon1():
 	witness_1.summon()
 
 func start_music():
-	MusicPlayer.set_target_volume( - 10)
-	MusicPlayer.set_track(track)
-	MusicPlayer.start_playing()
-	pass
+	MusicPlayer.start_playing(track, -10)
 
 func _on_strikes_dead():
 	get_tree().change_scene_to_packed(lose)

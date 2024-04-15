@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bw7bp573fvdna"]
+[gd_scene load_steps=16 format=3 uid="uid://bw7bp573fvdna"]
 
 [ext_resource type="Script" path="res://Level/court_case.gd" id="1_pkilm"]
 [ext_resource type="PackedScene" uid="uid://cgi8g0srvwpng" path="res://Menus/pause_menu.tscn" id="2_50iay"]
@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bp0o268me54ys" path="res://Assets/stand.png" id="7_p0ma0"]
 [ext_resource type="PackedScene" uid="uid://je3aequkna2" path="res://Actors/bug.tscn" id="8_l58rr"]
 [ext_resource type="PackedScene" uid="uid://bfsd4wjb54gd4" path="res://Actors/player.tscn" id="10_pp00g"]
-[ext_resource type="PackedScene" uid="uid://cshrl8h25y0ye" path="res://Actors/witness_layer.tscn" id="12_tswr3"]
+[ext_resource type="PackedScene" path="res://Actors/witness_layer.tscn" id="12_tswr3"]
 [ext_resource type="AudioStream" uid="uid://c2kb08pc22qgy" path="res://Assets/Music/Courtcase Music loop .wav" id="13_kf1s7"]
 
 [node name="CourtCase" type="Node2D"]

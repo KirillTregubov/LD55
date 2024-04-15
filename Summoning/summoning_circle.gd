@@ -1,12 +1,12 @@
 extends Node2D
 @onready var particles = $GPUParticles2D
 @onready var timer = $Timer
-@onready var sound = $SFX
+@export var audio_track: AudioStream = preload ("res://Assets/SFX/summoning_3.wav")
 
 func start_summoning():
 	particles.emitting = true
 	timer.start()
-	sound.play()
+	SoundPlayer.play_sound(audio_track, 1.0, -10)
 
 func _on_timer_timeout():
 	particles.emitting = false

@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://b8iwg2etjghi"]
+[gd_scene load_steps=5 format=3 uid="uid://b8iwg2etjghi"]
 
 [ext_resource type="Script" path="res://Autoloads/textbox.gd" id="1_0c11q"]
 [ext_resource type="Theme" uid="uid://dkqrfy3kvl768" path="res://Menus/menu_theme.tres" id="1_a6le3"]
 [ext_resource type="PackedScene" uid="uid://d0f2a1qyxli21" path="res://Menus/choice_layer.tscn" id="3_ql4ss"]
 [ext_resource type="FontFile" uid="uid://5mdnkiqe5rns" path="res://Theme/NotoSansBatak-Regular.ttf" id="3_ysj2i"]
-[ext_resource type="AudioStream" uid="uid://yknosivhdbu0" path="res://Assets/SFX/single_vowel.wav" id="5_3eo3g"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_0c11q")
@@ -89,10 +88,6 @@ one_shot = true
 
 [node name="DramaticPauseTimer" type="Timer" parent="."]
 one_shot = true
-
-[node name="audio" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_3eo3g")
-bus = &"SFX"
 
 [connection signal="timeout" from="LetterDisplayTimer" to="." method="_on_letter_display_timer_timeout"]
 [connection signal="timeout" from="DramaticPauseTimer" to="." method="_on_dramatic_pause_timer_timeout"]
