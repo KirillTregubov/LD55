@@ -1,0 +1,160 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=33 format=3 uid="uid://dohbbbmmv6ljx"]
+
+[ext_resource type="Script" path="res://Resources/line.gd" id="1_e3lhf"]
+[ext_resource type="Script" path="res://Resources/dialogue.gd" id="1_o0ytv"]
+
+[sub_resource type="Resource" id="Resource_a5a2d"]
+script = ExtResource("1_e3lhf")
+speaker = "Jaya"
+message = "... as a court-summoned attorney."
+
+[sub_resource type="Resource" id="Resource_745xi"]
+script = ExtResource("1_e3lhf")
+speaker = "EVENT"
+message = "camera_disabled"
+
+[sub_resource type="Resource" id="Resource_e07e0"]
+script = ExtResource("1_e3lhf")
+speaker = "EVENT"
+message = "start_music"
+
+[sub_resource type="Resource" id="Resource_l8xfx"]
+script = ExtResource("1_e3lhf")
+speaker = "Judge Belzebufo"
+message = "The sentencing of Abaddon is now in session."
+
+[sub_resource type="Resource" id="Resource_dr3e1"]
+script = ExtResource("1_e3lhf")
+speaker = "EVENT"
+message = "camera_enabled"
+
+[sub_resource type="Resource" id="Resource_uhhrr"]
+script = ExtResource("1_e3lhf")
+speaker = "Jaya"
+message = "(I want to die.)"
+
+[sub_resource type="Resource" id="Resource_4bnxj"]
+script = ExtResource("1_e3lhf")
+speaker = "Jaya"
+message = "(Maybe a second or third time will do it for me?)"
+
+[sub_resource type="Resource" id="Resource_gsth3"]
+script = ExtResource("1_e3lhf")
+speaker = "Jaya"
+message = "(What I do know is that this is no court.)"
+
+[sub_resource type="Resource" id="Resource_w23bd"]
+script = ExtResource("1_e3lhf")
+speaker = "Jaya"
+message = "(As a denizen of Hell, I only remember mere fragments of my past life.)"
+
+[sub_resource type="Resource" id="Resource_e77sl"]
+script = ExtResource("1_e3lhf")
+speaker = "Jaya"
+message = "(Like a dream. Just flashes and feelings.)"
+
+[sub_resource type="Resource" id="Resource_ufoyp"]
+script = ExtResource("1_e3lhf")
+speaker = "Jaya"
+message = "(I was a scholar. A legal scholar from a place long forgotten, a place that once called itself civilized.)"
+
+[sub_resource type="Resource" id="Resource_18cjl"]
+script = ExtResource("1_e3lhf")
+speaker = "Jaya"
+message = "(Now I stand here, defending the damned defendants from the harshest possible punishments, striving for justice befitting their time on Earth.)"
+
+[sub_resource type="Resource" id="Resource_shc75"]
+script = ExtResource("1_e3lhf")
+speaker = "Jaya"
+message = "(And to make matters worse, I get zero time to prepare for my case.)"
+
+[sub_resource type="Resource" id="Resource_rw8o3"]
+script = ExtResource("1_e3lhf")
+speaker = "Jaya"
+message = "(What horseshit.)"
+
+[sub_resource type="Resource" id="Resource_51mnk"]
+script = ExtResource("1_e3lhf")
+speaker = "Jaya"
+message = "(And yet, I can’t refuse when summoned.)"
+
+[sub_resource type="Resource" id="Resource_aunl8"]
+script = ExtResource("1_e3lhf")
+speaker = "Jaya"
+message = "(It’s my duty, my purpose.)"
+
+[sub_resource type="Resource" id="Resource_b6i58"]
+script = ExtResource("1_e3lhf")
+speaker = "Jaya"
+message = "(...)"
+
+[sub_resource type="Resource" id="Resource_ap53i"]
+script = ExtResource("1_e3lhf")
+speaker = "Jaya"
+message = "(Also I need money.)"
+
+[sub_resource type="Resource" id="Resource_ys0br"]
+script = ExtResource("1_e3lhf")
+speaker = "Judge Belzebufo"
+message = "Advocate Jaya?"
+
+[sub_resource type="Resource" id="Resource_664od"]
+script = ExtResource("1_e3lhf")
+speaker = "Jaya"
+message = "(I’m behind on rent and I am NOT giving up my condo in Circle 5.)"
+
+[sub_resource type="Resource" id="Resource_j1ovt"]
+script = ExtResource("1_e3lhf")
+speaker = "Judge Belzebufo"
+message = "Advocate?"
+
+[sub_resource type="Resource" id="Resource_6pewh"]
+script = ExtResource("1_e3lhf")
+speaker = "Jaya"
+message = "(I worked hard for my view of the water. If it means fighting tooth and nail to increase my legal fee by winning, so be it.) "
+
+[sub_resource type="Resource" id="Resource_qx4t1"]
+script = ExtResource("1_e3lhf")
+speaker = "Jaya"
+message = "(Plus, why did my rent have to increase over ‘repeated HOA fines’? NO ONE CAN FIGURE OUT THE GARBAGE DAY SCHEDULE, JENNA. THIS IS HELL WE’RE IN! THERE’S NO SUN!)"
+
+[sub_resource type="Resource" id="Resource_mqixv"]
+script = ExtResource("1_e3lhf")
+speaker = "Judge Belzebufo"
+message = "Jaya!"
+
+[sub_resource type="Resource" id="Resource_rgkbw"]
+script = ExtResource("1_e3lhf")
+speaker = "Jaya"
+message = "Present!"
+
+[sub_resource type="Resource" id="Resource_dhhfa"]
+script = ExtResource("1_e3lhf")
+speaker = "EVENT"
+message = "camera_disabled"
+
+[sub_resource type="Resource" id="Resource_fld8l"]
+script = ExtResource("1_e3lhf")
+speaker = "Judge Belzebufo"
+message = "Need I remind you, Advocate Jaya, that your conduct will determine the fate of your client?"
+
+[sub_resource type="Resource" id="Resource_02uuh"]
+script = ExtResource("1_e3lhf")
+speaker = "Jaya"
+message = "(And my pay cut...)"
+
+[sub_resource type="Resource" id="Resource_4egp6"]
+script = ExtResource("1_e3lhf")
+speaker = "Judge Belzebufo"
+message = "We conduct serious business here in Hell. As the Judge, my ruling on the trial of the recently deceased soul known as Abaddon is final."
+
+[sub_resource type="Resource" id="Resource_337rq"]
+script = ExtResource("1_e3lhf")
+speaker = "Judge Belzebufo"
+message = "And remember, should the evidence become overwhelmingly clear, I will not hesitate to come to a swift ruling."
+
+[resource]
+script = ExtResource("1_o0ytv")
+lines = Array[ExtResource("1_e3lhf")]([SubResource("Resource_a5a2d"), SubResource("Resource_745xi"), SubResource("Resource_e07e0"), SubResource("Resource_l8xfx"), SubResource("Resource_dr3e1"), SubResource("Resource_uhhrr"), SubResource("Resource_4bnxj"), SubResource("Resource_gsth3"), SubResource("Resource_w23bd"), SubResource("Resource_e77sl"), SubResource("Resource_ufoyp"), SubResource("Resource_18cjl"), SubResource("Resource_shc75"), SubResource("Resource_rw8o3"), SubResource("Resource_51mnk"), SubResource("Resource_aunl8"), SubResource("Resource_b6i58"), SubResource("Resource_ap53i"), SubResource("Resource_ys0br"), SubResource("Resource_664od"), SubResource("Resource_j1ovt"), SubResource("Resource_6pewh"), SubResource("Resource_qx4t1"), SubResource("Resource_mqixv"), SubResource("Resource_rgkbw"), SubResource("Resource_dhhfa"), SubResource("Resource_fld8l"), SubResource("Resource_02uuh"), SubResource("Resource_4egp6"), SubResource("Resource_337rq")])
+end_choice_lines = Array[String]([])
+end_choice_pointer = Array[ExtResource("1_o0ytv")]([])
