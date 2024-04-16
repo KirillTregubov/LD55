@@ -1,0 +1,55 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=12 format=3 uid="uid://go1ntkvrlejx"]
+
+[ext_resource type="Script" path="res://Resources/dialogue.gd" id="1_5wepa"]
+[ext_resource type="Script" path="res://Resources/line.gd" id="1_q0tl0"]
+
+[sub_resource type="Resource" id="Resource_wsdo0"]
+script = ExtResource("1_q0tl0")
+speaker = "TYPING"
+message = "One hour passes…"
+
+[sub_resource type="Resource" id="Resource_beimo"]
+script = ExtResource("1_q0tl0")
+speaker = "Judge Belzebufo"
+message = "Thank you for your testimony, Mrs. Le Guin."
+
+[sub_resource type="Resource" id="Resource_x177o"]
+script = ExtResource("1_q0tl0")
+speaker = "Jaya"
+message = "(I’m starving! Please tell me we’re finished…)"
+
+[sub_resource type="Resource" id="Resource_a13m4"]
+script = ExtResource("1_q0tl0")
+speaker = "Judge Belzebufo"
+message = "It seems that we have sent you to the wrong place… The evidence overwhelmingly concludes that you were a kind and caring parent to hundreds of souls back on Earth."
+
+[sub_resource type="Resource" id="Resource_40gvc"]
+script = ExtResource("1_q0tl0")
+speaker = "Judge Belzebufo"
+message = "Off to Heaven you go."
+
+[sub_resource type="Resource" id="Resource_cj5ke"]
+script = ExtResource("1_q0tl0")
+speaker = "Abaddon"
+message = "That was an option?"
+
+[sub_resource type="Resource" id="Resource_36s7i"]
+script = ExtResource("1_q0tl0")
+speaker = "EVENT"
+message = "disappear"
+
+[sub_resource type="Resource" id="Resource_ymsyw"]
+script = ExtResource("1_q0tl0")
+speaker = "Jaya"
+message = "(WHY CAN’T THAT HAPPEN TO ME!)"
+
+[sub_resource type="Resource" id="Resource_a8fn6"]
+script = ExtResource("1_q0tl0")
+speaker = "EVENT"
+message = "win"
+
+[resource]
+script = ExtResource("1_5wepa")
+lines = Array[ExtResource("1_q0tl0")]([SubResource("Resource_wsdo0"), SubResource("Resource_beimo"), SubResource("Resource_x177o"), SubResource("Resource_a13m4"), SubResource("Resource_40gvc"), SubResource("Resource_cj5ke"), SubResource("Resource_36s7i"), SubResource("Resource_ymsyw"), SubResource("Resource_a8fn6")])
+end_choice_lines = Array[String]([])
+end_choice_pointer = Array[ExtResource("1_5wepa")]([])

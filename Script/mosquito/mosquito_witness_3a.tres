@@ -1,0 +1,90 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=19 format=3 uid="uid://cy7l2amjd4rim"]
+
+[ext_resource type="Script" path="res://Resources/dialogue.gd" id="1_31ee4"]
+[ext_resource type="Script" path="res://Resources/line.gd" id="1_yhq3d"]
+
+[sub_resource type="Resource" id="Resource_04bjd"]
+script = ExtResource("1_yhq3d")
+speaker = "Jaya"
+message = "Except for-"
+
+[sub_resource type="Resource" id="Resource_0g7v6"]
+script = ExtResource("1_yhq3d")
+speaker = "Abaddon"
+message = "The needles she bought and used!"
+
+[sub_resource type="Resource" id="Resource_ekmot"]
+script = ExtResource("1_yhq3d")
+speaker = "Judge Belzebufo"
+message = "Defendant! I've warned you before, and I won't hesitate to hold you in contempt if you continue with these unfounded accusations."
+
+[sub_resource type="Resource" id="Resource_vfan7"]
+script = ExtResource("1_yhq3d")
+speaker = "Jaya"
+message = "Please let me handle this, Abaddon."
+
+[sub_resource type="Resource" id="Resource_gpaww"]
+script = ExtResource("1_yhq3d")
+speaker = "Jaya"
+message = "Judge… this lady was at the crime scene, had the weapons necessary, could have stabbed the victim with their proboscis (I’m so scientific!), and yet you still think my client did it… with his… fencing abilities?"
+
+[sub_resource type="Resource" id="Resource_awl6e"]
+script = ExtResource("1_yhq3d")
+speaker = "Judge Belzebufo"
+message = "Very well, Advocate."
+
+[sub_resource type="Resource" id="Resource_7esr3"]
+script = ExtResource("1_yhq3d")
+speaker = "Judge Belzebufo"
+message = "Thank you for your testimony, Mrs. Le Guin."
+
+[sub_resource type="Resource" id="Resource_n3uyv"]
+script = ExtResource("1_yhq3d")
+speaker = "Judge Belzebufo"
+message = "Due to the evidence brought to light in this court, you must stand on trial next."
+
+[sub_resource type="Resource" id="Resource_d7xwd"]
+script = ExtResource("1_yhq3d")
+speaker = "Jaya"
+message = "(I really hope I don’t have to defend this lady too…)"
+
+[sub_resource type="Resource" id="Resource_f0db1"]
+script = ExtResource("1_yhq3d")
+speaker = "Judge Belzebufo"
+message = "Don’t worry Advocate, you were only summoned for one trial."
+
+[sub_resource type="Resource" id="Resource_yogf6"]
+script = ExtResource("1_yhq3d")
+speaker = "Jaya"
+message = "(Phew.. Wait, is this Judge inside my head?)"
+
+[sub_resource type="Resource" id="Resource_kx2ue"]
+script = ExtResource("1_yhq3d")
+speaker = "Judge Belzebufo"
+message = "Ribbit."
+
+[sub_resource type="Resource" id="Resource_vb60l"]
+script = ExtResource("1_yhq3d")
+speaker = "Jaya"
+message = "What?"
+
+[sub_resource type="Resource" id="Resource_frb0k"]
+script = ExtResource("1_yhq3d")
+speaker = "Judge Belzebufo"
+message = "Witness, please proceed to the waiting room while we conclude this trial."
+
+[sub_resource type="Resource" id="Resource_ppmui"]
+script = ExtResource("1_yhq3d")
+speaker = "EVENT"
+message = "disappear"
+
+[sub_resource type="Resource" id="Resource_afkeu"]
+script = ExtResource("1_yhq3d")
+speaker = "EVENT"
+message = "win"
+
+[resource]
+script = ExtResource("1_31ee4")
+lines = Array[ExtResource("1_yhq3d")]([SubResource("Resource_04bjd"), SubResource("Resource_0g7v6"), SubResource("Resource_ekmot"), SubResource("Resource_vfan7"), SubResource("Resource_gpaww"), SubResource("Resource_awl6e"), SubResource("Resource_7esr3"), SubResource("Resource_n3uyv"), SubResource("Resource_d7xwd"), SubResource("Resource_f0db1"), SubResource("Resource_yogf6"), SubResource("Resource_kx2ue"), SubResource("Resource_vb60l"), SubResource("Resource_frb0k"), SubResource("Resource_ppmui"), SubResource("Resource_afkeu")])
+end_choice_lines = Array[String]([])
+end_choice_pointer = Array[ExtResource("1_31ee4")]([])
