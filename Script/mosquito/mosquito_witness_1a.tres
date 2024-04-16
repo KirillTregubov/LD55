@@ -1,8 +1,13 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=16 format=3 uid="uid://5klx454dsgyg"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=18 format=3 uid="uid://5klx454dsgyg"]
 
 [ext_resource type="Script" path="res://Resources/dialogue.gd" id="1_7qupu"]
 [ext_resource type="Resource" uid="uid://bsqle4x3tenv7" path="res://Script/mosquito/mosquito_witness_2.tres" id="1_th30l"]
 [ext_resource type="Script" path="res://Resources/line.gd" id="1_wodlt"]
+
+[sub_resource type="Resource" id="Resource_bi5bp"]
+script = ExtResource("1_wodlt")
+speaker = "EVENT"
+message = "camera_enabled"
 
 [sub_resource type="Resource" id="Resource_vmlhf"]
 script = ExtResource("1_wodlt")
@@ -13,6 +18,11 @@ message = "Judge, I would like to recall the testimony of the bug. He detailed 2
 script = ExtResource("1_wodlt")
 speaker = "Abaddon"
 message = "28 stab wounds! It must have been this mosquito lady!"
+
+[sub_resource type="Resource" id="Resource_5mf0s"]
+script = ExtResource("1_wodlt")
+speaker = "EVENT"
+message = "camera_disabled"
 
 [sub_resource type="Resource" id="Resource_qc5r5"]
 script = ExtResource("1_wodlt")
@@ -66,6 +76,6 @@ message = "Please move on with your testimony."
 
 [resource]
 script = ExtResource("1_7qupu")
-lines = Array[ExtResource("1_wodlt")]([SubResource("Resource_vmlhf"), SubResource("Resource_wr5wn"), SubResource("Resource_qc5r5"), SubResource("Resource_n7b14"), SubResource("Resource_tvrga"), SubResource("Resource_j6c31"), SubResource("Resource_1i7im"), SubResource("Resource_rx1at"), SubResource("Resource_3ve3t"), SubResource("Resource_25t7b"), SubResource("Resource_1y2xc"), SubResource("Resource_snmtg")])
+lines = Array[ExtResource("1_wodlt")]([SubResource("Resource_bi5bp"), SubResource("Resource_vmlhf"), SubResource("Resource_wr5wn"), SubResource("Resource_5mf0s"), SubResource("Resource_qc5r5"), SubResource("Resource_n7b14"), SubResource("Resource_tvrga"), SubResource("Resource_j6c31"), SubResource("Resource_1i7im"), SubResource("Resource_rx1at"), SubResource("Resource_3ve3t"), SubResource("Resource_25t7b"), SubResource("Resource_1y2xc"), SubResource("Resource_snmtg")])
 end_choice_lines = Array[String]([])
 end_choice_pointer = Array[ExtResource("1_7qupu")]([ExtResource("1_th30l")])
