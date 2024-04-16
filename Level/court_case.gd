@@ -55,6 +55,9 @@ func handle_scripted_events(event: String):
 			
 		"crowd_surprised":
 			foreground.crowd_surprised()
+			
+		"win":
+			get_tree().change_scene_to_file("res://Level/win_condition.tscn")
 
 func summon_bug_witness():
 	circle.start_summoning()
