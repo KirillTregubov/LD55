@@ -1,7 +1,100 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=5 format=3 uid="uid://bfw37l7dhqmux"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=24 format=3 uid="uid://bfw37l7dhqmux"]
 
 [ext_resource type="Script" path="res://Resources/line.gd" id="1_cgd38"]
 [ext_resource type="Script" path="res://Resources/dialogue.gd" id="1_fcrjw"]
+[ext_resource type="Resource" uid="uid://cy47msx1ytkn2" path="res://Script/chester/fish_witness_3.tres" id="1_mt8qx"]
+
+[sub_resource type="Resource" id="Resource_8lanr"]
+script = ExtResource("1_cgd38")
+speaker = "Jaya"
+message = "How many of these complaints were filed?"
+
+[sub_resource type="Resource" id="Resource_yfac0"]
+script = ExtResource("1_cgd38")
+speaker = "Chester"
+message = "Only one…"
+
+[sub_resource type="Resource" id="Resource_3chke"]
+script = ExtResource("1_cgd38")
+speaker = "Judge Belzebufo"
+message = "Chester, I remind you to choose your words carefully in this courtroom."
+
+[sub_resource type="Resource" id="Resource_cec3v"]
+script = ExtResource("1_cgd38")
+speaker = "Jaya"
+message = "And what was the relationship between my client and the person filing the report?"
+
+[sub_resource type="Resource" id="Resource_pmuft"]
+script = ExtResource("1_cgd38")
+speaker = "Chester"
+message = "Why would I tell you?! Where’s your sense of proprie-"
+
+[sub_resource type="Resource" id="Resource_jgqfa"]
+script = ExtResource("1_cgd38")
+speaker = "Chester"
+message = "Nah I’m just messing with you, it was his ex."
+
+[sub_resource type="Resource" id="Resource_ilas7"]
+script = ExtResource("1_cgd38")
+speaker = "Jaya"
+message = "Petition to strike that fact from the record."
+
+[sub_resource type="Resource" id="Resource_x75lh"]
+script = ExtResource("1_cgd38")
+speaker = "Judge Belzebufo"
+message = "On what grounds?"
+
+[sub_resource type="Resource" id="Resource_vm6o3"]
+script = ExtResource("1_cgd38")
+speaker = "Jaya"
+message = "On the grounds of relevance, Your Honor. The personal relationship between my client and the person filing the complaint should not influence the judgment of this case."
+
+[sub_resource type="Resource" id="Resource_spb1f"]
+script = ExtResource("1_cgd38")
+speaker = "EVENT"
+message = "restore"
+
+[sub_resource type="Resource" id="Resource_grt21"]
+script = ExtResource("1_cgd38")
+speaker = "Judge Belzebufo"
+message = "Very well. Now let’s speed things up, I am looking forward to having an early lunch."
+
+[sub_resource type="Resource" id="Resource_d86xh"]
+script = ExtResource("1_cgd38")
+speaker = "Jaya"
+message = "(WHAT? I haven’t even had breakfast yet!)"
+
+[sub_resource type="Resource" id="Resource_8shra"]
+script = ExtResource("1_fcrjw")
+lines = Array[ExtResource("1_cgd38")]([SubResource("Resource_8lanr"), SubResource("Resource_yfac0"), SubResource("Resource_3chke"), SubResource("Resource_cec3v"), SubResource("Resource_pmuft"), SubResource("Resource_jgqfa"), SubResource("Resource_ilas7"), SubResource("Resource_x75lh"), SubResource("Resource_vm6o3"), SubResource("Resource_spb1f"), SubResource("Resource_grt21"), SubResource("Resource_d86xh")])
+end_choice_lines = Array[String]([])
+end_choice_pointer = Array[ExtResource("1_fcrjw")]([ExtResource("1_mt8qx")])
+
+[sub_resource type="Resource" id="Resource_26jux"]
+script = ExtResource("1_cgd38")
+speaker = "Jaya"
+message = "Objection! That’s hearsay!"
+
+[sub_resource type="Resource" id="Resource_swr5t"]
+script = ExtResource("1_cgd38")
+speaker = "Chester"
+message = "Well, you see, it outlines a pattern of disregard for rules and regulations. He was always rough in the locker room."
+
+[sub_resource type="Resource" id="Resource_i6bmb"]
+script = ExtResource("1_cgd38")
+speaker = "EVENT"
+message = "strike"
+
+[sub_resource type="Resource" id="Resource_hmuhp"]
+script = ExtResource("1_cgd38")
+speaker = "Judge Belzebufo"
+message = "Overruled."
+
+[sub_resource type="Resource" id="Resource_jbnh6"]
+script = ExtResource("1_fcrjw")
+lines = Array[ExtResource("1_cgd38")]([SubResource("Resource_26jux"), SubResource("Resource_swr5t"), SubResource("Resource_i6bmb"), SubResource("Resource_hmuhp")])
+end_choice_lines = Array[String]([])
+end_choice_pointer = Array[ExtResource("1_fcrjw")]([ExtResource("1_mt8qx")])
 
 [sub_resource type="Resource" id="Resource_utivb"]
 script = ExtResource("1_cgd38")
@@ -16,5 +109,5 @@ message = "They claim he has been seen fencing in his apartment hallway!"
 [resource]
 script = ExtResource("1_fcrjw")
 lines = Array[ExtResource("1_cgd38")]([SubResource("Resource_utivb"), SubResource("Resource_gm14k")])
-end_choice_lines = Array[String]([])
-end_choice_pointer = Array[ExtResource("1_fcrjw")]([])
+end_choice_lines = Array[String](["How many complaints were filed?", "Objection: hearsay"])
+end_choice_pointer = Array[ExtResource("1_fcrjw")]([SubResource("Resource_8shra"), SubResource("Resource_jbnh6")])
