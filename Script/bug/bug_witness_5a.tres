@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=12 format=3 uid="uid://dkgwerdldgpux"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=14 format=3 uid="uid://dkgwerdldgpux"]
 
 [ext_resource type="Resource" uid="uid://wh78ue21hto7" path="res://Script/chester/fish_witness_1.tres" id="1_sdofx"]
 [ext_resource type="Script" path="res://Resources/dialogue.gd" id="1_xkh30"]
@@ -44,8 +44,18 @@ script = ExtResource("2_hgw4i")
 speaker = "Bug"
 message = "What? But I’m a detective of-"
 
+[sub_resource type="Resource" id="Resource_j422m"]
+script = ExtResource("2_hgw4i")
+speaker = "EVENT"
+message = "camera_disabled"
+
+[sub_resource type="Resource" id="Resource_37pwt"]
+script = ExtResource("2_hgw4i")
+speaker = "EVENT"
+message = "disappear"
+
 [resource]
 script = ExtResource("1_xkh30")
-lines = Array[ExtResource("2_hgw4i")]([SubResource("Resource_twliq"), SubResource("Resource_upeed"), SubResource("Resource_cm87q"), SubResource("Resource_d030r"), SubResource("Resource_0ygfq"), SubResource("Resource_ay3ks"), SubResource("Resource_jvgeg"), SubResource("Resource_6ukho")])
+lines = Array[ExtResource("2_hgw4i")]([SubResource("Resource_twliq"), SubResource("Resource_upeed"), SubResource("Resource_cm87q"), SubResource("Resource_d030r"), SubResource("Resource_0ygfq"), SubResource("Resource_ay3ks"), SubResource("Resource_jvgeg"), SubResource("Resource_6ukho"), SubResource("Resource_j422m"), SubResource("Resource_37pwt")])
 end_choice_lines = Array[String]([])
 end_choice_pointer = Array[ExtResource("1_xkh30")]([ExtResource("1_sdofx")])
