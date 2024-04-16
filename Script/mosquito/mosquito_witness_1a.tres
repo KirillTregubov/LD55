@@ -1,0 +1,71 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=16 format=3 uid="uid://5klx454dsgyg"]
+
+[ext_resource type="Script" path="res://Resources/dialogue.gd" id="1_7qupu"]
+[ext_resource type="Resource" uid="uid://bsqle4x3tenv7" path="res://Script/mosquito/mosquito_witness_2.tres" id="1_th30l"]
+[ext_resource type="Script" path="res://Resources/line.gd" id="1_wodlt"]
+
+[sub_resource type="Resource" id="Resource_vmlhf"]
+script = ExtResource("1_wodlt")
+speaker = "Jaya"
+message = "Judge, I would like to recall the testimony of the bug. He detailed 28 stab wounds on the alleged victim."
+
+[sub_resource type="Resource" id="Resource_wr5wn"]
+script = ExtResource("1_wodlt")
+speaker = "Abaddon"
+message = "28 stab wounds! It must have been this mosquito lady!"
+
+[sub_resource type="Resource" id="Resource_qc5r5"]
+script = ExtResource("1_wodlt")
+speaker = "Judge Belzebufo"
+message = "Mrs. Le Quin, do you have an alibi for Saturday, June 9th?"
+
+[sub_resource type="Resource" id="Resource_n7b14"]
+script = ExtResource("1_wodlt")
+speaker = "Ethel Le Guin"
+message = "I… Uh…"
+
+[sub_resource type="Resource" id="Resource_tvrga"]
+script = ExtResource("1_wodlt")
+speaker = "Ethel Le Guin"
+message = "Oh, that’s right! I was at the knitting store buying supplies."
+
+[sub_resource type="Resource" id="Resource_j6c31"]
+script = ExtResource("1_wodlt")
+speaker = "Judge Belzebufo"
+message = "There is a knitting store right across from where the incident occurred."
+
+[sub_resource type="Resource" id="Resource_1i7im"]
+script = ExtResource("1_wodlt")
+speaker = "EVENT"
+message = "restore"
+
+[sub_resource type="Resource" id="Resource_rx1at"]
+script = ExtResource("1_wodlt")
+speaker = "Ethel Le Guin"
+message = "I am unfamiliar with this stabbing incident, but I frequent that store often."
+
+[sub_resource type="Resource" id="Resource_3ve3t"]
+script = ExtResource("1_wodlt")
+speaker = "Jaya"
+message = "Your Honor, this lady could have clearly done this!"
+
+[sub_resource type="Resource" id="Resource_25t7b"]
+script = ExtResource("1_wodlt")
+speaker = "Ethel Le Guin"
+message = "I have a receipt!"
+
+[sub_resource type="Resource" id="Resource_1y2xc"]
+script = ExtResource("1_wodlt")
+speaker = "Judge Belzebufo"
+message = "Mm yes. This receipt matched the date."
+
+[sub_resource type="Resource" id="Resource_snmtg"]
+script = ExtResource("1_wodlt")
+speaker = "Judge Belzebufo"
+message = "Please move on with your testimony."
+
+[resource]
+script = ExtResource("1_7qupu")
+lines = Array[ExtResource("1_wodlt")]([SubResource("Resource_vmlhf"), SubResource("Resource_wr5wn"), SubResource("Resource_qc5r5"), SubResource("Resource_n7b14"), SubResource("Resource_tvrga"), SubResource("Resource_j6c31"), SubResource("Resource_1i7im"), SubResource("Resource_rx1at"), SubResource("Resource_3ve3t"), SubResource("Resource_25t7b"), SubResource("Resource_1y2xc"), SubResource("Resource_snmtg")])
+end_choice_lines = Array[String]([])
+end_choice_pointer = Array[ExtResource("1_7qupu")]([ExtResource("1_th30l")])

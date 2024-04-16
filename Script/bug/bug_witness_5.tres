@@ -8,7 +8,7 @@
 [sub_resource type="Resource" id="Resource_pmm8b"]
 script = ExtResource("3_vul1q")
 speaker = "Bug"
-message = "Oh, and they have 28 stab wounds on their body."
+message = "Oh, and it had 28 stab wounds on its body."
 
 [resource]
 script = ExtResource("1_peyhm")

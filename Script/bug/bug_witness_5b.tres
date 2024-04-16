@@ -22,7 +22,7 @@ message = "No they did not."
 [sub_resource type="Resource" id="Resource_dbkx3"]
 script = ExtResource("2_r24gs")
 speaker = "Abaddon"
-message = "But in college,  Idid do fenci-"
+message = "But in college,  I did do fenci-"
 
 [sub_resource type="Resource" id="Resource_qackc"]
 script = ExtResource("2_r24gs")

@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=9 format=3 uid="uid://dbvucudbanoqr"]
+
+[ext_resource type="Script" path="res://Resources/line.gd" id="1_5puvb"]
+[ext_resource type="Script" path="res://Resources/dialogue.gd" id="1_e53q3"]
+[ext_resource type="Resource" uid="uid://5klx454dsgyg" path="res://Script/mosquito/mosquito_witness_1a.tres" id="1_othnw"]
+[ext_resource type="Resource" uid="uid://bd3quyy0e1nw1" path="res://Script/mosquito/mosquito_witness_1b.tres" id="2_mfoem"]
+[ext_resource type="Resource" uid="uid://duxnrguuxvh85" path="res://Script/mosquito/mosquito_witness_1c.tres" id="3_f3pb3"]
+
+[sub_resource type="Resource" id="Resource_b3inh"]
+script = ExtResource("1_5puvb")
+speaker = "EVENT"
+message = "summon_mosquito"
+
+[sub_resource type="Resource" id="Resource_e6uak"]
+script = ExtResource("1_5puvb")
+speaker = "Judge Belzebufo"
+message = "Please state your name and occupation for the record."
+
+[sub_resource type="Resource" id="Resource_2ocov"]
+script = ExtResource("1_5puvb")
+speaker = "Ethel Le Guin"
+message = "My name is Ethel Le Guin, I’m a retired lawyer who spends her time knitting for my 300 grandchildren."
+
+[resource]
+script = ExtResource("1_e53q3")
+lines = Array[ExtResource("1_5puvb")]([SubResource("Resource_b3inh"), SubResource("Resource_e6uak"), SubResource("Resource_2ocov")])
+end_choice_lines = Array[String](["(Wait.. A mosquito! Of course!)", "Wow! That’s a lot of children...", "Objection! Lawyer as witness."])
+end_choice_pointer = Array[ExtResource("1_e53q3")]([ExtResource("1_othnw"), ExtResource("2_mfoem"), ExtResource("3_f3pb3")])

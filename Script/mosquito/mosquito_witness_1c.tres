@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=10 format=3 uid="uid://duxnrguuxvh85"]
+
+[ext_resource type="Script" path="res://Resources/line.gd" id="1_2vx83"]
+[ext_resource type="Script" path="res://Resources/dialogue.gd" id="1_41jwb"]
+[ext_resource type="Resource" uid="uid://bsqle4x3tenv7" path="res://Script/mosquito/mosquito_witness_2.tres" id="1_obj3l"]
+
+[sub_resource type="Resource" id="Resource_6hijh"]
+script = ExtResource("1_2vx83")
+speaker = "Jaya"
+message = "Objection! Judge, this is clearly a lawyer being used as a witness."
+
+[sub_resource type="Resource" id="Resource_2ygbr"]
+script = ExtResource("1_2vx83")
+speaker = "Judge Belzebufo"
+message = "Advocate, I don’t know what institution you graduated, but that objection only applies to lawyers involved in the case."
+
+[sub_resource type="Resource" id="Resource_glpnt"]
+script = ExtResource("1_2vx83")
+speaker = "Jaya"
+message = "Oh…"
+
+[sub_resource type="Resource" id="Resource_q12u6"]
+script = ExtResource("1_2vx83")
+speaker = "Jaya"
+message = "(Did I even go to law school?)"
+
+[sub_resource type="Resource" id="Resource_haqwo"]
+script = ExtResource("1_2vx83")
+speaker = "EVENT"
+message = "strike"
+
+[sub_resource type="Resource" id="Resource_qprlb"]
+script = ExtResource("1_2vx83")
+speaker = "Judge Belzebufo"
+message = "Please detail the events of Saturday, June 9th as they occurred for you."
+
+[resource]
+script = ExtResource("1_41jwb")
+lines = Array[ExtResource("1_2vx83")]([SubResource("Resource_6hijh"), SubResource("Resource_2ygbr"), SubResource("Resource_glpnt"), SubResource("Resource_q12u6"), SubResource("Resource_haqwo"), SubResource("Resource_qprlb")])
+end_choice_lines = Array[String]([])
+end_choice_pointer = Array[ExtResource("1_41jwb")]([ExtResource("1_obj3l")])
