@@ -7,7 +7,7 @@ signal stop
 func start_summoning():
 	particles.emitting = true
 	timer.start()
-	SoundPlayer.play_sound(audio_track, 1.0, -10)
+	SoundPlayer.play_sound(audio_track, 1.0)
 
 func _on_timer_timeout():
 	particles.emitting = false

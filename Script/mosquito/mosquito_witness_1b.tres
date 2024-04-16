@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=12 format=3 uid="uid://bd3quyy0e1nw1"]
+
+[ext_resource type="Resource" uid="uid://bsqle4x3tenv7" path="res://Script/mosquito/mosquito_witness_2.tres" id="1_a05gd"]
+[ext_resource type="Script" path="res://Resources/dialogue.gd" id="1_pe2rr"]
+[ext_resource type="Script" path="res://Resources/line.gd" id="1_t4q0q"]
+
+[sub_resource type="Resource" id="Resource_trhtd"]
+script = ExtResource("1_t4q0q")
+speaker = "Jaya"
+message = "That’s a lot of children. Are you sure you have time for knitting with such a big family?"
+
+[sub_resource type="Resource" id="Resource_r2oqt"]
+script = ExtResource("1_t4q0q")
+speaker = "Ethel Le Guin"
+message = "Oh, it keeps me busy, but I manage to find time for my hobbies."
+
+[sub_resource type="Resource" id="Resource_oy3do"]
+script = ExtResource("1_t4q0q")
+speaker = "Abaddon"
+message = "(Muttering) More like she finds time for stabbing!"
+
+[sub_resource type="Resource" id="Resource_5bd7r"]
+script = ExtResource("1_t4q0q")
+speaker = "Judge Belzebufo"
+message = "Counsel, please remind your client to refrain from making unfounded accusations."
+
+[sub_resource type="Resource" id="Resource_2ikk7"]
+script = ExtResource("1_t4q0q")
+speaker = "EVENT"
+message = "strike"
+
+[sub_resource type="Resource" id="Resource_hhkn4"]
+script = ExtResource("1_t4q0q")
+speaker = "Jaya"
+message = "(Glares at Abaddon)"
+
+[sub_resource type="Resource" id="Resource_yydci"]
+script = ExtResource("1_t4q0q")
+speaker = "Jaya"
+message = "My apologies, Your Honor."
+
+[sub_resource type="Resource" id="Resource_2j0nv"]
+script = ExtResource("1_t4q0q")
+speaker = "Judge Belzebufo"
+message = "Witness, please detail the events of Saturday, June 9th as they occurred for you."
+
+[resource]
+script = ExtResource("1_pe2rr")
+lines = Array[ExtResource("1_t4q0q")]([SubResource("Resource_trhtd"), SubResource("Resource_r2oqt"), SubResource("Resource_oy3do"), SubResource("Resource_5bd7r"), SubResource("Resource_2ikk7"), SubResource("Resource_hhkn4"), SubResource("Resource_yydci"), SubResource("Resource_2j0nv")])
+end_choice_lines = Array[String]([])
+end_choice_pointer = Array[ExtResource("1_pe2rr")]([ExtResource("1_a05gd")])
