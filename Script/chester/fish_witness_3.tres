@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=9 format=3 uid="uid://cy47msx1ytkn2"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=10 format=3 uid="uid://cy47msx1ytkn2"]
 
+[ext_resource type="Resource" uid="uid://dbvucudbanoqr" path="res://Script/mosquito/mosquito_witness_1.tres" id="1_3ymwa"]
 [ext_resource type="Script" path="res://Resources/dialogue.gd" id="1_ibca6"]
 [ext_resource type="Script" path="res://Resources/line.gd" id="1_q5w8l"]
 
@@ -37,4 +38,4 @@ message = "We will now call Ethel Le Guin to the stand."
 script = ExtResource("1_ibca6")
 lines = Array[ExtResource("1_q5w8l")]([SubResource("Resource_lhnki"), SubResource("Resource_qfb2e"), SubResource("Resource_ug6sn"), SubResource("Resource_uwwis"), SubResource("Resource_kv0wd"), SubResource("Resource_hl12q")])
 end_choice_lines = Array[String]([])
-end_choice_pointer = Array[ExtResource("1_ibca6")]([])
+end_choice_pointer = Array[ExtResource("1_ibca6")]([ExtResource("1_3ymwa")])
