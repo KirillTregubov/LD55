@@ -11,14 +11,14 @@ func _ready():
 	small.visible = true
 	DialogueManager.talk.connect(talk)
 	
-func talk(isTalking:bool, person: String):
+func talk(isTalking: bool, person: String):
 	if person == character_name:
+		if isTalking:
+			DialogueManager.set_voice(track)
 		if isTalking and canTalk:
 			sprite.play("talking")
-			DialogueManager.set_voice(track)
 		else:
 			sprite.play("default")
-
 
 func _on_court_case_closeup(speak: bool):
 	canTalk = speak

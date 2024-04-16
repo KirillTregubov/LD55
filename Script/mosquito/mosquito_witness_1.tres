@@ -16,7 +16,7 @@ script = ExtResource("1_5puvb")
 speaker = "EVENT"
 message = "summon_mosquito"
 
-[sub_resource type="Resource" id="Resource_cge24"]
+[sub_resource type="Resource" id="Resource_qemw8"]
 script = ExtResource("1_5puvb")
 speaker = "EVENT"
 message = "PAUSE_12"
@@ -38,6 +38,6 @@ message = "My name is Ethel Le Guin, I’m a retired lawyer who spends her time 
 
 [resource]
 script = ExtResource("1_e53q3")
-lines = Array[ExtResource("1_5puvb")]([SubResource("Resource_naodn"), SubResource("Resource_b3inh"), SubResource("Resource_cge24"), SubResource("Resource_e6uak"), SubResource("Resource_5ydgv"), SubResource("Resource_2ocov")])
+lines = Array[ExtResource("1_5puvb")]([SubResource("Resource_naodn"), SubResource("Resource_b3inh"), SubResource("Resource_qemw8"), SubResource("Resource_e6uak"), SubResource("Resource_5ydgv"), SubResource("Resource_2ocov")])
 end_choice_lines = Array[String](["(Wait.. A mosquito! Of course!)", "Wow! That’s a lot of children...", "Objection! Lawyer as witness."])
 end_choice_pointer = Array[ExtResource("1_e53q3")]([ExtResource("1_othnw"), ExtResource("2_mfoem"), ExtResource("3_f3pb3")])

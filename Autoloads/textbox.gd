@@ -8,7 +8,7 @@ extends CanvasLayer
 @onready var dramatic_pause = $DramaticPauseTimer
 @export var audio_track: AudioStream = preload ("res://Assets/SFX/single_vowel.wav")
 
-@export var typing: AudioStream = preload("res://Assets/SFX/typing.wav")
+@export var typing: AudioStream = preload ("res://Assets/SFX/typing.wav")
 
 var inner_voice = false
 var skip = false
@@ -37,7 +37,6 @@ func set_voice(voice: AudioStream):
 # takes in a Dialogue to process
 func start_dialogue(lines: Dialogue) -> void:
 	if lines.lines.size() == 0 and lines.end_choice_pointer.is_empty():
-		print('Dialogue started incorrectly')
 		return
 	
 	if self.visible == false:
@@ -57,7 +56,7 @@ func start_dialogue(lines: Dialogue) -> void:
 func display_text(person: String, text_to_display: String) -> void:
 	text = text_to_display
 	speaker.text = person
-	if text[0] != "(":
+	if len(text) > 0 and text[0] != "(":
 		talk_emitter(true)
 		inner_voice = false
 	else:
@@ -124,7 +123,7 @@ func show_line() -> void:
 			return
 
 	# if speaker is "TYPING", use typing voice
-	if(dialogue_lines.lines[current_line_index].speaker == "TYPING"):
+	if (dialogue_lines.lines[current_line_index].speaker == "TYPING"):
 		set_voice(typing)
 		display_text("", dialogue_lines.lines[current_line_index].message)
 	else:
@@ -172,7 +171,6 @@ func reset() -> void:
 
 func _on_dramatic_pause_timer_timeout() -> void:
 	if current_line_index < dialogue_lines.lines.size() - 1:
-		print('show')
 		container.show()
 
 func talk_emitter(isTalking: bool) -> void:
