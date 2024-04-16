@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://je3aequkna2"]
+[gd_scene load_steps=12 format=3 uid="uid://je3aequkna2"]
 
 [ext_resource type="Script" path="res://Actors/small_witness.gd" id="1_m20g0"]
 [ext_resource type="Texture2D" uid="uid://bjucqaoq27yfi" path="res://Assets/Bug/bug_back.png" id="2_4yd7m"]
 [ext_resource type="Texture2D" uid="uid://baaeeguxwwcbd" path="res://Assets/Angler/chesterback.png" id="3_dfdrk"]
 [ext_resource type="Texture2D" uid="uid://c0ig8smk114ah" path="res://Assets/Abaddon/defendant_back.png" id="4_3p3sg"]
+[ext_resource type="Texture2D" uid="uid://bmhsubkk3bf1s" path="res://Assets/Mosquito/mosquito_back.png" id="5_0y05l"]
 
 [sub_resource type="Animation" id="Animation_2e5ca"]
 length = 0.001
@@ -30,6 +31,33 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [ExtResource("2_4yd7m")]
+}
+
+[sub_resource type="Animation" id="Animation_fnwqh"]
+resource_name = "summon_abaddon"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_3p3sg")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_uqfy7"]
@@ -86,8 +114,8 @@ tracks/1/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_fnwqh"]
-resource_name = "summon_abaddon"
+[sub_resource type="Animation" id="Animation_jfg54"]
+resource_name = "summon_mosquito"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -95,22 +123,10 @@ tracks/0/path = NodePath("Sprite:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("4_3p3sg")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+"update": 1,
+"values": [null, ExtResource("5_0y05l")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xxruf"]
@@ -118,7 +134,8 @@ _data = {
 "RESET": SubResource("Animation_2e5ca"),
 "summon_abaddon": SubResource("Animation_fnwqh"),
 "summon_bug": SubResource("Animation_uqfy7"),
-"summon_chester": SubResource("Animation_fhjvr")
+"summon_chester": SubResource("Animation_fhjvr"),
+"summon_mosquito": SubResource("Animation_jfg54")
 }
 
 [node name="SmallWitness" type="Node2D"]
