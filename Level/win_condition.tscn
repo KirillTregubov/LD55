@@ -1,0 +1,78 @@
+[gd_scene load_steps=13 format=3 uid="uid://hgx710htvklk"]
+
+[ext_resource type="Texture2D" uid="uid://e0nkg0ehdkj2" path="res://Assets/background.png" id="1_4341c"]
+[ext_resource type="Script" path="res://Level/win_condition.gd" id="1_kelm7"]
+[ext_resource type="PackedScene" uid="uid://bv8rxwcvq7cwx" path="res://Actors/judge.tscn" id="2_7gutv"]
+[ext_resource type="Resource" uid="uid://cd7c0tjcnlwue" path="res://Script/win_condition.tres" id="2_en5vk"]
+[ext_resource type="Texture2D" uid="uid://cdutcglkydg1o" path="res://Assets/desk.png" id="3_3vau2"]
+[ext_resource type="Texture2D" uid="uid://cpj33cilvi42f" path="res://Assets/summoning_circle.png" id="4_1kytb"]
+[ext_resource type="Texture2D" uid="uid://bp0o268me54ys" path="res://Assets/stand.png" id="5_r7sxn"]
+[ext_resource type="Texture2D" uid="uid://c0ig8smk114ah" path="res://Assets/Abaddon/defendant_back.png" id="6_d2koq"]
+[ext_resource type="Texture2D" uid="uid://curnkypsfc62u" path="res://Assets/ld55smalllawyer.png" id="7_a2g2p"]
+[ext_resource type="Texture2D" uid="uid://ds6gvx3pd4j20" path="res://Assets/Crowd.png" id="8_p6h1w"]
+[ext_resource type="PackedScene" uid="uid://cgi8g0srvwpng" path="res://Menus/pause_menu.tscn" id="9_p2h7u"]
+[ext_resource type="PackedScene" uid="uid://cn6btcval6sbs" path="res://Level/win.tscn" id="12_rth2d"]
+
+[node name="WinCondition" type="Node2D"]
+script = ExtResource("1_kelm7")
+opening = ExtResource("2_en5vk")
+metadata/_edit_vertical_guides_ = [959.0, -242.0]
+metadata/_edit_horizontal_guides_ = [611.0]
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_4341c")
+
+[node name="Subjects" type="Node2D" parent="."]
+
+[node name="Judge" parent="Subjects" instance=ExtResource("2_7gutv")]
+position = Vector2(960, 400)
+
+[node name="LeftDesk" type="Sprite2D" parent="Subjects"]
+position = Vector2(360, 730)
+texture = ExtResource("3_3vau2")
+flip_h = true
+
+[node name="RightDesk" type="Sprite2D" parent="Subjects"]
+position = Vector2(1560, 730)
+texture = ExtResource("3_3vau2")
+
+[node name="Circle" type="Sprite2D" parent="Subjects"]
+position = Vector2(960, 890)
+texture = ExtResource("4_1kytb")
+
+[node name="Stand" type="Sprite2D" parent="Subjects"]
+position = Vector2(960, 750)
+texture = ExtResource("5_r7sxn")
+
+[node name="Defendant" type="Sprite2D" parent="Subjects"]
+position = Vector2(960, 510)
+texture = ExtResource("6_d2koq")
+
+[node name="Player" type="Sprite2D" parent="Subjects"]
+position = Vector2(1576, 520)
+texture = ExtResource("7_a2g2p")
+flip_h = true
+
+[node name="Foreground" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="TextureRect" type="TextureRect" parent="Foreground"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_p6h1w")
+
+[node name="PauseMenu" parent="." instance=ExtResource("9_p2h7u")]
+visible = false
+
+[node name="Win" parent="." instance=ExtResource("12_rth2d")]

@@ -32,6 +32,9 @@ func handle_scripted_events(event: String):
 			small_witness.visible = true
 			summon_abaddon_witness()
 			
+		"summon_mosquito":
+			small_witness.visible = true
+			summon_mosquito_witness()
 		"unsummon":
 			small_witness.visible = false
 			
@@ -55,6 +58,9 @@ func handle_scripted_events(event: String):
 			
 		"crowd_surprised":
 			foreground.crowd_surprised()
+			
+		"win":
+			get_tree().change_scene_to_file("res://Level/win_condition.tscn")
 
 func summon_bug_witness():
 	circle.start_summoning()
@@ -68,6 +74,9 @@ func summon_abaddon_witness():
 	circle.start_summoning()
 	small_witness.summon_abaddon()
 
+func summon_mosquito_witness():
+	circle.start_summoning()
+	small_witness.summon_mosquito()
 
 func start_music():
 	MusicPlayer.start_playing(track, -10)

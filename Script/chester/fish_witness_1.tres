@@ -1,15 +1,123 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=4 format=3 uid="uid://wh78ue21hto7"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=26 format=3 uid="uid://wh78ue21hto7"]
 
 [ext_resource type="Script" path="res://Resources/line.gd" id="1_joxwq"]
 [ext_resource type="Script" path="res://Resources/dialogue.gd" id="1_tq3s2"]
+[ext_resource type="Resource" uid="uid://bfw37l7dhqmux" path="res://Script/chester/fish_witness_2.tres" id="1_w2y8u"]
+
+[sub_resource type="Resource" id="Resource_8561w"]
+script = ExtResource("1_joxwq")
+speaker = "Jaya"
+message = "Objection Your Honor! Nobody in good conscience would let this man near kids!"
+
+[sub_resource type="Resource" id="Resource_hie7j"]
+script = ExtResource("1_joxwq")
+speaker = "Judge Belzebufo"
+message = "I will not tolerate personal attacks in my courtroom."
+
+[sub_resource type="Resource" id="Resource_ivdrh"]
+script = ExtResource("1_tq3s2")
+lines = Array[ExtResource("1_joxwq")]([SubResource("Resource_8561w"), SubResource("Resource_hie7j")])
+end_choice_lines = Array[String]([])
+end_choice_pointer = Array[ExtResource("1_tq3s2")]([ExtResource("1_w2y8u")])
+
+[sub_resource type="Resource" id="Resource_dpiey"]
+script = ExtResource("1_joxwq")
+speaker = "Jaya"
+message = "And now in the courtroom…"
+
+[sub_resource type="Resource" id="Resource_bx3dt"]
+script = ExtResource("1_joxwq")
+speaker = "Abaddon"
+message = "Hey!"
+
+[sub_resource type="Resource" id="Resource_8l3wy"]
+script = ExtResource("1_joxwq")
+speaker = "Jaya"
+message = "(Just act friendly, think about what’s at stake… rent money.)"
+
+[sub_resource type="Resource" id="Resource_ey7ry"]
+script = ExtResource("1_tq3s2")
+lines = Array[ExtResource("1_joxwq")]([SubResource("Resource_dpiey"), SubResource("Resource_bx3dt"), SubResource("Resource_8l3wy")])
+end_choice_lines = Array[String]([])
+end_choice_pointer = Array[ExtResource("1_tq3s2")]([ExtResource("1_w2y8u")])
 
 [sub_resource type="Resource" id="Resource_asgi5"]
 script = ExtResource("1_joxwq")
-speaker = ""
-message = ""
+speaker = "Judge Belzebufo"
+message = "Thank you for your testimony, bug. We will now bring to the stand, Chester Montgomery."
+
+[sub_resource type="Resource" id="Resource_5wqcn"]
+script = ExtResource("1_joxwq")
+speaker = "EVENT"
+message = "summon_chester"
+
+[sub_resource type="Resource" id="Resource_xji0y"]
+script = ExtResource("1_joxwq")
+speaker = "Judge Belzebufo"
+message = "Welcome to Hell, Mr. Montgomery. Please state your name and occupation for the record."
+
+[sub_resource type="Resource" id="Resource_v37jm"]
+script = ExtResource("1_joxwq")
+speaker = "EVENT"
+message = "chester_appear"
+
+[sub_resource type="Resource" id="Resource_bw2d8"]
+script = ExtResource("1_joxwq")
+speaker = "Chester"
+message = "AHH! What the hell, I was just having a nice pineapple pizza."
+
+[sub_resource type="Resource" id="Resource_ugq2n"]
+script = ExtResource("1_joxwq")
+speaker = "Chester"
+message = "Wait, did you just say I’m in Hell? "
+
+[sub_resource type="Resource" id="Resource_fbp68"]
+script = ExtResource("1_joxwq")
+speaker = "Chester"
+message = "But I paid my indulgence fees!"
+
+[sub_resource type="Resource" id="Resource_73rux"]
+script = ExtResource("1_joxwq")
+speaker = "Jaya"
+message = "The Judge was being hyperbolic. Can you move along now please?"
+
+[sub_resource type="Resource" id="Resource_7af0q"]
+script = ExtResource("1_joxwq")
+speaker = "Abaddon"
+message = "You eat pineapple on pizza, Chester?"
+
+[sub_resource type="Resource" id="Resource_2l5uh"]
+script = ExtResource("1_joxwq")
+speaker = "Judge Belzebufo"
+message = "Silence in the court! Chester, proceed."
+
+[sub_resource type="Resource" id="Resource_m104o"]
+script = ExtResource("1_joxwq")
+speaker = "Chester"
+message = "What a strange courtroom… And would you look at this crowd…"
+
+[sub_resource type="Resource" id="Resource_qq0qy"]
+script = ExtResource("1_joxwq")
+speaker = "Chester"
+message = "Hello. I am Chester Montgomery, I am a gym teacher by day and a fencing coach by night."
+
+[sub_resource type="Resource" id="Resource_4q7xj"]
+script = ExtResource("1_joxwq")
+speaker = "Jaya"
+message = "(Is this guy molding the next generation of stabbers?)"
+
+[sub_resource type="Resource" id="Resource_ep0vn"]
+script = ExtResource("1_joxwq")
+speaker = "Judge Belzebufo"
+message = " What do you know of Mr. Abaddon’s fencing?"
+
+[sub_resource type="Resource" id="Resource_5j1pk"]
+script = ExtResource("1_joxwq")
+speaker = "Chester"
+message = "Ah. You see, I taught Abaddon here when he was still a wee lil chap, causing havoc at school."
 
 [resource]
 script = ExtResource("1_tq3s2")
-lines = Array[ExtResource("1_joxwq")]([SubResource("Resource_asgi5"), null, null, null, null, null])
-end_choice_lines = Array[String]([])
-end_choice_pointer = Array[ExtResource("1_tq3s2")]([])
+lines = Array[ExtResource("1_joxwq")]([SubResource("Resource_asgi5"), SubResource("Resource_5wqcn"), SubResource("Resource_xji0y"), SubResource("Resource_v37jm"), SubResource("Resource_bw2d8"), SubResource("Resource_ugq2n"), SubResource("Resource_fbp68"), SubResource("Resource_73rux"), SubResource("Resource_7af0q"), SubResource("Resource_2l5uh"), SubResource("Resource_m104o"), SubResource("Resource_qq0qy"), SubResource("Resource_4q7xj"), SubResource("Resource_ep0vn"), SubResource("Resource_5j1pk")])
+end_choice_lines = Array[String](["Objection: incompetent witness", "And now in the courtroom"])
+end_choice_pointer = Array[ExtResource("1_tq3s2")]([SubResource("Resource_ivdrh"), SubResource("Resource_ey7ry")])

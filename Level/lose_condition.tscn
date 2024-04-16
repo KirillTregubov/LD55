@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://k6lkg3xungis"]
+[gd_scene load_steps=17 format=3 uid="uid://k6lkg3xungis"]
 
 [ext_resource type="Script" path="res://Level/lose_condition.gd" id="1_5hg75"]
 [ext_resource type="Resource" uid="uid://blme3er80lfw8" path="res://Script/lose_condition.tres" id="2_uo0ov"]
@@ -8,10 +8,145 @@
 [ext_resource type="Texture2D" uid="uid://cpj33cilvi42f" path="res://Assets/summoning_circle.png" id="6_blgmp"]
 [ext_resource type="Texture2D" uid="uid://bp0o268me54ys" path="res://Assets/stand.png" id="7_2y3tb"]
 [ext_resource type="Texture2D" uid="uid://c0ig8smk114ah" path="res://Assets/Abaddon/defendant_back.png" id="8_if2m5"]
+[ext_resource type="Texture2D" uid="uid://wrfk1kafxulp" path="res://Assets/Judge/ld55_tongue.png" id="8_ov3dd"]
 [ext_resource type="Texture2D" uid="uid://curnkypsfc62u" path="res://Assets/ld55smalllawyer.png" id="9_2xylc"]
 [ext_resource type="Texture2D" uid="uid://ds6gvx3pd4j20" path="res://Assets/Crowd.png" id="10_s14mt"]
 [ext_resource type="PackedScene" uid="uid://cgi8g0srvwpng" path="res://Menus/pause_menu.tscn" id="12_cvjfj"]
 [ext_resource type="PackedScene" uid="uid://bvphsu5igd6xu" path="res://Level/Death/death.tscn" id="15_w3jnj"]
+
+[sub_resource type="Animation" id="Animation_exsae"]
+resource_name = "eat"
+length = 0.1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Subjects/Tongue:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Subjects/Tongue:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.02, 0.04, 0.06, 0.08),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(960, 400), Vector2(960, 470.25), Vector2(960, 530.25), Vector2(960, 430.25)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Subjects/Tongue:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.02, 0.04, 0.06, 0.08),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 0.275), Vector2(1, 0.9775), Vector2(1, 1.5775), Vector2(1, 0.5775)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Subjects/Defendant:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.08),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(960, 710), Vector2(960, 510)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Subjects/Defendant:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_nkuhd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Subjects/Tongue:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Subjects/Tongue:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(960, 400)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Subjects/Tongue:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 0.275)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Subjects/Defendant:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(960, 510)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Subjects/Defendant:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_clx6i"]
+_data = {
+"RESET": SubResource("Animation_nkuhd"),
+"eat": SubResource("Animation_exsae")
+}
 
 [node name="LoseCondition" type="Node2D"]
 script = ExtResource("1_5hg75")
@@ -52,8 +187,15 @@ texture = ExtResource("6_blgmp")
 position = Vector2(960, 750)
 texture = ExtResource("7_2y3tb")
 
+[node name="Tongue" type="Sprite2D" parent="Subjects"]
+visible = false
+position = Vector2(960, 400)
+scale = Vector2(1, 0.275)
+texture = ExtResource("8_ov3dd")
+
 [node name="Defendant" type="Sprite2D" parent="Subjects"]
-position = Vector2(960, 710)
+visible = false
+position = Vector2(960, 510)
 texture = ExtResource("8_if2m5")
 
 [node name="Player" type="Sprite2D" parent="Subjects"]
@@ -73,5 +215,14 @@ grow_vertical = 2
 texture = ExtResource("10_s14mt")
 
 [node name="PauseMenu" parent="." instance=ExtResource("12_cvjfj")]
+visible = false
 
 [node name="DeathScreen" parent="." instance=ExtResource("15_w3jnj")]
+visible = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_clx6i")
+}
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

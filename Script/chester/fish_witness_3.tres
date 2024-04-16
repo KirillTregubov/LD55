@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=9 format=3 uid="uid://cy47msx1ytkn2"]
+
+[ext_resource type="Script" path="res://Resources/dialogue.gd" id="1_ibca6"]
+[ext_resource type="Script" path="res://Resources/line.gd" id="1_q5w8l"]
+
+[sub_resource type="Resource" id="Resource_lhnki"]
+script = ExtResource("1_q5w8l")
+speaker = "Judge Belzebufo"
+message = "I believe we’ve heard sufficient testimony on the matter. "
+
+[sub_resource type="Resource" id="Resource_qfb2e"]
+script = ExtResource("1_q5w8l")
+speaker = "Judge Belzebufo"
+message = "Thank you for your testimony, Mr. Montgomery. Your trial will come shortly."
+
+[sub_resource type="Resource" id="Resource_ug6sn"]
+script = ExtResource("1_q5w8l")
+speaker = "Abaddon"
+message = "Wait, what?"
+
+[sub_resource type="Resource" id="Resource_uwwis"]
+script = ExtResource("1_q5w8l")
+speaker = "EVENT"
+message = "disappear"
+
+[sub_resource type="Resource" id="Resource_kv0wd"]
+script = ExtResource("1_q5w8l")
+speaker = "EVENT"
+message = "unsummon"
+
+[sub_resource type="Resource" id="Resource_hl12q"]
+script = ExtResource("1_q5w8l")
+speaker = "Judge Belzebufo"
+message = "We will now call Ethel Le Guin to the stand."
+
+[resource]
+script = ExtResource("1_ibca6")
+lines = Array[ExtResource("1_q5w8l")]([SubResource("Resource_lhnki"), SubResource("Resource_qfb2e"), SubResource("Resource_ug6sn"), SubResource("Resource_uwwis"), SubResource("Resource_kv0wd"), SubResource("Resource_hl12q")])
+end_choice_lines = Array[String]([])
+end_choice_pointer = Array[ExtResource("1_ibca6")]([])

@@ -1,0 +1,65 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=14 format=3 uid="uid://cd7c0tjcnlwue"]
+
+[ext_resource type="Script" path="res://Resources/dialogue.gd" id="1_c3wnk"]
+[ext_resource type="Script" path="res://Resources/line.gd" id="1_ctfvv"]
+
+[sub_resource type="Resource" id="Resource_rmls5"]
+script = ExtResource("1_ctfvv")
+speaker = "Judge Belzebufo"
+message = "I believe that I’ve heard enough."
+
+[sub_resource type="Resource" id="Resource_rk4th"]
+script = ExtResource("1_ctfvv")
+speaker = "Judge Belzebufo"
+message = "In light of recent events, the facts of the matter clearly point to Mr. Abaddon, NOT being dead to rights."
+
+[sub_resource type="Resource" id="Resource_18s5x"]
+script = ExtResource("1_ctfvv")
+speaker = "Judge Belzebufo"
+message = "The defendant will be provided the best possible fate befitting his time on Earth."
+
+[sub_resource type="Resource" id="Resource_gr41c"]
+script = ExtResource("1_ctfvv")
+speaker = "Abaddon"
+message = "Hell yeah!"
+
+[sub_resource type="Resource" id="Resource_wpwk3"]
+script = ExtResource("1_ctfvv")
+speaker = "Abaddon"
+message = "… Do I get to leave?"
+
+[sub_resource type="Resource" id="Resource_1qtxb"]
+script = ExtResource("1_ctfvv")
+speaker = "Judge Belzebufo"
+message = "I send the defendant, Mr. Abaddon, into Purgatory for all eternity."
+
+[sub_resource type="Resource" id="Resource_xfnlv"]
+script = ExtResource("1_ctfvv")
+speaker = "Abaddon"
+message = "Wait what?"
+
+[sub_resource type="Resource" id="Resource_hmvde"]
+script = ExtResource("1_ctfvv")
+speaker = "EVENT"
+message = "vanish"
+
+[sub_resource type="Resource" id="Resource_rjhgk"]
+script = ExtResource("1_ctfvv")
+speaker = "Judge Belzebufo"
+message = "Here’s your pay cut."
+
+[sub_resource type="Resource" id="Resource_lv40p"]
+script = ExtResource("1_ctfvv")
+speaker = "Jaya"
+message = "Hell yeah!"
+
+[sub_resource type="Resource" id="Resource_0yang"]
+script = ExtResource("1_ctfvv")
+speaker = "EVENT"
+message = "win"
+
+[resource]
+script = ExtResource("1_c3wnk")
+lines = Array[ExtResource("1_ctfvv")]([SubResource("Resource_rmls5"), SubResource("Resource_rk4th"), SubResource("Resource_18s5x"), SubResource("Resource_gr41c"), SubResource("Resource_wpwk3"), SubResource("Resource_1qtxb"), SubResource("Resource_xfnlv"), SubResource("Resource_hmvde"), SubResource("Resource_rjhgk"), SubResource("Resource_lv40p"), SubResource("Resource_0yang")])
+end_choice_lines = Array[String]([])
+end_choice_pointer = Array[ExtResource("1_c3wnk")]([])
