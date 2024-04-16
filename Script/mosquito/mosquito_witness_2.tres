@@ -1,7 +1,9 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=8 format=3 uid="uid://bsqle4x3tenv7"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=10 format=3 uid="uid://bsqle4x3tenv7"]
 
 [ext_resource type="Script" path="res://Resources/dialogue.gd" id="1_227aa"]
 [ext_resource type="Script" path="res://Resources/line.gd" id="1_haaxv"]
+[ext_resource type="Resource" uid="uid://cgmlb8p8el8ih" path="res://Script/mosquito/mosquito_witness_2a.tres" id="1_o3fw8"]
+[ext_resource type="Resource" uid="uid://ox0to48e4hc2" path="res://Script/mosquito/mosquito_witness_2b.tres" id="2_tp0mq"]
 
 [sub_resource type="Resource" id="Resource_lot30"]
 script = ExtResource("1_haaxv")
@@ -32,4 +34,4 @@ message = "Yes, the knitting store is right across from where I saw the fox, but
 script = ExtResource("1_227aa")
 lines = Array[ExtResource("1_haaxv")]([SubResource("Resource_lot30"), SubResource("Resource_hc2er"), SubResource("Resource_4d65r"), SubResource("Resource_g7o18"), SubResource("Resource_maj5y")])
 end_choice_lines = Array[String](["Objection! Nonresponsive!", "What fox?"])
-end_choice_pointer = Array[ExtResource("1_227aa")]([])
+end_choice_pointer = Array[ExtResource("1_227aa")]([ExtResource("1_o3fw8"), ExtResource("2_tp0mq")])
