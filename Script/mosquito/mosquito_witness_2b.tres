@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=14 format=3 uid="uid://c2253k0sonqy"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=15 format=3 uid="uid://ox0to48e4hc2"]
 
 [ext_resource type="Script" path="res://Resources/dialogue.gd" id="1_8okd7"]
+[ext_resource type="Resource" uid="uid://7hbww6krfpmq" path="res://Script/mosquito/mosquito_witness_3.tres" id="1_di24b"]
 [ext_resource type="Script" path="res://Resources/line.gd" id="1_g0ihs"]
 
 [sub_resource type="Resource" id="Resource_ev6fj"]
@@ -62,4 +63,4 @@ message = "restore"
 script = ExtResource("1_8okd7")
 lines = Array[ExtResource("1_g0ihs")]([SubResource("Resource_ev6fj"), SubResource("Resource_3te5w"), SubResource("Resource_ignk1"), SubResource("Resource_ywsjh"), SubResource("Resource_n8o4v"), SubResource("Resource_mn87d"), SubResource("Resource_sbokp"), SubResource("Resource_ep283"), SubResource("Resource_grlqu"), SubResource("Resource_iwk1q"), SubResource("Resource_noyf0")])
 end_choice_lines = Array[String]([])
-end_choice_pointer = Array[ExtResource("1_8okd7")]([])
+end_choice_pointer = Array[ExtResource("1_8okd7")]([ExtResource("1_di24b")])

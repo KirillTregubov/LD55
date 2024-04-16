@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=12 format=3 uid="uid://7hbww6krfpmq"]
+
+[ext_resource type="Resource" uid="uid://cy7l2amjd4rim" path="res://Script/mosquito/mosquito_witness_3a.tres" id="1_blrxk"]
+[ext_resource type="Script" path="res://Resources/dialogue.gd" id="1_ombdl"]
+[ext_resource type="Script" path="res://Resources/line.gd" id="1_oyjov"]
+[ext_resource type="Resource" uid="uid://go1ntkvrlejx" path="res://Script/mosquito/mosquito_witness_3b.tres" id="2_v60ni"]
+
+[sub_resource type="Resource" id="Resource_hjubn"]
+script = ExtResource("1_oyjov")
+speaker = "Judge Belzebufo"
+message = "Mrs. Le Guin, let's try this again. Please provide a concise account of your activities on Saturday, June 9th."
+
+[sub_resource type="Resource" id="Resource_0n5mg"]
+script = ExtResource("1_oyjov")
+speaker = "Ethel Le Guin"
+message = "Of course, Your Honor. I woke up, found my car damaged by my daughter-in-law, and walked to the knitting store. On my way there, I passed by the location where the incident occurred. I saw a fox, but nothing seemed out of the ordinary at the time. I purchased knitting supplies and returned home without incident."
+
+[sub_resource type="Resource" id="Resource_u1jx1"]
+script = ExtResource("1_oyjov")
+speaker = "Judge Belzebufo"
+message = "Thank you, Mrs. Le Guin. Counsel, you may proceed with your questioning."
+
+[sub_resource type="Resource" id="Resource_08qud"]
+script = ExtResource("1_oyjov")
+speaker = "EVENT"
+message = "camera_enabled"
+
+[sub_resource type="Resource" id="Resource_gxlk5"]
+script = ExtResource("1_oyjov")
+speaker = "Jaya"
+message = "Were you wearing any distinctive clothing or accessories that day that might help identify you as the person passing by?"
+
+[sub_resource type="Resource" id="Resource_xlbxm"]
+script = ExtResource("1_oyjov")
+speaker = "EVENT"
+message = "camera_disabled"
+
+[sub_resource type="Resource" id="Resource_vri7k"]
+script = ExtResource("1_oyjov")
+speaker = "Ethel Le Guin"
+message = "I was wearing my usual attire, nothing that would stand out particularly."
+
+[resource]
+script = ExtResource("1_ombdl")
+lines = Array[ExtResource("1_oyjov")]([SubResource("Resource_hjubn"), SubResource("Resource_0n5mg"), SubResource("Resource_u1jx1"), SubResource("Resource_08qud"), SubResource("Resource_gxlk5"), SubResource("Resource_xlbxm"), SubResource("Resource_vri7k")])
+end_choice_lines = Array[String](["Except for the needles she used as a weapon!", "(This is going nowhere...)"])
+end_choice_pointer = Array[ExtResource("1_ombdl")]([ExtResource("1_blrxk"), ExtResource("2_v60ni")])
