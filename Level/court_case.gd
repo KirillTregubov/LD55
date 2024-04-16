@@ -22,7 +22,7 @@ func handle_scripted_events(event: String):
 	match event:
 		"summon_bug":
 			small_witness.visible = true
-			summon_bug_witness()	
+			summon_bug_witness()
 			
 		"summon_chester":
 			small_witness.visible = true
@@ -79,13 +79,12 @@ func summon_mosquito_witness():
 	small_witness.summon_mosquito()
 
 func start_music():
-	MusicPlayer.start_playing(track, -10)
+	MusicPlayer.start_playing(track, -15)
 
 func _on_strikes_dead():
 	get_tree().change_scene_to_packed(lose)
 
-
 func _on_summoning_circle_start():
 	MusicPlayer.stop_playing()
 func _on_summoning_circle_stop():
-	MusicPlayer.start_playing(track, -10)
+	MusicPlayer.start_playing(track, -15)

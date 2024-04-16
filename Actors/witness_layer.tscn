@@ -106,14 +106,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_w1oex")
+"texture": ExtResource("9_vw45j")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_vw45j")
+"texture": ExtResource("6_w1oex")
 }],
 "loop": true,
 "name": &"talking",
-"speed": 5.0
+"speed": 8.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cx652"]
@@ -162,7 +162,6 @@ animation = &"talking"
 visible = false
 position = Vector2(960, 540)
 sprite_frames = SubResource("SpriteFrames_tkjiy")
-animation = &"talking"
 
 [node name="Mosquito" type="AnimatedSprite2D" parent="."]
 visible = false

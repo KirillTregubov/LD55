@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://by7gbne0bycq4"]
 
 [ext_resource type="Script" path="res://Level/prelude.gd" id="1_mjc3m"]
-[ext_resource type="Resource" uid="uid://cxhsi4gucg5h" path="res://Script/prelude.tres" id="2_satfc"]
+[ext_resource type="Resource" uid="uid://bes2t065pmg8a" path="res://Script/prelude.tres" id="2_satfc"]
 [ext_resource type="PackedScene" uid="uid://cgi8g0srvwpng" path="res://Menus/pause_menu.tscn" id="3_ik500"]
 
 [node name="Prelude" type="CanvasLayer"]
