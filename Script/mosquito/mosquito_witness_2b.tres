@@ -12,7 +12,7 @@ message = "Judge, we haven’t brought up the identity of the victim yet. This w
 [sub_resource type="Resource" id="Resource_3te5w"]
 script = ExtResource("1_g0ihs")
 speaker = "Judge Belzebufo"
-message = "Counselor, are you suggesting Mrs. Le Guin is withholding information"
+message = "Counselor, are you suggesting Mrs. Le Guin is withholding information?"
 
 [sub_resource type="Resource" id="Resource_ignk1"]
 script = ExtResource("1_g0ihs")
