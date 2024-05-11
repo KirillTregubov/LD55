@@ -17,11 +17,12 @@
 
 Play as Jaya, a defense attorney in hell who is needing to get their newest client Abaddon out of serious punishment, except he's definitely guilty. Gaslight, gatekeep, and girlboss your way through "proving" his innocence so that Jaya can keep paying for their luxury condo.
 
-Submitted as part of the [Ludum Dare 56 Jam](https://ldjam.com/events/ludum-dare/55/devils-advocate-1).
+Submitted as part of the [Ludum Dare 55 Jam](https://ldjam.com/events/ludum-dare/55/devils-advocate-1) with the theme "Summoning". The game scored 23rd overall, 6th in graphics and 9th in mood out of 2194 entries.
 
 ### Screenshots
 
 <p float="left">
+  <img src="Assets/Promotional/ScreenshotMenu.png" width="400" /> 
   <img src="Assets/Promotional/ScreenshotCourtroom.png" width="400" /> 
   <img src="Assets/Promotional/ScreenshotCrossExamination.png" width="400" /> 
 </p>
